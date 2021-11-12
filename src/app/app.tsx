@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { StoreContext, useStoreon } from 'storeon/react';
 import './app.scss';
-import { createStore } from './app.store';
+import { AppStore } from './app.store';
 import { Report } from './modules/reports/reports.state';
+import { Router, View } from 'react-navi';
+import { mount, route } from 'navi';
 
 function WrappedApp() {
     const { reports, articles } = useStoreon('reports', 'articles');
 
     useEffect(() => {
-        console.log(reports, articles);
-    }, [reports, articles]);
+        console.log(reports);
+    }, [reports]);
 
-    const [title, setTitle] = useState<string>('OZZY');
+    useEffect(() => {
+        console.log(articles);
+    }, [articles]);
 
     return (
         <div>
@@ -23,42 +27,27 @@ function WrappedApp() {
                         <p>{report.summary}</p>
                     </div>
                 ))}
-            <button onClick={() => setTitle(`OZZY`)}>OZZY</button>
-            <button onClick={() => setTitle(`LEMMY`)}>LEMMY</button>
-            <button onClick={() => setTitle(`ZAKK`)}>ZAKK</button>
-            {title}
-            <TheList title={title} />
         </div>
     );
 }
 
-interface TheListProps {
-    title: string;
+interface AppProps {
+    store: AppStore
 }
 
-function TheList({ title }: TheListProps) {
-    return (
-        <div>
-            <h2>challenge</h2>
-            <p>title: {title}</p>
-            <ul>
-                <li className={title === 'OZZY' ? 'active' : ''}>OZZY</li>
-                <li className={title === 'LEMMY' ? 'active' : ''}>LEMMY</li>
-                <li className={title === 'ZAKK' ? 'active' : ''}>ZAKK</li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    );
-}
+const routes = mount({
+    '/': route({
+        title: '',
+        view: <WrappedApp />
+    })
+})
 
-function App() {
-    const store = createStore();
-
+function App({store}: AppProps) {
     return (
         <StoreContext.Provider value={store}>
-            <WrappedApp />
+            <Router routes={routes}>
+                <View />
+            </Router>
         </StoreContext.Provider>
     );
 }
