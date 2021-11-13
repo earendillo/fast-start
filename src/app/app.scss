@@ -2,6 +2,21 @@
     text-align: center;
 }
 
+.navigation-container {
+
+    ul {
+        list-style-type: none;
+    }
+
+    .navigation-list {
+        display: flex;
+
+        .navigation-list-item {
+            padding: 5px;
+        }
+    }
+}
+
 .show {
     display: block;
 }
