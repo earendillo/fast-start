@@ -7,7 +7,7 @@ import {
     ReportsInitEvent,
 } from './reports.events';
 import { WithReportsState, ReportsState, Report } from './reports.state';
-import { BASE_API_URL, REPORTS_ROUTE } from '../../config/consts';
+import { REPORTS_ROUTE } from '../../config/consts';
 
 export type ReportsStore = StoreonStore<ReportsState, ReportsEvents>;
 export type ReportsModule = StoreonModule<WithReportsState, ReportsEvents>;
@@ -28,10 +28,9 @@ export function getReportsModule(): StoreonModule<any> {
         reportsStore.on(ReportsInitEvent, () =>
             store.dispatch(FetchReportsEvent)
         );
-        reportsStore.on(FetchReportsEvent, async (state) => {
+        reportsStore.on(FetchReportsEvent, async () => {
             try {
-                const FETCH_REPORTS_API = `${BASE_API_URL}${REPORTS_ROUTE}`;
-                const rawReports = await fetch(FETCH_REPORTS_API);
+                const rawReports = await fetch(REPORTS_ROUTE);
                 const result: Array<Report> = await rawReports.json();
                 store.dispatch(FetchReportsEndedEvent, {
                     reports: result,

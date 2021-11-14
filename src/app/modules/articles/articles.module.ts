@@ -7,7 +7,7 @@ import {
     ArticlesEvents,
 } from './articles.events';
 import { WithArticlesState, ArticlesState, Article } from './articles.state';
-import { ARTICLES_ROUTE, BASE_API_URL } from '../../config/consts';
+import { ARTICLES_ROUTE } from '../../config/consts';
 
 export type ArticlesStore = StoreonStore<ArticlesState, ArticlesEvents>;
 export type ArticlesModule = StoreonModule<WithArticlesState, ArticlesEvents>;
@@ -28,10 +28,9 @@ export function getArticlesModule(): StoreonModule<any> {
         articlesStore.on(ArticlesInitEvent, () =>
             store.dispatch(FetchArticlesEvent)
         );
-        articlesStore.on(FetchArticlesEvent, async (state) => {
+        articlesStore.on(FetchArticlesEvent, async () => {
             try {
-                const FETCH_ARTICLES_API = `${BASE_API_URL}${ARTICLES_ROUTE}`;
-                const rawArticles = await fetch(FETCH_ARTICLES_API);
+                const rawArticles = await fetch(ARTICLES_ROUTE);
                 const result: Array<Article> = await rawArticles.json();
                 store.dispatch(FetchArticlesEndedEvent, {
                     articles: result,
@@ -45,7 +44,7 @@ export function getArticlesModule(): StoreonModule<any> {
             }
         });
 
-        articlesStore.on(FetchArticlesEndedEvent, (state, data) => {
+        articlesStore.on(FetchArticlesEndedEvent, (state, data): ArticlesState => {
             return {
                 ...state,
                 articles: data.articles,
