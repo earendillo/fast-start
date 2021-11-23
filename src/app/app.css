@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.navigation-container ul {
+  list-style-type: none;
+}
+
+.navigation-container .navigation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navigation-container .navigation-list .navigation-list-item {
+  padding: 5px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: greenyellow;
+}
+/*# sourceMappingURL=app.css.map */
