@@ -1,6 +1,5 @@
 import './header.styles.css';
 
-
 interface HeaderProps {
     appName: string;
 }

@@ -3,13 +3,10 @@ import { StoreContext, useStoreon } from 'storeon/react';
 import { AppStore } from './app.store';
 import { Link, Router, View } from 'react-navi';
 import { compose, mount, route, withView } from 'navi';
-// Components
 import { Articles } from './components/articles/articles.component';
 import { Reports } from './components/reports/reports.component';
-// Modules
 import { Article } from './modules/articles/articles.state';
 import { Report } from './modules/reports/reports.state';
-// Styles
 import './app.css';
 
 function WrappedApp(): JSX.Element {
