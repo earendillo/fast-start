@@ -12,7 +12,7 @@ import { Report } from './modules/reports/reports.state';
 // Styles
 import './app.css';
 
-function WrappedApp() {
+function WrappedApp(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
 
     return (
