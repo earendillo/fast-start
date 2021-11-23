@@ -7,7 +7,7 @@ import { Articles } from './components/articles/articles.component';
 import { Reports } from './components/reports/reports.component';
 import { Article } from './modules/articles/articles.state';
 import { Report } from './modules/reports/reports.state';
-import './app.css';
+import './app.scss';
 
 function WrappedApp(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');

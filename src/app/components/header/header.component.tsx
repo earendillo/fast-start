@@ -1,4 +1,4 @@
-import './header.styles.css';
+import './header.component.scss';
 
 interface HeaderProps {
     appName: string;

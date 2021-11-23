@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,IAAI,CAAJ,mCAAI;AAGJ,IAAI,CAAJ,6BAAI",
-    "sources": [
-        "reports.styles.scss"
-    ],
-    "names": [],
-    "file": "reports.styles.css"
-}

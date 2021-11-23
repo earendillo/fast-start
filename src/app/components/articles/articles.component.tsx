@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStoreon } from 'storeon/react';
 import { Article } from '../../modules/articles/articles.state';
-import './articles.styles.css';
+import './articles.component.scss';
 
 
 export function Articles() {
