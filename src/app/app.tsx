@@ -1,15 +1,15 @@
 import React from 'react';
 import { StoreContext, useStoreon } from 'storeon/react';
-import './app.scss';
 import { AppStore } from './app.store';
-import { Report } from './modules/reports/reports.state';
 import { Link, Router, View } from 'react-navi';
 import { compose, mount, route, withView } from 'navi';
-import { Articles } from './components/articles.component';
-import { Reports } from './components/reports.component';
+import { Articles } from './components/articles/articles.component';
+import { Reports } from './components/reports/reports.component';
 import { Article } from './modules/articles/articles.state';
+import { Report } from './modules/reports/reports.state';
+import './app.css';
 
-function WrappedApp() {
+function WrappedApp(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
 
     return (

@@ -1,11 +1,15 @@
+@import './styles/variables/variables.scss';
+@import './styles/mixins/mixins.scss';
+
+
 .App {
     text-align: center;
 }
 
 .navigation-container {
-
     ul {
         list-style-type: none;
+        
     }
 
     .navigation-list {
