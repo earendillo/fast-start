@@ -1,4 +1,3 @@
-// Styles
 import './header.styles.css';
 
 

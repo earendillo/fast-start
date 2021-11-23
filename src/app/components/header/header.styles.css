@@ -1,1 +1,3 @@
-/* No CSS *//*# sourceMappingURL=header.styles.css.map */
+@use './styles/variables/variables.scss';
+@use './styles/mixins/mixins.scss';
+/*# sourceMappingURL=header.styles.css.map */
