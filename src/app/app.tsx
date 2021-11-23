@@ -1,13 +1,16 @@
 import React from 'react';
 import { StoreContext, useStoreon } from 'storeon/react';
-import './app.scss';
 import { AppStore } from './app.store';
-import { Report } from './modules/reports/reports.state';
 import { Link, Router, View } from 'react-navi';
 import { compose, mount, route, withView } from 'navi';
+// Components
 import { Articles } from './components/articles/articles.component';
 import { Reports } from './components/reports/reports.component';
+// Modules
 import { Article } from './modules/articles/articles.state';
+import { Report } from './modules/reports/reports.state';
+// Styles
+import './app.css';
 
 function WrappedApp() {
     const { reports, articles } = useStoreon('reports', 'articles');
