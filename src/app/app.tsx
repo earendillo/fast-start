@@ -8,6 +8,7 @@ import { Reports } from './components/reports/reports.component';
 import { Article } from './modules/articles/articles.state';
 import { Report } from './modules/reports/reports.state';
 import './app.scss';
+import { Header } from './components/header/header.component';
 
 function WrappedApp(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
@@ -96,6 +97,7 @@ function NavBar(props: any) {
 function App({ store }: AppProps) {
     return (
         <StoreContext.Provider value={store}>
+            <Header appName='abc' />
             <Router routes={routes}>
                 <View />
             </Router>
