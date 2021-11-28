@@ -5,41 +5,71 @@ import { Link, Router, View } from 'react-navi';
 import { compose, mount, route, withView } from 'navi';
 import { Articles } from './components/articles/articles.component';
 import { Reports } from './components/reports/reports.component';
+import { HeaderComponent } from './components/header/header.component';
 import { Article } from './modules/articles/articles.state';
 import { Report } from './modules/reports/reports.state';
 import './app.scss';
-import { Header } from './components/header/header.component';
 
 function WrappedApp(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
 
     return (
         <div>
-            <div>
+            <div
+                className="reports-container">
                 {reports &&
                     reports.reports
                         ?.slice(0, 3)
                         .map((report: Report, index: number) => (
                             <div
+                                className="report-item"
                                 key={`${index}_${report.newsSite}_${report.id}`}
                             >
-                                <p>{report.id}</p>
-                                <p>{report.newsSite}</p>
-                                <p>{report.summary}</p>
+                                <div
+                                    className="report-item-id"
+                                >
+                                    <p>{report.id}</p>
+                                </div>
+                                <div
+                                    className="report-item-898+65"
+                                >
+                                    <p>{report.newsSite}</p>
+                                </div>
+                                <div
+                                    className="report-item-summary"
+                                >
+                                    <p>{report.summary}</p>
+                                </div>
                             </div>
                         ))}
             </div>
-            <div>
+            <div
+                className="articles-container"
+            >
                 {articles &&
                     articles.articles
                         ?.slice(0, 3)
                         .map((article: Article, index: number) => (
                             <div
+                                
+                                className="article-item"
                                 key={`${index}_${article.newsSite}_${article.id}`}
                             >
-                                <p>{article.id}</p>
-                                <p>{article.newsSite}</p>
-                                <p>{article.summary}</p>
+                                <div
+                                    className="article-item-id"
+                                >
+                                    <p>{article.id}</p>
+                                </div>
+                                <div
+                                    className="article-item-title"
+                                >
+                                    <p>{article.newsSite}</p>
+                                </div>
+                                <div
+                                    className="article-item-summary"
+                                >
+                                    <p>{article.summary}</p>
+                                </div>
                             </div>
                         ))}
             </div>
@@ -51,11 +81,17 @@ interface AppProps {
     store: AppStore;
 }
 
-const routes = compose(
+export const routes = compose(
     withView((request) => (
-        <NavBar>
-            <View />
-        </NavBar>
+        <div>
+            <HeaderComponent />
+            <div
+                className="main-container"
+                
+            >
+                <View />
+            </div>
+        </div>
     )),
     mount({
         '/': route({
@@ -73,10 +109,12 @@ const routes = compose(
     })
 );
 
-function NavBar(props: any) {
+export function NavBar(props: any) {
     return (
-        <div>
-            <nav className="navigation-container">
+        <div className='navbar-container'>
+            <nav
+                className="navigation-container"
+            >
                 <ul className="navigation-list">
                     <li className="navigation-list-item">
                         <Link href={'/'}>Home</Link>
@@ -86,6 +124,9 @@ function NavBar(props: any) {
                     </li>
                     <li className="navigation-list-item">
                         <Link href={'/reports'}>Reports</Link>
+                    </li>
+                    <li className="navigation-list-item">
+                        <Link href={'/#'}>Blogs</Link>
                     </li>
                 </ul>
             </nav>
@@ -97,10 +138,7 @@ function NavBar(props: any) {
 function App({ store }: AppProps) {
     return (
         <StoreContext.Provider value={store}>
-            <Header appName='abc' />
-            <Router routes={routes}>
-                <View />
-            </Router>
+                <Router routes={routes} />
         </StoreContext.Provider>
     );
 }
