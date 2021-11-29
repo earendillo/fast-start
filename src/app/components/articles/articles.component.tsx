@@ -7,7 +7,7 @@ export function Articles() {
     const { articles } = useStoreon('articles');
 
     return (
-        <div style={{ backgroundColor: 'pink' }}>
+        <div>
             <h2>Articles</h2>
             {articles &&
                 //props && props.children && props.children.value instead props?.children?.value

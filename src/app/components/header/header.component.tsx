@@ -5,19 +5,11 @@ interface HeaderProps {
     appName: string;
 }
 
-function Header({ appName }: HeaderProps) {
-    return (
-        <div className="product-name-item">
-            <p>{appName}</p>
-        </div>
-    );
-}
-
-export function HeaderComponent() {
+export function MainHeader({ appName }: HeaderProps) {
     return (
         <div className="header-container">
             <div className="product-name-container">
-                <Header appName="Product name - change me" />
+                <p>{appName}</p>
             </div>
             <NavBar />
         </div>
