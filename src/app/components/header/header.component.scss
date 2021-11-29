@@ -1,6 +1,11 @@
 @import '../../styles/variables/variables.scss';
 @import '../../styles/mixins/mixins.scss';
 
-.abc {
-    background-color: green;
+.header-container {
+    @include flexRowSpaceBetween;
+
+    .product-name-container {
+        @include flexRowStart;
+
+    }
 }
