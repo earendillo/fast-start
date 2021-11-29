@@ -6,19 +6,6 @@
     @include flexColumnCentered;
     
 }
-.navbar-container {
-    @include flexRowEnd;
-}
-
-.navigation-container {
-    ul {
-        list-style-type: none;
-    }
-
-    .navigation-list {
-        display: flex;
-    }
-}
 
 .show {
     display: block;
