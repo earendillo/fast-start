@@ -1,0 +1,19 @@
+@import "../../styles/variables/variables.scss";
+@import "../../styles/mixins/mixins.scss";
+
+.main-content-container {
+    @include flexColumnSpaceBetween;
+
+    .articles-and-blogs-container {
+        @include flexRowSpaceBetween;
+
+        .articles-container {
+            width: 50%;
+        }
+
+        .blogs-container {
+            @include flexColumnSpaceBetween;
+            width: 50%;
+        }
+    }
+}
