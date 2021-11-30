@@ -1,6 +1,7 @@
 import { useStoreon } from 'storeon/react';
 import { Article } from '../../modules/articles/articles.state';
 import { Report } from '../../modules/reports/reports.state';
+import { Blog } from '../../modules/blogs/blogs.state';
 import './mainContent.component.scss';
 
 export function MainContent(): JSX.Element {
