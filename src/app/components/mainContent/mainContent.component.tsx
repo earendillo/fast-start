@@ -1,13 +1,18 @@
 import { useStoreon } from 'storeon/react';
 import { Article } from '../../modules/articles/articles.state';
 import { Report } from '../../modules/reports/reports.state';
+import { Blog } from '../../modules/blogs/blogs.state';
 import './mainContent.component.scss';
 
 export function MainContent(): JSX.Element {
-    const { reports, articles } = useStoreon('reports', 'articles');
+    const { reports, articles, blogs } = useStoreon(
+        'reports',
+        'articles',
+        'blogs'
+    );
 
     return (
-        <div className='main-content-container'>
+        <div className="main-content-container">
             <div className="articles-and-blogs-container">
                 <div className="articles-container">
                     {articles &&
@@ -31,8 +36,31 @@ export function MainContent(): JSX.Element {
                             ))}
                 </div>
                 <div className="blogs-container">
-                    <div className="blog-item">{'blog item 1'}</div>
-                    <div className="blog-item">{'blog item 2'}</div>
+                    {blogs &&
+                        blogs.blogs
+                            ?.slice(0, 2)
+                            .map((blog: Blog, index: number) => (
+                                <div
+                                    className="blog-item"
+                                    key={`${index}_${blog.newsSite}_${blog.id}`}
+                                >
+                                    <div className="blog-item-id">
+                                        <p>
+                                            {blog.id}
+                                        </p>
+                                    </div>
+                                    <div className="blog-item-title">
+                                        <p>
+                                            {blog.newsSite}
+                                        </p>
+                                    </div>
+                                    <div className="blog-item-summary">
+                                        <p>
+                                            {blog.summary}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
                 </div>
             </div>
             <div className="reports-container">

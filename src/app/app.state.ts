@@ -1,11 +1,13 @@
 import { WithReportsState } from './modules/reports/reports.state';
 import { WithArticlesState } from './modules/articles/articles.state';
+import { WithBlogsState } from './modules/blogs/blogs.state';
 
 export const APP_STORE_KEY = 'app' as const;
 
 export interface AppState
     extends WithAppGlobalState,
         WithReportsState,
+        WithBlogsState,
         WithArticlesState {}
 
 export interface AppGlobalState {}
