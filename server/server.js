@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 5000;
 const BASE_API_URL = 'https://api.spaceflightnewsapi.net/v3';
 const ARTICLES_ROUTE = '/articles';
 const REPORTS_ROUTE = '/reports';
+const BLOGS_ROUTE = '/blogs';
 
 fastify.get('/express_backend', function (request, reply) {
     reply.send({ hello: 'world' });
@@ -25,6 +26,16 @@ fastify.get('/articles', (req, res) => {
 fastify.get('/reports', (req, res) => {
     try {
         axios.get(`${BASE_API_URL}${REPORTS_ROUTE}`).then(async (response) => {
+            res.send(response.data);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+fastify.get('/blogs', (req, res) => {
+    try {
+        axios.get(`${BASE_API_URL}${BLOGS_ROUTE}`).then(async (response) => {
             res.send(response.data);
         });
     } catch (error) {
