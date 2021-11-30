@@ -1,7 +1,7 @@
 import { useStoreon } from 'storeon/react';
 import { Article } from '../../modules/articles/articles.state';
 import { Report } from '../../modules/reports/reports.state';
-import './main.component.scss';
+import './mainContent.component.scss';
 
 export function MainContent(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
