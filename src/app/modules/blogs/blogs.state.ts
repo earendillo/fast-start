@@ -7,14 +7,13 @@ export interface BlogsState {
 
 export interface Blog {
     id: number;
+    title: string;
+    url: string;
     imageUrl: string;
     newsSite: string;
-    publishedAt: string;
     summary: string;
-    title: string;
+    publishedAt: string;
     updatedAt: string;
-    url: string;
-    featured: boolean;
     launches: Array<any>;
     events: Array<any>;
 }
