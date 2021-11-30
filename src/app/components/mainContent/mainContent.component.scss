@@ -1,7 +1,7 @@
 @import "../../styles/variables/variables.scss";
 @import "../../styles/mixins/mixins.scss";
 
-.main-container {
+.main-content-container {
     @include flexColumnSpaceBetween;
 
     .articles-and-blogs-container {

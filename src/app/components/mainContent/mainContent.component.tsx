@@ -3,11 +3,11 @@ import { Article } from '../../modules/articles/articles.state';
 import { Report } from '../../modules/reports/reports.state';
 import './main.component.scss';
 
-export function Main(): JSX.Element {
+export function MainContent(): JSX.Element {
     const { reports, articles } = useStoreon('reports', 'articles');
 
     return (
-        <div className='main-container'>
+        <div className='main-content-container'>
             <div className="articles-and-blogs-container">
                 <div className="articles-container">
                     {articles &&
