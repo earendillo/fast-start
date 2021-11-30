@@ -36,7 +36,7 @@ export function MainHeader({ appName }: HeaderProps) {
     return (
         <div className="header-container">
             <div className="product-name-container">
-                <p>{appName}</p>
+                <p>{ appName }</p>
             </div>
             <NavBar />
         </div>
