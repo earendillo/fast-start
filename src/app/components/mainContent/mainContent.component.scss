@@ -6,6 +6,12 @@
 
     .articles-and-blogs-container {
         @include flexRowSpaceBetween;
+        @include medium-screen {
+            @include flexColumnCentered;
+    }
+        @include small-screen {
+            @include flexColumnCentered;
+        }
 
         .articles-container {
             width: 50%;

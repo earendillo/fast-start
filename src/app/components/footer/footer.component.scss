@@ -3,6 +3,12 @@
 
 .footer-container {
     @include flexRowSpaceBetween;
+        @include medium-screen {
+            @include flexColumnCentered;
+    }
+        @include small-screen {
+            @include flexColumnCentered;
+        }
 
     .info-container {
         @include flexRowStart;

@@ -1,10 +1,8 @@
-@import './styles/variables/variables.scss';
-@import './styles/mixins/mixins.scss';
-
+@import "./styles/variables/variables.scss";
+@import "./styles/mixins/mixins.scss";
 
 .App {
     @include flexColumnCentered;
-    
 }
 
 .show {
@@ -18,3 +16,4 @@
 .active {
     background-color: greenyellow;
 }
+

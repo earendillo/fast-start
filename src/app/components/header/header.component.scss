@@ -3,6 +3,12 @@
 
 .header-container {
     @include flexRowSpaceBetween;
+    @include medium-screen {
+        @include flexColumnCentered;
+    }
+    @include small-screen {
+        @include flexColumnCentered;
+    }
 
     .product-name-container {
         @include flexRowStart;
@@ -10,6 +16,12 @@
 
     .navbar-container {
         @include flexRowEnd;
+        @include medium-screen {
+            @include flexColumnCentered;
+    }
+        @include small-screen {
+            @include flexColumnCentered;
+        }
     }
 
     .navigation-container {
@@ -19,6 +31,15 @@
 
         .navigation-list {
             display: flex;
+            @include flexRowEnd;
+        @include medium-screen {
+            @include flexColumnCentered;
+    }
+        @include small-screen {
+            @include flexColumnCentered;
+        }
         }
     }
 }
+
+
