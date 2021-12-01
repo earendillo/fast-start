@@ -1,0 +1,14 @@
+@import "../../styles/variables/variables.scss";
+@import "../../styles/mixins/mixins.scss";
+
+.footer-container {
+    @include flexRowSpaceBetween;
+
+    .info-container {
+        @include flexRowStart;
+    }
+
+    .used-api-container {
+        @include flexRowEnd;
+    }
+}

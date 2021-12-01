@@ -6,6 +6,7 @@ import { compose, mount, route, withView } from 'navi';
 import { Articles } from './components/articles/articles.component';
 import { Reports } from './components/reports/reports.component';
 import { MainHeader } from './components/header/header.component';
+import { Footer } from './components/footer/footer.component';
 import { MainContent } from './components/mainContent/mainContent.component';
 import { Blogs } from './components/blogs/blogs.component';
 import { AboutPage } from './components/aboutPage/aboutPage.component';
@@ -22,6 +23,7 @@ export const routes = compose(
             <div className="main-container">
                 <View />
             </div>
+            <Footer aboutPageInfo={'info about page - change me'} usedAPI={'used API - change me'}/>
         </div>
     )),
     mount({
