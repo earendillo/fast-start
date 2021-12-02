@@ -9,10 +9,6 @@ const ARTICLES_ROUTE = '/articles';
 const REPORTS_ROUTE = '/reports';
 const BLOGS_ROUTE = '/blogs';
 
-fastify.get('/express_backend', function (request, reply) {
-    reply.send({ hello: 'world' });
-});
-
 fastify.get('/articles', (req, res) => {
     try {
         axios.get(`${BASE_API_URL}${ARTICLES_ROUTE}`).then(async (response) => {
