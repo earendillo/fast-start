@@ -3,6 +3,8 @@
 
 .header-container {
     @include flexRowSpaceBetween;
+    background-color: $color_background-dark;
+    color: $color_text-light;
 
     .product-name-container {
         @include flexRowStart;
@@ -19,6 +21,20 @@
 
         .navigation-list {
             display: flex;
+
+            a {
+                text-decoration: none;
+                color: $color_text-light;
+                transition: color 0.5s;
+                padding: 10px;
+                &:hover {
+                    color: $color_text-contrast;
+                }
+
+                &:active {
+                    color: $color_text-active;
+                }
+            }
         }
     }
 }
