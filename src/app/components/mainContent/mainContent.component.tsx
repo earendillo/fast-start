@@ -1,22 +1,16 @@
 import { useStoreon } from 'storeon/react';
-import { Article } from '../../modules/articles/articles.state';
-import { Report } from '../../modules/reports/reports.state';
-import { Blog } from '../../modules/blogs/blogs.state';
+import { Article, Blog, Report } from '../../modules/content/content.state';
 import './mainContent.component.scss';
 
 export function MainContent(): JSX.Element {
-    const { reports, articles, blogs } = useStoreon(
-        'reports',
-        'articles',
-        'blogs'
-    );
+    const { content } = useStoreon('content');
 
     return (
         <div className="main-content-container">
             <div className="articles-and-blogs-container">
                 <div className="articles-container">
-                    {articles &&
-                        articles.articles
+                    {content &&
+                        content.articles
                             ?.slice(0, 1)
                             .map((article: Article, index: number) => (
                                 <div
@@ -36,8 +30,8 @@ export function MainContent(): JSX.Element {
                             ))}
                 </div>
                 <div className="blogs-container">
-                    {blogs &&
-                        blogs.blogs
+                    {content &&
+                        content.blogs
                             ?.slice(0, 2)
                             .map((blog: Blog, index: number) => (
                                 <div
@@ -45,27 +39,21 @@ export function MainContent(): JSX.Element {
                                     key={`${index}_${blog.newsSite}_${blog.id}`}
                                 >
                                     <div className="blog-item-id">
-                                        <p>
-                                            {blog.id}
-                                        </p>
+                                        <p>{blog.id}</p>
                                     </div>
                                     <div className="blog-item-title">
-                                        <p>
-                                            {blog.newsSite}
-                                        </p>
+                                        <p>{blog.newsSite}</p>
                                     </div>
                                     <div className="blog-item-summary">
-                                        <p>
-                                            {blog.summary}
-                                        </p>
+                                        <p>{blog.summary}</p>
                                     </div>
                                 </div>
                             ))}
                 </div>
             </div>
             <div className="reports-container">
-                {reports &&
-                    reports.reports
+                {content &&
+                    content.reports
                         ?.slice(0, 4)
                         .map((report: Report, index: number) => (
                             <div
