@@ -3,17 +3,26 @@
 
 .App {
     @include flexColumnCentered;
+
+    @include medium-screen {
+        overflow-x: hidden;
+    }
+
+    @include small-screen {
+        overflow-x: hidden;
+
+    }
 }
 
-.show {
-    display: block;
-}
+// .show {
+//     display: block;
+// }
 
-.hide {
-    display: none;
-}
+// .hide {
+//     display: none;
+// }
 
-.active {
-    background-color: greenyellow;
-}
+// .active {
+//     background-color: greenyellow;
+// }
 

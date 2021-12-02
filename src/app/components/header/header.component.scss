@@ -2,44 +2,137 @@
 @import "../../styles/mixins/mixins.scss";
 
 .header-container {
+    display: flex;
+    flex-direction: flex-row;
     @include flexRowSpaceBetween;
+    justify-content: space-around;
     @include medium-screen {
-        @include flexColumnCentered;
+        @include flexRowStart;
     }
     @include small-screen {
-        @include flexColumnCentered;
+        @include flexRowStart;
+        justify-content: flex-start;
+
     }
 
     .product-name-container {
         @include flexRowStart;
+        
     }
 
-    .navbar-container {
+
+    // .navbar-container {
+    //     // @include flexRowEnd;
+    //     display: flex;
+    //     justify-content: space-around;
+    nav {
         @include flexRowEnd;
+        min-height: 8vh;
+        width: 100%;
+        align-items: center;
+        @include large-screen {
+            position: absolute;
+        }
         @include medium-screen {
             @include flexColumnCentered;
-    }
+            .active {
+                transform: translateX(0%);
+            }
+        }
         @include small-screen {
             @include flexColumnCentered;
+            .active {
+                transform: translateX(0%);
+            }
         }
-    }
+        .active {
+            transform: translateX(0%);
+        }
+        // position: relative;
 
-    .navigation-container {
         ul {
             list-style-type: none;
         }
-
-        .navigation-list {
+        
+        .nav-links {
             display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 50%;
+            // overflow-y: scroll;
+            list-style: none;
+            // position: fixed;
+            // background: grey;
+            // top: 0;
+            // left: 0;
+            // bottom: 0;
+            // height: 100vh;
+            // width: 0;
+            // overflow: hidden;
+            // max-width: 290px;
+            // z-index: 9;
+
             @include flexRowEnd;
-        @include medium-screen {
-            @include flexColumnCentered;
-    }
-        @include small-screen {
-            @include flexColumnCentered;
+            @include medium-screen {
+                @include flexColumnCentered;
+                position: absolute;
+                right: 0px;
+                height: 92vh;
+                align-items: center;
+                width: 100%;
+                top: 8vh;
+                background-color: teal;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+            }
+            @include small-screen {
+                @include flexColumnCentered;
+                position: absolute;
+                right: 0px;
+                height: 92vh;
+                align-items: center;
+                width: 100%;
+                top: 8vh;
+                background-color: teal;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+
+
+
+            }
+
+            // .showMenu {
+            //     width: 100%;
+            // }
+
+            // a {
+            //     display: block;
+            //     padding: 10px 40px;
+            //     text-decoration: none;
+            //     color: #3fffd2;
+            //     text-transform: uppercase;
+            //     font-weight: bold;
+            //   }
         }
+
+        .hamburgerToggle {
+            cursor: pointer;
+            display: none;
+            @include medium-screen {
+                display: block;
+            }
+            @include small-screen {
+                display: block;
+            }
+            button {
+                display: flex;
+                // position: fixed;
+                // left: 40px;
+                // top: 40px;
+                // z-index: 10;
+                // cursor: pointer;
+            }
         }
     }
+
 }
-
-
