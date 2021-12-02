@@ -17,11 +17,16 @@ export function MainContent(): JSX.Element {
                                     className="article-item"
                                     key={`${index}_${article.newsSite}_${article.id}`}
                                 >
-                                    <div className="article-item-id">
-                                        <p>{article.id}</p>
-                                    </div>
-                                    <div className="article-item-title">
-                                        <p>{article.newsSite}</p>
+                                    <div className="article-item-img-and-title">
+                                        <div className="article-item-img">
+                                            <img
+                                                alt="article pic"
+                                                src={`${article.imageUrl}`}
+                                            />
+                                        </div>
+                                        <div className="article-item-title">
+                                            <p>{article.newsSite}</p>
+                                        </div>
                                     </div>
                                     <div className="article-item-summary">
                                         <p>{article.summary}</p>
@@ -38,11 +43,16 @@ export function MainContent(): JSX.Element {
                                     className="blog-item"
                                     key={`${index}_${blog.newsSite}_${blog.id}`}
                                 >
-                                    <div className="blog-item-id">
-                                        <p>{blog.id}</p>
-                                    </div>
-                                    <div className="blog-item-title">
-                                        <p>{blog.newsSite}</p>
+                                    <div className="blog-item-img-and-title">
+                                        <div className="blog-item-img">
+                                            <img
+                                                alt="blog pic"
+                                                src={`${blog.imageUrl}`}
+                                            />
+                                        </div>
+                                        <div className="blog-item-title">
+                                            <p>{blog.newsSite}</p>
+                                        </div>
                                     </div>
                                     <div className="blog-item-summary">
                                         <p>{blog.summary}</p>
@@ -60,9 +70,6 @@ export function MainContent(): JSX.Element {
                                 className="report-item"
                                 key={`${index}_${report.newsSite}_${report.id}`}
                             >
-                                <div className="report-item-id">
-                                    <p>{report.id}</p>
-                                </div>
                                 <div className="report-item-898+65">
                                     <p>{report.newsSite}</p>
                                 </div>

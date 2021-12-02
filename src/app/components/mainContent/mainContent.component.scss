@@ -3,17 +3,53 @@
 
 .main-content-container {
     @include flexColumnSpaceBetween;
+    background-color: $color_background-light-rose;
 
     .articles-and-blogs-container {
         @include flexRowSpaceBetween;
 
         .articles-container {
             width: 50%;
+
+            .article-item {
+                background-color: $color_background-light-ivory;
+                @include shadowEffect;
+                .article-item-img-and-title {
+                    @include flexRowCentered;
+                }
+
+                img {
+                    max-width: 200px;
+                    height: auto;
+                    padding: 5px;
+                }
+            }
         }
 
         .blogs-container {
             @include flexColumnSpaceBetween;
             width: 50%;
+
+            .blog-item {
+                background-color: $color_background-light-ivory;
+                @include shadowEffect;
+
+                .blog-item-img-and-title {
+                    @include flexRowCentered;
+                }
+
+                img {
+                    max-width: 200px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .reports-container {
+        .report-item {
+            background-color: $color_background-light-ivory;
+            @include shadowEffect;
         }
     }
 }
