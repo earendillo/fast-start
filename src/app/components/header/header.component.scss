@@ -1,40 +1,38 @@
-@import "../../styles/variables/variables.scss";
 @import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
 
 .header-container {
-    @include flexRowSpaceBetween;
-    background-color: $color_background-dark;
+    @extend %rowSpaceBetween;
+    @extend %paletteDark;
+}
+
+.product-name-container {
+    @extend %rowLeft;
+}
+
+.navbar-container {
+    @extend %rowRight;
+}
+
+.navigation-list {
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
     color: $color_text-light;
-
-    .product-name-container {
-        @include flexRowStart;
+    @extend %paddingStandard;
+    text-decoration: none;
+    transition: color 0.5s;
+    &:hover {
+        color: $color_text-contrast;
     }
 
-    .navbar-container {
-        @include flexRowEnd;
-    }
-
-    .navigation-container {
-        ul {
-            list-style-type: none;
-        }
-
-        .navigation-list {
-            display: flex;
-
-            a {
-                text-decoration: none;
-                color: $color_text-light;
-                transition: color 0.5s;
-                padding: 10px;
-                &:hover {
-                    color: $color_text-contrast;
-                }
-
-                &:active {
-                    color: $color_text-active;
-                }
-            }
-        }
+    &:active {
+        color: $color_text-active;
     }
 }

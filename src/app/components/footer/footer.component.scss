@@ -1,18 +1,18 @@
-@import "../../styles/variables/variables.scss";
-@import "../../styles/mixins/mixins.scss";
+@import '../../styles/mixins/mixins.scss';
+@import '../../styles/placeholders/placeholders.scss';
+@import '../../styles/variables/variables.scss';
 
 .footer-container {
-    @include flexRowSpaceBetween;
-    background-color: $color_background-dark;
-    color: $color_text-light;
+    @extend %rowSpaceBetween;
+    @extend %paletteDark;
+}
 
-    .info-container {
-        @include flexRowStart;
-        padding: 10px;
-    }
+.info-container {
+    @extend %rowLeft;
+    @extend %paddingStandard;
+}
 
-    .used-api-container {
-        @include flexRowEnd;
-        padding: 10px;
-    }
+.used-api-container {
+    @extend %rowRight;
+    @extend %paddingStandard;
 }

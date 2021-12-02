@@ -1,0 +1,42 @@
+%columnCentered {
+    @include setFlexDisplay(column, center, center);
+};
+%columnSpaceBetween {
+    @include setFlexDisplay(column, space-between, space-between);
+};
+
+%rowSpaceBetween {
+    @include setFlexDisplay(row, space-between, space-between);
+};
+%rowCentered {
+    @include setFlexDisplay(row, center, center);
+};
+%rowRight {
+    @include setFlexDisplay(row, flex-end, flex-end);
+};
+%rowLeft {
+    @include setFlexDisplay(row, flex-start, flex-start);
+};
+
+%paddingStandard {
+    padding: 10px;
+}
+
+%paddingSmall {
+    padding: 5px;
+}
+
+%paletteDark {
+    background-color: $color_background-dark;
+    color: $color_text-light;
+}
+
+%paletteMedium {
+    background-color: $color_background-medium-light;
+    color: $color_text-dark;
+}
+
+%paletteLight {
+    background-color: $color_background-light;
+    color: $color_text-dark;
+}
