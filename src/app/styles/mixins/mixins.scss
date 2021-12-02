@@ -10,7 +10,6 @@
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
-
 }
 
 @mixin flexRowSpaceBetween {
@@ -25,7 +24,6 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-
 }
 
 @mixin flexRowEnd {
@@ -51,5 +49,23 @@
 @mixin small-screen {
   @media(max-width: $breakpoint-small) {
     @content;
+  }
+}
+@mixin flexRowCentered {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin shadowEffect {
+  box-shadow: 5px 5px 10px $color_shadow;
+  border: 1px solid $color_background-light-ivory;
+  padding: 10px;
+  margin: 35px;
+  &:hover {
+    padding: 14px;
+    margin: 30px;
+    border: 2px solid $color_background-light-ivory;
   }
 }

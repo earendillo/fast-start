@@ -9,12 +9,16 @@
         @include small-screen {
             @include flexColumnCentered;
         }
+    background-color: $color_background-dark;
+    color: $color_text-light;
 
     .info-container {
         @include flexRowStart;
+        padding: 10px;
     }
 
     .used-api-container {
         @include flexRowEnd;
+        padding: 10px;
     }
 }
