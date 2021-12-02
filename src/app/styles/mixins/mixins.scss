@@ -42,19 +42,12 @@
 
 @mixin shadowEffect {
   box-shadow: 5px 5px 10px $color_shadow;
-  border: {
-    color: $color_background-light-ivory;
-    width: 1px;
-    style: solid;
-  }
+  border: 1px solid $color_background-light-ivory;
   padding: 10px;
   margin: 35px;
   &:hover {
     padding: 14px;
     margin: 30px;
-    border: {
-      width: 2px;
-      color: $color_background-light-ivory;
-    }
+    border: 2px solid $color_background-light-ivory;
   }
 }
