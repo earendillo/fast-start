@@ -23,7 +23,10 @@ export const routes = compose(
             <div className="main-container">
                 <View />
             </div>
-            <Footer aboutPageInfo={'info about page - change me'} usedAPI={'used API - change me'}/>
+            <Footer
+                aboutPageInfo={'info about page - change me'}
+                usedAPI={'used API - change me'}
+            />
         </div>
     )),
     mount({
