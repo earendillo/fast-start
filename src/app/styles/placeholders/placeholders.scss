@@ -1,42 +1,60 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/variables/variables.scss";
+
 %columnCentered {
     @include setFlexDisplay(column, center, center);
+};
+%columnLeft {
+    @include setFlexDisplay(column, flex-start, flex-start);
 };
 %columnSpaceBetween {
     @include setFlexDisplay(column, space-between, space-between);
 };
 
-%rowSpaceBetween {
-    @include setFlexDisplay(row, space-between, space-between);
-};
 %rowCentered {
     @include setFlexDisplay(row, center, center);
-};
-%rowRight {
-    @include setFlexDisplay(row, flex-end, flex-end);
 };
 %rowLeft {
     @include setFlexDisplay(row, flex-start, flex-start);
 };
+%rowRight {
+    @include setFlexDisplay(row, flex-end, flex-end);
+};
+%rowSpaceBetween {
+    @include setFlexDisplay(row, space-between, space-between);
+};
 
-%paddingStandard {
-    padding: 10px;
-}
+%marginZero {
+    margin: 0px;
+};
+%marginSmall {
+    margin: 5px;
+};
+%marginStandard {
+    margin: 10px;
+};
 
+%paddingZero {
+    padding: 0px;
+};
 %paddingSmall {
     padding: 5px;
-}
+};
+%paddingStandard {
+    padding: 10px;
+};
+
 
 %paletteDark {
     background-color: $color_background-dark;
     color: $color_text-light;
 }
-
+%paletteLight {
+    background-color: $color_background-light;
+    color: $color_text-dark;
+}
 %paletteMedium {
     background-color: $color_background-medium-light;
     color: $color_text-dark;
 }
 
-%paletteLight {
-    background-color: $color_background-light;
-    color: $color_text-dark;
-}

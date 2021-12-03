@@ -8,12 +8,19 @@
 }
 
 .articles-and-blogs-container {
-    @extend %rowSpaceBetween;
+    @extend %columnCentered;
+
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .article-item,
 .blog-item,
 .report-item {
+    @extend %marginStandard;
+    @extend %paddingStandard;
     @extend %paletteLight;
 }
 
@@ -25,9 +32,14 @@
 .articles-container,
 .blogs-container {
     @extend %columnSpaceBetween;
-    width: 50%;
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: 50%;
+    }
 }
 
 img {
-    @include setImageDisplay(200px, auto);
+    @extend %paddingStandard;
+    @include setImageDisplay(auto, 150px);
 }

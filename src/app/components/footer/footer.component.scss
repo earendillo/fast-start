@@ -1,18 +1,23 @@
-@import '../../styles/mixins/mixins.scss';
-@import '../../styles/placeholders/placeholders.scss';
-@import '../../styles/variables/variables.scss';
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
 
 .footer-container {
-    @extend %rowSpaceBetween;
+    @extend %columnCentered;
     @extend %paletteDark;
+
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .info-container {
-    @extend %rowLeft;
     @extend %paddingStandard;
+    @extend %rowLeft;
 }
 
 .used-api-container {
-    @extend %rowRight;
     @extend %paddingStandard;
+    @extend %rowRight;
 }

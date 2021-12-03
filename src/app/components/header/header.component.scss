@@ -3,36 +3,67 @@
 @import "../../styles/variables/variables.scss";
 
 .header-container {
-    @extend %rowSpaceBetween;
+    @extend %columnLeft;
     @extend %paletteDark;
+
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.header-logo-and-icon-container {
+    @extend %columnCentered;
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: auto;
+        }
 }
 
-.product-name-container {
-    @extend %rowLeft;
+.hamburger-icon-container {
+    @include forLargeScreens($breakpoint-medium) {
+        display: none;
+    }
 }
 
-.navbar-container {
-    @extend %rowRight;
+.navigation-container {
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: auto;
+        }
 }
 
 .navigation-list {
-    display: flex;
+    @extend %columnCentered;    
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: flex-end;
+        }
 }
 
 ul {
+    @extend %paddingZero;
     list-style-type: none;
 }
 
-a {
-    color: $color_text-light;
+li {
     @extend %paddingStandard;
-    text-decoration: none;
-    transition: color 0.5s;
-    &:hover {
-        color: $color_text-contrast;
-    }
+    border: 1px solid white;
+    width: 100%;
 
-    &:active {
-        color: $color_text-active;
-    }
+    @include forLargeScreens($breakpoint-medium) {
+        padding: 0px;
+        border: none;
+        width: auto;
+        }
+}
+
+a, button {
+    @extend %paddingStandard;
+    @include setLinkDark;
+    
+    @include forLargeScreens($breakpoint-medium) {
+        padding: 10px;
+        }
 }
