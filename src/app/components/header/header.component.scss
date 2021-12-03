@@ -49,7 +49,7 @@ ul {
 
 li {
     @extend %paddingStandard;
-    border: 1px solid white;
+    border: 1px solid $color_light;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
