@@ -1,40 +1,69 @@
-@import "../../styles/variables/variables.scss";
 @import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
 
 .header-container {
-    @include flexRowSpaceBetween;
-    background-color: $color_background-dark;
-    color: $color_text-light;
+    @extend %columnLeft;
+    @extend %paletteDark;
 
-    .product-name-container {
-        @include flexRowStart;
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-between;
     }
+}
+.header-logo-and-icon-container {
+    @extend %columnCentered;
+    width: 100%;
 
-    .navbar-container {
-        @include flexRowEnd;
-    }
-
-    .navigation-container {
-        ul {
-            list-style-type: none;
+    @include forLargeScreens($breakpoint-medium) {
+        width: auto;
         }
+}
 
-        .navigation-list {
-            display: flex;
-
-            a {
-                text-decoration: none;
-                color: $color_text-light;
-                transition: color 0.5s;
-                padding: 10px;
-                &:hover {
-                    color: $color_text-contrast;
-                }
-
-                &:active {
-                    color: $color_text-active;
-                }
-            }
-        }
+.hamburger-icon-container {
+    @include forLargeScreens($breakpoint-medium) {
+        display: none;
     }
+}
+
+.navigation-container {
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: auto;
+        }
+}
+
+.navigation-list {
+    @extend %columnCentered;    
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: flex-end;
+        }
+}
+
+ul {
+    @extend %paddingZero;
+    list-style-type: none;
+}
+
+li {
+    @extend %paddingStandard;
+    border: 1px solid $color_light;
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        padding: 0px;
+        border: none;
+        width: auto;
+        }
+}
+
+a, button {
+    @extend %paddingStandard;
+    @include setLinkDark;
+    
+    @include forLargeScreens($breakpoint-medium) {
+        padding: 10px;
+        }
 }

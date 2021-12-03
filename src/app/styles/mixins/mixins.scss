@@ -1,53 +1,32 @@
-@mixin flexColumnCentered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flexColumnSpaceBetween {
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: space-between;
-}
-
-@mixin flexRowSpaceBetween {
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
-  justify-content: space-between;
-}
-
-@mixin flexRowStart {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-@mixin flexRowEnd {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-@mixin flexRowCentered {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin shadowEffect {
-  box-shadow: 5px 5px 10px $color_shadow;
-  border: 1px solid $color_background-light-ivory;
-  padding: 10px;
-  margin: 35px;
-  &:hover {
-    padding: 14px;
-    margin: 30px;
-    border: 2px solid $color_background-light-ivory;
+@mixin forLargeScreens($media) {
+  @media (min-width: $media) {
+    @content;
   }
+}
+
+@mixin setFlexDisplay($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin setImageDisplay($maxWidth, $height) {
+  max-width: $maxWidth;
+  height: $height;
+}
+
+@mixin setLinkDark() {
+  @extend %paletteDark;
+    text-decoration: none;
+    transition: color 0.5s;
+    border: none;
+    
+    &:active {
+        color: $color_text-active;
+    }
+    &:hover {
+        color: $color_text-contrast;
+        cursor: pointer;
+    }
 }

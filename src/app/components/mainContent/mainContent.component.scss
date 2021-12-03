@@ -1,55 +1,45 @@
-@import "../../styles/variables/variables.scss";
 @import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
 
 .main-content-container {
-    @include flexColumnSpaceBetween;
-    background-color: $color_background-light-rose;
+    @extend %columnSpaceBetween;
+    @extend %paletteMedium;
+}
 
-    .articles-and-blogs-container {
-        @include flexRowSpaceBetween;
+.articles-and-blogs-container {
+    @extend %columnCentered;
 
-        .articles-container {
-            width: 50%;
-
-            .article-item {
-                background-color: $color_background-light-ivory;
-                @include shadowEffect;
-                .article-item-img-and-title {
-                    @include flexRowCentered;
-                }
-
-                img {
-                    height: auto;
-                    max-width: 200px;
-                    padding: 5px;
-                }
-            }
-        }
-
-        .blogs-container {
-            @include flexColumnSpaceBetween;
-            width: 50%;
-
-            .blog-item {
-                background-color: $color_background-light-ivory;
-                @include shadowEffect;
-
-                .blog-item-img-and-title {
-                    @include flexRowCentered;
-                }
-
-                img {
-                    max-width: 200px;
-                    height: auto;
-                }
-            }
-        }
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-between;
     }
+}
 
-    .reports-container {
-        .report-item {
-            background-color: $color_background-light-ivory;
-            @include shadowEffect;
-        }
+.article-item,
+.blog-item,
+.report-item {
+    @extend %marginStandard;
+    @extend %paddingStandard;
+    @extend %paletteLight;
+}
+
+.article-item-img-and-title,
+.blog-item-img-and-title {
+    @extend %rowCentered;
+}
+
+.articles-container,
+.blogs-container {
+    @extend %columnSpaceBetween;
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: 50%;
     }
+}
+
+img {
+    @extend %paddingStandard;
+    @include setImageDisplay(auto, 150px);
 }
