@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-navi';
 import './header.component.scss';
 
@@ -9,13 +7,12 @@ interface HeaderProps {
 }
 
 function NavBar(props: any) {
-    const menuVisibility = false;
-    const [isMenuVisible, setMenuVisible] = useState(menuVisibility);
+    const [isMenuVisible, setMenuVisible] = useState(false);
     const handleMenuVisibility = () => setMenuVisible(!isMenuVisible);
     const icon = isMenuVisible ? (
-        <FontAwesomeIcon icon={faTimes} />
+        <i className="fa fa-times" aria-hidden="true"></i>
     ) : (
-        <FontAwesomeIcon icon={faBars} />
+        <i className="fa fa-bars" aria-hidden="true"></i>
     );
     const visibilityClass = isMenuVisible ? 'visible' : 'hiddenIfMobile';
 
