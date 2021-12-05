@@ -58,13 +58,11 @@
   width: $barWidth;
 }
 
-@mixin setImageDisplay($maxWidth, $height) {
-  height: $height;
+@mixin setImageDisplay($maxWidth, $maxHeight) {
+  max-height: $maxHeight;
   max-width: $maxWidth;
 }
 
-@mixin setImageDisplay($maxWidth, $height) {
-}
 
 @mixin setLinkDark() {
   @extend %paletteDark;
