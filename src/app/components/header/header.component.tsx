@@ -8,46 +8,40 @@ interface HeaderProps {
 
 function NavBar(props: any) {
     const [isMenuVisible, setMenuVisible] = useState(false);
-    const handleMenuVisibility = () => setMenuVisible(!isMenuVisible);
-    const icon = isMenuVisible ? (
-        <i className="fa fa-times" aria-hidden="true"></i>
-    ) : (
-        <i className="fa fa-bars" aria-hidden="true"></i>
-    );
-    const visibilityClass = isMenuVisible ? 'visible' : 'hiddenIfMobile';
+    const onClickHandler = () => setMenuVisible(!isMenuVisible);
+    const iconVisibilityClass = isMenuVisible ? 'animate' : '';
+    const menuVisibilityClass = isMenuVisible ? 'visible' : 'hiddenIfMobile';
+
 
     return (
         <nav className="navigation-container">
-            <div className="hamburger-icon-container">
-                <button onClick={handleMenuVisibility}>{icon}</button>
+            <div className="hamburger-icon-container" onClick={onClickHandler}>
+                <div className={`hamburger-icon ${iconVisibilityClass}`}></div>
             </div>
-            <div className={`navbar-container ${visibilityClass}`}>
+            <div className={`navbar-container ${menuVisibilityClass}`}>
                 <ul className="navigation-list">
                     <li className="navigation-list-item">
-                        <Link onClick={handleMenuVisibility} href={'/'}>
+                        <Link onClick={onClickHandler} href={'/'}>
                             Home
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={handleMenuVisibility} href={'/articles'}>
+                        <Link onClick={onClickHandler} href={'/articles'}>
                             Articles
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={handleMenuVisibility} href={'/reports'}>
+                        <Link onClick={onClickHandler} href={'/reports'}>
                             Reports
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={handleMenuVisibility} href={'/blogs'}>
+                        <Link onClick={onClickHandler} href={'/blogs'}>
                             Blogs
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link
-                            onClick={handleMenuVisibility}
-                            href={'/about-page'}
-                        >
+                        <Link onClick={onClickHandler} href={'/about-page'}>
                             About page
                         </Link>
                     </li>

@@ -47,7 +47,7 @@
 .navigation-list {
     @extend %columnCentered;
     width: 100%;
-    
+
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         justify-content: flex-end;
@@ -74,12 +74,16 @@ li {
 
 a,
 button {
-    @extend %paddingStandard;
+    @extend %paddingMedium;
     @include setLinkDark;
 
     @include forLargeScreens($breakpoint-medium) {
         padding: 10px;
     }
+}
+
+svg {
+    color: $color_light;
 }
 
 .visible {
@@ -92,4 +96,20 @@ button {
     @include forLargeScreens($breakpoint-medium) {
         display: flex;
     }
+}
+
+.hamburger-icon-container {
+    @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
+    @extend %paddingMedium;
+
+}
+
+.hamburger-icon,
+.hamburger-icon:after,
+.hamburger-icon:before {
+    @include setHamburgerIconSize($hamburgerBarWidth, $hamburgerBarHeight, 10px);
+}
+
+.hamburger-icon {
+    @include setHamburgerIconAnimate($hamburgerBarSpacing);
 }
