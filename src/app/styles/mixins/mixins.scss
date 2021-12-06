@@ -5,28 +5,76 @@
 }
 
 @mixin setFlexDisplay($direction, $align, $justify) {
+  align-items: $align;
   display: flex;
   flex-direction: $direction;
-  align-items: $align;
   justify-content: $justify;
 }
 
-@mixin setImageDisplay($maxWidth, $height) {
-  max-width: $maxWidth;
-  height: $height;
+@mixin setHamburgerContainerDisplay($barWidth, $barHeight, $barSpacing) {
+  cursor: pointer;
+  height: $barHeight + $barSpacing * 2;
+  width: $barWidth;
 }
+
+@mixin setHamburgerIconAnimate($barSpacing) {
+  background: $color_background-light;
+  transform: translateY($barSpacing);
+  transition: all 0ms 300ms;
+  &:after {
+    background: rgba(255, 255, 255, 1);
+    content: "";
+    left: 0;
+    position: absolute;
+    top: $barSpacing;
+    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &.animate {
+    background: $color_background-dark;
+    &:after {
+      top: 0;
+      transform: rotate(45deg);
+      transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &:before {
+      bottom: 0;
+      transform: rotate(-45deg);
+      transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  }
+  &:before {
+    background: rgba(255, 255, 255, 1);
+    bottom: $barSpacing;
+    content: "";
+    left: 0;
+    position: absolute;
+    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+@mixin setHamburgerIconSize($barWidth, $barHeight, $borderRadius) {
+  border-radius: $borderRadius;
+  height: $barHeight;
+  width: $barWidth;
+}
+
+@mixin setImageDisplay($maxWidth, $maxHeight) {
+  max-height: $maxHeight;
+  max-width: $maxWidth;
+}
+
 
 @mixin setLinkDark() {
   @extend %paletteDark;
-    text-decoration: none;
-    transition: color 0.5s;
-    border: none;
-    
-    &:active {
-        color: $color_text-active;
-    }
-    &:hover {
-        color: $color_text-contrast;
-        cursor: pointer;
-    }
+  border: none;
+  text-decoration: none;
+  transition: color 0.5s;
+
+  &:active {
+    color: $color_text-active;
+  }
+  &:hover {
+    color: $color_text-contrast;
+    cursor: pointer;
+  }
 }

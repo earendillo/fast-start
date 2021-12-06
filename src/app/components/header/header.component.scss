@@ -17,7 +17,7 @@
 
     @include forLargeScreens($breakpoint-medium) {
         width: auto;
-        }
+    }
 }
 
 .hamburger-icon-container {
@@ -27,19 +27,31 @@
 }
 
 .navigation-container {
+    @extend %columnLeft;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
         width: auto;
-        }
+    }
+}
+
+.navbar-container {
+    @extend %columnLeft;
+    width: 100%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        width: auto;
+    }
 }
 
 .navigation-list {
-    @extend %columnCentered;    
+    @extend %columnCentered;
+    width: 100%;
+
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         justify-content: flex-end;
-        }
+    }
 }
 
 ul {
@@ -50,20 +62,54 @@ ul {
 li {
     @extend %paddingStandard;
     border: 1px solid $color_light;
+    display: flex;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
-        padding: 0px;
         border: none;
+        padding: 0;
         width: auto;
-        }
+    }
 }
 
-a, button {
-    @extend %paddingStandard;
+a,
+button {
+    @extend %paddingMedium;
     @include setLinkDark;
-    
+
     @include forLargeScreens($breakpoint-medium) {
         padding: 10px;
-        }
+    }
+}
+
+svg {
+    color: $color_light;
+}
+
+.visible {
+    display: flex;
+}
+
+.hiddenIfMobile {
+    display: none;
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+    }
+}
+
+.hamburger-icon-container {
+    @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
+    @extend %paddingMedium;
+
+}
+
+.hamburger-icon,
+.hamburger-icon:after,
+.hamburger-icon:before {
+    @include setHamburgerIconSize($hamburgerBarWidth, $hamburgerBarHeight, 10px);
+}
+
+.hamburger-icon {
+    @include setHamburgerIconAnimate($hamburgerBarSpacing);
 }

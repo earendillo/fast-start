@@ -1,5 +1,5 @@
-@import "../../styles/mixins/mixins.scss";
-@import "../../styles/variables/variables.scss";
+@import '../../styles/mixins/mixins.scss';
+@import '../../styles/variables/variables.scss';
 
 %columnCentered {
     @include setFlexDisplay(column, center, center);
@@ -43,6 +43,9 @@
 %paddingStandard {
     padding: 10px;
 };
+%paddingMedium {
+    padding: 20px;
+}
 
 
 %paletteDark {
@@ -57,4 +60,8 @@
     background-color: $color_background-medium-light;
     color: $color_text-dark;
 }
+
+$hamburgerBarWidth: 40px;
+$hamburgerBarHeight: 5px;
+$hamburgerBarSpacing: 15px;
 
