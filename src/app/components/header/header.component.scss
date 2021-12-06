@@ -67,7 +67,7 @@ li {
 
     @include forLargeScreens($breakpoint-medium) {
         border: none;
-        padding: 0px;
+        padding: 0;
         width: auto;
     }
 }
