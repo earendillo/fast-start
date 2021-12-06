@@ -7,39 +7,39 @@
     @extend %paletteMedium;
 }
 
-.articles-and-blogs-container {
+// .articles-and-blogs-container {
+    
+//     @include forLargeScreens($breakpoint-medium) {
+//         flex-direction: row;
+//         justify-content: space-between;
+//     }
+// }
+.articles-container,
+.blogs-container, 
+.reports-container {
     @extend %columnCentered;
+    width: 85%;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
-        justify-content: space-between;
+        width: 25%;
     }
 }
 
-.article-item,
-.blog-item,
-.report-item {
-    @extend %marginStandard;
-    @extend %paddingStandard;
-    @extend %paletteLight;
-}
+// .article-item,
+// .blog-item,
+// .report-item {
+//     @extend %marginStandard;
+//     @extend %paddingStandard;
+//     // @extend %paletteLight;
+// }
 
-.article-item-img-and-title,
-.blog-item-img-and-title {
-    @extend %rowCentered;
-}
+// .article-item-img-and-title,
+// .blog-item-img-and-title {
+//     @extend %rowCentered;
+// }
 
-.articles-container,
-.blogs-container {
-    @extend %columnSpaceBetween;
-    width: 100%;
-
-    @include forLargeScreens($breakpoint-medium) {
-        width: 50%;
-    }
-}
-
-img {
-    @extend %paddingStandard;
-    @include setImageDisplay(auto, 150px);
-}
+// img {
+//     @extend %paddingStandard;
+//     @include setImageDisplay(auto, 150px);
+// }
