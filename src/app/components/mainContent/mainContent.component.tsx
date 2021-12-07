@@ -1,6 +1,6 @@
 import { useStoreon } from 'storeon/react';
 import { ContentItem } from '../../modules/content/content.state';
-import { ContentTile } from '../contentItem/contentTile.component';
+import { ContentTile, ContentLabel } from '../contentItem/contentTile.component';
 import './mainContent.component.scss';
 
 export function MainContent(): JSX.Element | null {
@@ -15,7 +15,7 @@ export function MainContent(): JSX.Element | null {
                         content.articles
                             ?.slice(0, 3)
                             .map((article: ContentItem) => (
-                                <ContentTile contentItem={article} />
+                                <ContentTile contentItem={article} contentLabel={ContentLabel.Article} />
                             ))}
                 </div>
 
@@ -24,7 +24,7 @@ export function MainContent(): JSX.Element | null {
                         content.blogs
                             ?.slice(0, 3)
                             .map((blog: ContentItem) => (
-                                <ContentTile contentItem={blog} />
+                                <ContentTile contentItem={blog} contentLabel={ContentLabel.Blog} />
                             ))}
                 </div>
 
@@ -33,7 +33,7 @@ export function MainContent(): JSX.Element | null {
                         content.reports
                             ?.slice(0, 3)
                             .map((report: ContentItem) => (
-                                <ContentTile contentItem={report} />
+                                <ContentTile contentItem={report} contentLabel={ContentLabel.Report} />
                             ))}
                 </div>
             </div>

@@ -1,7 +1,114 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
 .content-tile {
-    cursor: pointer;
-    height: 90%;
-    margin: 15px;
-    padding: 15px;
+    @extend %marginStandard;
+    @extend %paddingZero;
+    @extend %paletteLight;
+    @extend %rowSpaceBetween;
+    border: 1px solid green;
+    font-size: 0.9rem;
+    height: 300px;
     width: 90%;
-  }
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.content-tile-container {
+    @extend %columnSpaceBetween;
+    @extend %marginStandard;
+    @extend %paddingZero;
+    @extend %paletteLight;
+    cursor: pointer;
+    height: 280px;
+    width: 50%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        height: 150px;
+        width: 60%;
+    }
+}
+
+.content-tile-img {
+    height: 280px;
+    margin: 10px;
+    margin-right: 0px;
+    position: relative;
+    width: 50%;
+
+    @include forLargeScreens($breakpoint-medium) {
+        height: 150px;
+        width: 40%;
+    }
+}
+
+.content-tile-img-and-container {
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.content-tile-label {
+    @extend %columnCentered;
+    @extend %paddingSmall;
+    @extend %paletteContrast;
+    bottom: 8px;
+    font-size: 0.7rem;
+    left: 10px;
+    position: absolute;
+    width: 25%;
+}
+
+.content-tile-newssite-and-date {
+    @extend %paddingStandard;
+    font-size: 0.7rem;
+}
+
+.content-tile-summary {
+    @extend %paddingStandard;
+    font-size: 0.8rem;
+}
+
+.content-tile-title {
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+        height: 100px;
+        width: 100%;
+    }
+}
+
+.for-large-screens {
+    display: none;
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.for-small-screens {
+    display: flex;
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: none;
+    }
+}
+
+h3 {
+    @extend %paddingStandard;
+    @extend %paletteContrast;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+img {
+    height: 280px;
+    max-height: 100%;
+    object-fit: cover;
+    width: 100%;
+}

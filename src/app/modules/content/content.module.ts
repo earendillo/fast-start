@@ -25,6 +25,10 @@ import {
 
 export type ArticlesStore = StoreonStore<ContentState, ContentEvents>;
 export type ArticlesModule = StoreonModule<WithContentState, ContentEvents>;
+export type BlogsStore = StoreonStore<ContentState, ContentEvents>;
+export type BlogsModule = StoreonModule<WithContentState, ContentEvents>;
+export type ReportsStore = StoreonStore<ContentState, ContentEvents>;
+export type ReportsModule = StoreonModule<WithContentState, ContentEvents>;
 
 export const CONTENT_STORE_KEY = 'content';
 
