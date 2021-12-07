@@ -7,39 +7,16 @@
     @extend %paletteMedium;
 }
 
-.articles-and-blogs-container {
-    @extend %columnCentered;
-
-    @include forLargeScreens($breakpoint-medium) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-.article-item,
-.blog-item,
-.report-item {
-    @extend %marginStandard;
-    @extend %paddingStandard;
-    @extend %paletteLight;
-}
-
-.article-item-img-and-title,
-.blog-item-img-and-title {
-    @extend %rowCentered;
-}
-
 .articles-container,
-.blogs-container {
-    @extend %columnSpaceBetween;
+.blogs-container, 
+.reports-container {
+    @extend %columnCentered;
+    height: 300%;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
-        width: 50%;
+        flex-direction: row;
+        width: 100%;
+        height: 33.333333%;
     }
-}
-
-img {
-    @extend %paddingStandard;
-    @include setImageDisplay(auto, 150px);
 }
