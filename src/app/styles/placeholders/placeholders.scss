@@ -33,6 +33,9 @@
 %marginStandard {
     margin: 10px;
 };
+%marginMedium {
+    margin: 20px;
+}
 
 %paddingZero {
     padding: 0px;
@@ -47,7 +50,10 @@
     padding: 20px;
 }
 
-
+%paletteContrast {
+    background-color: $color_background-contrast;
+    color: $color_text-light;
+}
 %paletteDark {
     background-color: $color_background-dark;
     color: $color_text-light;
@@ -60,8 +66,3 @@
     background-color: $color_background-medium-light;
     color: $color_text-dark;
 }
-
-$hamburgerBarWidth: 40px;
-$hamburgerBarHeight: 5px;
-$hamburgerBarSpacing: 15px;
-

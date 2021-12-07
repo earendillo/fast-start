@@ -1,84 +1,42 @@
 import { useStoreon } from 'storeon/react';
-import { Article, Blog, Report } from '../../modules/content/content.state';
+import { ContentItem } from '../../modules/content/content.state';
+import { ContentTile, ContentLabel } from '../contentItem/contentTile.component';
 import './mainContent.component.scss';
 
-export function MainContent(): JSX.Element {
+export function MainContent(): JSX.Element | null {
     const { content } = useStoreon('content');
 
+    if (!content) return null;
     return (
-        <div className="main-content-container">
-            <div className="articles-and-blogs-container">
+        content && (
+            <div className="main-content-container">
                 <div className="articles-container">
-                    {content &&
+                    {content?.articles.length >= 3 &&
                         content.articles
-                            ?.slice(0, 1)
-                            .map((article: Article, index: number) => (
-                                <div
-                                    className="article-item"
-                                    key={`${index}_${article.newsSite}_${article.id}`}
-                                >
-                                    <div className="article-item-img-and-title">
-                                        <div className="article-item-img">
-                                            <img
-                                                alt="article pic"
-                                                src={`${article.imageUrl}`}
-                                            />
-                                        </div>
-                                        <div className="article-item-title">
-                                            <p>{article.newsSite}</p>
-                                        </div>
-                                    </div>
-                                    <div className="article-item-summary">
-                                        <p>{article.summary}</p>
-                                    </div>
-                                </div>
+                            ?.slice(0, 3)
+                            .map((article: ContentItem) => (
+                                <ContentTile contentItem={article} contentLabel={ContentLabel.Article} />
                             ))}
                 </div>
+
                 <div className="blogs-container">
-                    {content &&
+                    {content?.blogs?.length >= 3 &&
                         content.blogs
-                            ?.slice(0, 2)
-                            .map((blog: Blog, index: number) => (
-                                <div
-                                    className="blog-item"
-                                    key={`${index}_${blog.newsSite}_${blog.id}`}
-                                >
-                                    <div className="blog-item-img-and-title">
-                                        <div className="blog-item-img">
-                                            <img
-                                                alt="blog pic"
-                                                src={`${blog.imageUrl}`}
-                                            />
-                                        </div>
-                                        <div className="blog-item-title">
-                                            <p>{blog.newsSite}</p>
-                                        </div>
-                                    </div>
-                                    <div className="blog-item-summary">
-                                        <p>{blog.summary}</p>
-                                    </div>
-                                </div>
+                            ?.slice(0, 3)
+                            .map((blog: ContentItem) => (
+                                <ContentTile contentItem={blog} contentLabel={ContentLabel.Blog} />
+                            ))}
+                </div>
+
+                <div className="reports-container">
+                    {content?.reports?.length >= 3 &&
+                        content.reports
+                            ?.slice(0, 3)
+                            .map((report: ContentItem) => (
+                                <ContentTile contentItem={report} contentLabel={ContentLabel.Report} />
                             ))}
                 </div>
             </div>
-            <div className="reports-container">
-                {content &&
-                    content.reports
-                        ?.slice(0, 4)
-                        .map((report: Report, index: number) => (
-                            <div
-                                className="report-item"
-                                key={`${index}_${report.newsSite}_${report.id}`}
-                            >
-                                <div className="report-item-898+65">
-                                    <p>{report.newsSite}</p>
-                                </div>
-                                <div className="report-item-summary">
-                                    <p>{report.summary}</p>
-                                </div>
-                            </div>
-                        ))}
-            </div>
-        </div>
+        )
     );
 }
