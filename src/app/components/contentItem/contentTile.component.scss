@@ -6,14 +6,18 @@
     @extend %marginStandard;
     @extend %paddingZero;
     @extend %paletteLight;
-    @extend %rowSpaceBetween;
+    @extend %columnSpaceBetween;
     font-size: 0.9rem;
-    height: 300px;
+    height: 350px;
     width: 90%;
 
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        flex-direction: row;
+        height: 300px;
+    }
+
     @include forLargeScreens($breakpoint-medium) {
-        display: flex;
-        flex-direction: column;
+        height: 300px;
     }
 }
 
@@ -23,31 +27,32 @@
     @extend %paddingZero;
     @extend %paletteLight;
     cursor: pointer;
-    height: 280px;
-    width: 50%;
+    height: 150px;
+    width: 60%;
 
-    @include forLargeScreens($breakpoint-medium) {
-        height: 150px;
-        width: 60%;
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: 280px;
+        width: 50%;
     }
 }
 
 .content-tile-img {
-    height: 280px;
+    height: 150px;
     margin: 10px 0 10px 10px;
     position: relative;
-    width: 50%;
+    width: 40%;
 
-    @include forLargeScreens($breakpoint-medium) {
-        height: 150px;
-        width: 40%;
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: 280px;
+        width: 50%;
     }
 }
 
 .content-tile-img-and-container {
-    @include forLargeScreens($breakpoint-medium) {
-        display: flex;
-        flex-direction: row;
+    @extend %rowCentered;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        flex-direction: column;
     }
 }
 
@@ -73,35 +78,34 @@
 }
 
 .content-tile-title {
-    @include forLargeScreens($breakpoint-medium) {
-        display: flex;
-        height: 100px;
+    @extend %rowCentered;
+    @extend %marginZero;
+    @extend %paddingStandard;
+    @extend %paletteContrast;
+    font-size: 0.9rem;
+    height: 90px;
+    width: 95%;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: auto;
         width: 100%;
     }
 }
 
-.for-large-screens {
-    display: none;
+.for-large-and-small-screens {
+    @extend %columnCentered;
 
-    @include forLargeScreens($breakpoint-medium) {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.for-small-screens {
-    display: flex;
-
-    @include forLargeScreens($breakpoint-medium) {
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         display: none;
     }
 }
 
-h3 {
-    @extend %paddingStandard;
-    @extend %paletteContrast;
-    font-size: 1rem;
-    margin-top: 0;
+.for-medium-screens {
+    display: none;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        display: flex;
+    }
 }
 
 img {
