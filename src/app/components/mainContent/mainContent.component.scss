@@ -7,13 +7,6 @@
     @extend %paletteMedium;
 }
 
-// .articles-and-blogs-container {
-    
-    @include forLargeScreens($breakpoint-medium) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-// }
 .articles-container,
 .blogs-container, 
 .reports-container {
@@ -27,21 +20,3 @@
         height: 33.333333%;
     }
 }
-
-// .article-item,
-// .blog-item,
-// .report-item {
-//     @extend %marginStandard;
-//     @extend %paddingStandard;
-//     // @extend %paletteLight;
-// }
-
-// .article-item-img-and-title,
-// .blog-item-img-and-title {
-//     @extend %rowCentered;
-// }
-
-// img {
-//     @extend %paddingStandard;
-//     @include setImageDisplay(auto, 150px);
-// }

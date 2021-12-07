@@ -7,7 +7,6 @@
     @extend %paddingZero;
     @extend %paletteLight;
     @extend %rowSpaceBetween;
-    border: 1px solid green;
     font-size: 0.9rem;
     height: 300px;
     width: 90%;
@@ -35,8 +34,7 @@
 
 .content-tile-img {
     height: 280px;
-    margin: 10px;
-    margin-right: 0px;
+    margin: 10px 0 10px 10px;
     position: relative;
     width: 50%;
 
