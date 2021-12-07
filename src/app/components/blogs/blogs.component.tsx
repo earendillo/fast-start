@@ -2,21 +2,32 @@ import React from 'react';
 import { useStoreon } from 'storeon/react';
 import { Blog } from '../../modules/content/content.state';
 import './blogs.component.scss';
+import {
+    ContentLabel,
+    ContentTile,
+} from '../contentItem/contentTile.component';
 
 export function Blogs() {
     const { content } = useStoreon('content');
 
+    function renderBlogs(): JSX.Element {
+        if (!content || !content.blogs.length) {
+            return <div>No data</div>;
+        }
+
+        return content.blogs.map((blog: Blog, index: number) => (
+            <ContentTile
+                key={index + blog.title}
+                contentItem={blog}
+                contentLabel={ContentLabel.Blog}
+            />
+        ));
+    }
+
     return (
-        <div>
+        <div className="blogs-component">
             <h2>Blogs</h2>
-            {content &&
-                content.blogs?.map((blog: Blog, index: number) => (
-                    <div key={`${index}_${blog.newsSite}_${blog.id}`}>
-                        <p>{blog.id}</p>
-                        <p>{blog.newsSite}</p>
-                        <p>{blog.summary}</p>
-                    </div>
-                ))}
+            {renderBlogs()}
         </div>
     );
 }
