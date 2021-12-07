@@ -52,7 +52,7 @@ export function getContentModule(): StoreonModule<any> {
                 const content: ContentState = await rawContent.json();
                 store.dispatch(FetchDashboardDataEndedEvent, {
                     articles: content.articles,
-                    blogs: content.articles,
+                    blogs: content.blogs,
                     reports: content.reports,
                     error: null,
                 });
@@ -70,7 +70,7 @@ export function getContentModule(): StoreonModule<any> {
                 return {
                     ...state,
                     articles: content.articles,
-                    blogs: content.articles,
+                    blogs: content.blogs,
                     reports: content.reports,
                     error: content.error,
                 };
