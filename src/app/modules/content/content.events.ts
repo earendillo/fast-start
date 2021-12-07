@@ -10,6 +10,8 @@ export const FetchArticlesEndedEvent = Symbol('Fetch Articles Ended');
 export const BlogsInitEvent = Symbol('Blogs Init');
 export const FetchBlogsEvent = Symbol('Fetch Blogs');
 export const FetchBlogsEndedEvent = Symbol('Fetch Blogs Ended');
+export const FetchDashboardDataEvent = Symbol('Fetch Dashboard Data');
+export const FetchDashboardDataEndedEvent = Symbol('Fetch Dashboard Data Ended');
 
 export type ContentInitEvent = void;
 
@@ -32,6 +34,14 @@ export type FetchBlogsEndedEvent = {
     error?: Error | null;
 };
 
+export type FetchDashboardDataEvent = void;
+export type FetchDashboardDataEndedEvent = {
+    articles?: Array<Article> | null;
+    blogs?: Array<Blog> | null;
+    reports?: Array<Report> | null;
+    error?: Error | null;
+}
+
 export interface ContentEvents {
     [ContentInitEvent]: ContentInitEvent;
     [ReportsInitEvent]: ReportsInitEvent;
@@ -43,6 +53,8 @@ export interface ContentEvents {
     [BlogsInitEvent]: BlogsInitEvent;
     [FetchBlogsEvent]: FetchBlogsEvent;
     [FetchBlogsEndedEvent]: FetchBlogsEndedEvent;
+    [FetchDashboardDataEvent]: FetchDashboardDataEvent;
+    [FetchDashboardDataEndedEvent]: FetchDashboardDataEndedEvent;
 }
 
 
