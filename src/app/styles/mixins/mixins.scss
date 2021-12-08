@@ -74,8 +74,8 @@
 }
 
 
-@mixin setLinkDark() {
-  @extend %paletteDark;
+@mixin setLinkDarkContrast() {
+  @extend %paletteDarkContrast;
   border: none;
   text-decoration: none;
   transition: color 0.5s;

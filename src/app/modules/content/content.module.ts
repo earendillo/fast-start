@@ -11,6 +11,7 @@ import {
     FetchDashboardDataEvent,
     FetchDashboardDataEndedEvent,
     ContentEvents,
+    SetPendingEvent,
 } from './content.events';
 import {
     WithContentState,
@@ -157,5 +158,15 @@ export function getContentModule(): StoreonModule<any> {
                 };
             }
         );
+
+        contentStore.on(
+            SetPendingEvent,
+            (state, content) => {
+                return {
+                    ...state,
+                    pending: content.pending,
+                }
+            }
+        )
     };
 }

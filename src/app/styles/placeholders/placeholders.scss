@@ -58,6 +58,10 @@
     background-color: $color_background-dark;
     color: $color_text-light;
 }
+%paletteDarkContrast {
+    background-color: $color_background-dark-contrast;
+    color: $color_text-light;
+}
 %paletteLight {
     background-color: $color_background-light;
     color: $color_text-dark;
