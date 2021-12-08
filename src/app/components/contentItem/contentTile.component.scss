@@ -37,7 +37,7 @@
 }
 
 .content-tile-img {
-    height: 150px;
+    height: 220px;
     margin: 10px 0 10px 10px;
     position: relative;
     width: 40%;
@@ -45,6 +45,9 @@
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         height: 280px;
         width: 50%;
+    }
+    @include forLargeScreens($breakpoint-medium) {
+        height: 170px;
     }
 }
 
