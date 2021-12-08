@@ -19,7 +19,7 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
             className="content-tile"
             onClick={() => window.open(contentItem.url, '_blank')}
         >
-            <div className="for-large-screens">
+            <div className="for-large-and-small-screens">
                 <div className="content-tile-title">
                     <h3>{contentItem.title}</h3>
                 </div>
@@ -48,7 +48,7 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
                 </div>
             </div>
 
-            <div className="for-small-screens">
+            <div className="for-medium-screens">
                 <div className="content-tile-img">
                     <img
                         alt="content item pic"
@@ -60,7 +60,9 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
                 </div>
                 <div className="content-tile-container">
                     <div className="content-tile-summary">
-                        <h3>{contentItem.title}</h3>
+                        <div className="content-tile-title">
+                            <h3>{contentItem.title}</h3>
+                        </div>
                         <p>{`${contentItem.summary.slice(0, 120)}...`}</p>
                     </div>
                     <div className="content-tile-newssite-and-date">

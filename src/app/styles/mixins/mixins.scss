@@ -1,5 +1,15 @@
-@mixin forLargeScreens($media) {
-  @media (min-width: $media) {
+@mixin forLargeScreens($breakpointMedium) {
+  @media only screen and (min-width: $breakpointMedium) {
+    @content;
+  }
+}
+@mixin forMediumScreens($breakpointSmall, $breakpointMedium) {
+  @media only screen and (min-width: $breakpointSmall) and (max-width: $breakpointMedium) {
+    @content;
+  }
+}
+@mixin forSmallScreens($breakpointSmall) {
+  @media only screen and (max-width: $breakpointSmall) {
     @content;
   }
 }
