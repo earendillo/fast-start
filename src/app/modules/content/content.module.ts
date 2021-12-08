@@ -8,6 +8,8 @@ import {
     FetchBlogsEndedEvent,
     FetchReportsEndedEvent,
     FetchReportsEvent,
+    FetchDashboardDataEvent,
+    FetchDashboardDataEndedEvent,
     ContentEvents,
 } from './content.events';
 import {
@@ -20,15 +22,12 @@ import {
 import {
     ARTICLES_ROUTE,
     BLOGS_ROUTE,
+    DASHBOARD_ROUTE,
     REPORTS_ROUTE,
 } from '../../config/consts';
 
-export type ArticlesStore = StoreonStore<ContentState, ContentEvents>;
-export type ArticlesModule = StoreonModule<WithContentState, ContentEvents>;
-export type BlogsStore = StoreonStore<ContentState, ContentEvents>;
-export type BlogsModule = StoreonModule<WithContentState, ContentEvents>;
-export type ReportsStore = StoreonStore<ContentState, ContentEvents>;
-export type ReportsModule = StoreonModule<WithContentState, ContentEvents>;
+export type ContentStore = StoreonStore<ContentState, ContentEvents>;
+export type ContentModule = StoreonModule<WithContentState, ContentEvents>;
 
 export const CONTENT_STORE_KEY = 'content';
 
@@ -37,17 +36,46 @@ export function getContentModule(): StoreonModule<any> {
         const contentStore = createSubstore(
             store,
             CONTENT_STORE_KEY
-        ) as ArticlesStore;
+        ) as ContentStore;
 
         contentStore.on('@init', () => {
             contentStore.dispatch(ContentInitEvent);
         });
 
         contentStore.on(ContentInitEvent, () => {
-            store.dispatch(FetchArticlesEvent);
-            store.dispatch(FetchReportsEvent);
-            store.dispatch(FetchBlogsEvent);
+            store.dispatch(FetchDashboardDataEvent);
         });
+
+        contentStore.on(FetchDashboardDataEvent, async () => {
+            try {
+                const rawContent = await fetch(DASHBOARD_ROUTE);
+                const content: ContentState = await rawContent.json();
+                store.dispatch(FetchDashboardDataEndedEvent, {
+                    articles: content.articles,
+                    blogs: content.blogs,
+                    reports: content.reports,
+                    error: null,
+                });
+            } catch (error) {
+                store.dispatch(FetchDashboardDataEndedEvent, {
+                    articles: null,
+                    error: error as Error,
+                });
+            }
+        });
+
+        contentStore.on(
+            FetchDashboardDataEndedEvent,
+            (state, content): ContentState => {
+                return {
+                    ...state,
+                    articles: content.articles,
+                    blogs: content.blogs,
+                    reports: content.reports,
+                    error: content.error,
+                };
+            }
+        );
 
         contentStore.on(FetchArticlesEvent, async () => {
             try {
