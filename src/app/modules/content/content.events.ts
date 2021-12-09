@@ -14,7 +14,13 @@ export const FetchDashboardDataEvent = Symbol('Fetch Dashboard Data');
 export const FetchDashboardDataEndedEvent = Symbol('Fetch Dashboard Data Ended');
 export const SetPendingEvent = Symbol('Set Pending');
 
-export type ContentInitEvent = void;
+export type ContentInitEvent = {
+    articles: Array<Article> | null;
+    blogs: Array<Blog> | null;
+    error: Error | null;
+    pending: boolean;
+    reports: Array<Report> | null;
+};
 
 export type ReportsInitEvent = void;
 export type FetchReportsEvent = void;
