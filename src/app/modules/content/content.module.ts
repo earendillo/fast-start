@@ -50,14 +50,20 @@ export function getContentModule(): StoreonModule<any> {
             contentStore.dispatch(ContentInitEvent, contentInitState);
         });
 
+        const pendingHandler = () => {
+            return {
+                pending: true
+            };
+        };
+
         contentStore.on(ContentInitEvent, (state) => {
             store.dispatch(FetchDashboardDataEvent);
             return state || contentInitState;
         });
 
-        contentStore.on(FetchDashboardDataEvent, async (state) => {
-            store.dispatch(SetPendingEvent, { pending: true });
+        contentStore.on(ContentInitEvent, pendingHandler);
 
+        contentStore.on(FetchDashboardDataEvent, async (state) => {
             try {
                 const rawContent = await fetch(DASHBOARD_ROUTE);
                 const content: ContentState = await rawContent.json();
@@ -78,10 +84,10 @@ export function getContentModule(): StoreonModule<any> {
         contentStore.on(
             FetchDashboardDataEndedEvent,
             (state, content): ContentState => {
-                store.dispatch(SetPendingEvent, { pending: false });
-
+                
                 return {
                     ...state,
+                    pending: false,
                     articles: content.articles,
                     blogs: content.blogs,
                     reports: content.reports,

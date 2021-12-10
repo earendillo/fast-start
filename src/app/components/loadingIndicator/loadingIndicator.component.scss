@@ -13,11 +13,11 @@
     width: 125px;
     height: 125px;
     margin: auto;
-    transform: scale(0.6);
-    -o-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
+    transform: scale(0.4);
+    -o-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
 }
 
 .f_circleG {
@@ -35,11 +35,11 @@
     -ms-animation-name: f_fadeG;
     -webkit-animation-name: f_fadeG;
     -moz-animation-name: f_fadeG;
-    animation-duration: 1.2s;
-    -o-animation-duration: 1.2s;
-    -ms-animation-duration: 1.2s;
-    -webkit-animation-duration: 1.2s;
-    -moz-animation-duration: 1.2s;
+    animation-duration: 1.0s;
+    -o-animation-duration: 1.0s;
+    -ms-animation-duration: 1.0s;
+    -webkit-animation-duration: 1.0s;
+    -moz-animation-duration: 1.0s;
     animation-iteration-count: infinite;
     -o-animation-iteration-count: infinite;
     -ms-animation-iteration-count: infinite;
@@ -55,16 +55,26 @@
 #frotateG_01 {
     left: 0;
     top: 51px;
-    animation-delay: 0.45s;
-    -o-animation-delay: 0.45s;
-    -ms-animation-delay: 0.45s;
-    -webkit-animation-delay: 0.45s;
-    -moz-animation-delay: 0.45s;
+    animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
 }
 
 #frotateG_02 {
     left: 15px;
     top: 15px;
+    animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+}
+
+#frotateG_03 {
+    left: 51px;
+    top: 0;
     animation-delay: 0.6s;
     -o-animation-delay: 0.6s;
     -ms-animation-delay: 0.6s;
@@ -72,19 +82,19 @@
     -moz-animation-delay: 0.6s;
 }
 
-#frotateG_03 {
-    left: 51px;
-    top: 0;
-    animation-delay: 0.75s;
-    -o-animation-delay: 0.75s;
-    -ms-animation-delay: 0.75s;
-    -webkit-animation-delay: 0.75s;
-    -moz-animation-delay: 0.75s;
-}
-
 #frotateG_04 {
     right: 15px;
     top: 15px;
+    animation-delay: 0.8s;
+    -o-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+}
+
+#frotateG_05 {
+    right: 0;
+    top: 51px;
     animation-delay: 0.9s;
     -o-animation-delay: 0.9s;
     -ms-animation-delay: 0.9s;
@@ -92,24 +102,14 @@
     -moz-animation-delay: 0.9s;
 }
 
-#frotateG_05 {
-    right: 0;
-    top: 51px;
-    animation-delay: 1.05s;
-    -o-animation-delay: 1.05s;
-    -ms-animation-delay: 1.05s;
-    -webkit-animation-delay: 1.05s;
-    -moz-animation-delay: 1.05s;
-}
-
 #frotateG_06 {
     right: 15px;
     bottom: 15px;
-    animation-delay: 1.2s;
-    -o-animation-delay: 1.2s;
-    -ms-animation-delay: 1.2s;
-    -webkit-animation-delay: 1.2s;
-    -moz-animation-delay: 1.2s;
+    animation-delay: 1.0s;
+    -o-animation-delay: 1.0s;
+    -ms-animation-delay: 1.0s;
+    -webkit-animation-delay: 1.0s;
+    -moz-animation-delay: 1.0s;
 }
 
 #frotateG_07 {

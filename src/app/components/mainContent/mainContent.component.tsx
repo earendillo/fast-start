@@ -6,17 +6,17 @@ import {
     ContentLabel,
 } from '../contentItem/contentTile.component';
 import './mainContent.component.scss';
+import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
 
-export function MainContent(): JSX.Element | null {
+export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');
 
     useEffect(() => {
       console.log(content.pending);  
     }, [content.pending]);
 
-    if (!content) return null;
     if (content.pending) {
-        return <div>LOADING</div>;
+        return <LoadingIndicator />;
     }
     if (content?.articles?.length) {
         return (
@@ -61,5 +61,5 @@ export function MainContent(): JSX.Element | null {
             )
         );
     }
-    return (<div></div>);
+    return (<div>test</div>);
 }
