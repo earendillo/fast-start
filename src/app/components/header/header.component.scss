@@ -4,7 +4,7 @@
 
 .header-container {
     @extend %columnLeft;
-    @extend %paletteDarkContrast;
+    @extend %paletteDark;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
@@ -75,7 +75,7 @@ li {
 a,
 button {
     @extend %paddingMedium;
-    @include setLinkDarkContrast;
+    @include setLinkDark;
 
     @include forLargeScreens($breakpoint-medium) {
         padding: 10px;

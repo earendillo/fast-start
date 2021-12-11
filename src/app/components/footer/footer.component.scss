@@ -4,7 +4,7 @@
 
 .footer-container {
     @extend %columnCentered;
-    @extend %paletteDarkContrast;
+    @extend %paletteDark;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
