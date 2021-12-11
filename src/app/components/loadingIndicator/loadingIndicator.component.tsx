@@ -1,10 +1,6 @@
-// import { useStoreon } from 'storeon/react';
 import './loadingIndicator.component.scss';
 
 export function LoadingIndicator(): JSX.Element {
-    // const { pending } = useStoreon('pending');
-
-    // if (!pending) return null;
     return (<div className="loading-indicator-container">
         <div id="floatingCirclesG">
             <div className="f_circleG" id="frotateG_01"></div>

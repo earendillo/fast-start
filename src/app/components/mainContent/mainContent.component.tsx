@@ -12,7 +12,6 @@ export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');
 
     useEffect(() => {
-      console.log(content.pending);  
     }, [content.pending]);
 
     if (content.pending) {
