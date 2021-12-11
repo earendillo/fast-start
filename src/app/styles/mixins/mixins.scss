@@ -74,6 +74,21 @@
 }
 
 
+@mixin setLinkDarkContrast() {
+  @extend %paletteDarkContrast;
+  border: none;
+  text-decoration: none;
+  transition: color 0.5s;
+
+  &:active {
+    color: $color_text-active;
+  }
+  &:hover {
+    color: $color_text-contrast;
+    cursor: pointer;
+  }
+}
+
 @mixin setLinkDark() {
   @extend %paletteDark;
   border: none;

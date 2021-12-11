@@ -11,6 +11,7 @@ import {
     FetchDashboardDataEvent,
     FetchDashboardDataEndedEvent,
     ContentEvents,
+    SetPendingEvent,
 } from './content.events';
 import {
     WithContentState,
@@ -30,6 +31,13 @@ export type ContentStore = StoreonStore<ContentState, ContentEvents>;
 export type ContentModule = StoreonModule<WithContentState, ContentEvents>;
 
 export const CONTENT_STORE_KEY = 'content';
+export const contentInitState = {
+    articles: [],
+    blogs: [],
+    error: null,
+    pending: false,
+    reports: []
+}
 
 export function getContentModule(): StoreonModule<any> {
     return (store: StoreonStore<WithContentState, ContentEvents>): void => {
@@ -39,14 +47,23 @@ export function getContentModule(): StoreonModule<any> {
         ) as ContentStore;
 
         contentStore.on('@init', () => {
-            contentStore.dispatch(ContentInitEvent);
+            contentStore.dispatch(ContentInitEvent, contentInitState);
         });
 
-        contentStore.on(ContentInitEvent, () => {
+        const pendingHandler = () => {
+            return {
+                pending: true
+            };
+        };
+
+        contentStore.on(ContentInitEvent, (state) => {
             store.dispatch(FetchDashboardDataEvent);
+            return state || contentInitState;
         });
 
-        contentStore.on(FetchDashboardDataEvent, async () => {
+        contentStore.on(ContentInitEvent, pendingHandler);
+
+        contentStore.on(FetchDashboardDataEvent, async (state) => {
             try {
                 const rawContent = await fetch(DASHBOARD_ROUTE);
                 const content: ContentState = await rawContent.json();
@@ -67,8 +84,10 @@ export function getContentModule(): StoreonModule<any> {
         contentStore.on(
             FetchDashboardDataEndedEvent,
             (state, content): ContentState => {
+                
                 return {
                     ...state,
+                    pending: false,
                     articles: content.articles,
                     blogs: content.blogs,
                     reports: content.reports,
@@ -157,5 +176,12 @@ export function getContentModule(): StoreonModule<any> {
                 };
             }
         );
+
+        contentStore.on(SetPendingEvent, (state, content) => {
+            return {
+                ...state,
+                pending: content.pending,
+            };
+        });
     };
 }
