@@ -2,9 +2,35 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
+.for-medium-screens {
+    padding-right: 10px;
+}
+
+.hamburger-icon {
+    @include setHamburgerIconAnimate($hamburgerBarSpacing);
+}
+
+.hamburger-icon,
+.hamburger-icon:after,
+.hamburger-icon:before {
+    @include setHamburgerIconSize($hamburgerBarWidth, $hamburgerBarHeight, 10px);
+}
+
+.hamburger-icon-container {
+    @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
+    @extend %paddingMedium;
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: none;
+    }
+}
+
 .header-container {
     @extend %columnLeft;
     @extend %paletteDark;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
@@ -12,26 +38,36 @@
     }
 }
 .header-logo-and-icon-container {
-    @extend %columnCentered;
+    @extend %rowCentered;
+    justify-content: space-between;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
         width: auto;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
-.hamburger-icon-container {
+.hiddenIfMobile {
+    display: none;
+
     @include forLargeScreens($breakpoint-medium) {
-        display: none;
+        display: flex;
     }
 }
 
 .navigation-container {
     @extend %columnLeft;
+    @extend %paletteDark;
+    position: fixed;
     width: 100%;
+    z-index: 10;
 
     @include forLargeScreens($breakpoint-medium) {
-        width: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -54,9 +90,22 @@
     }
 }
 
-ul {
-    @extend %paddingZero;
-    list-style-type: none;
+.product-name-container {
+    margin-right: 10px;
+}
+
+.visible {
+    display: flex;
+}
+
+a,
+button {
+    @extend %paddingMedium;
+    @include setLinkDark;
+
+    @include forLargeScreens($breakpoint-medium) {
+        padding: 10px;
+    }
 }
 
 li {
@@ -72,44 +121,15 @@ li {
     }
 }
 
-a,
-button {
-    @extend %paddingMedium;
-    @include setLinkDark;
-
-    @include forLargeScreens($breakpoint-medium) {
-        padding: 10px;
-    }
+p {
+    cursor: default;
 }
 
 svg {
     color: $color_light;
 }
 
-.visible {
-    display: flex;
-}
-
-.hiddenIfMobile {
-    display: none;
-
-    @include forLargeScreens($breakpoint-medium) {
-        display: flex;
-    }
-}
-
-.hamburger-icon-container {
-    @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
-    @extend %paddingMedium;
-
-}
-
-.hamburger-icon,
-.hamburger-icon:after,
-.hamburger-icon:before {
-    @include setHamburgerIconSize($hamburgerBarWidth, $hamburgerBarHeight, 10px);
-}
-
-.hamburger-icon {
-    @include setHamburgerIconAnimate($hamburgerBarSpacing);
+ul {
+    @extend %paddingZero;
+    list-style-type: none;
 }

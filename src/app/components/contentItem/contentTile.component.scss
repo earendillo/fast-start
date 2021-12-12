@@ -10,6 +10,7 @@
     font-size: 0.9rem;
     height: 350px;
     width: 90%;
+    cursor: pointer;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         flex-direction: row;
@@ -53,6 +54,7 @@
 
 .content-tile-img-and-container {
     @extend %rowCentered;
+    width: 100%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         flex-direction: column;
@@ -76,7 +78,6 @@
 }
 
 .content-tile-summary {
-    @extend %paddingStandard;
     font-size: 0.8rem;
 }
 
@@ -90,8 +91,11 @@
     width: 95%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        height: auto;
+        height: 90px;
         width: 100%;
+    }
+    @include forLargeScreens($breakpoint-medium) {
+        height: 50px;
     }
 }
 
