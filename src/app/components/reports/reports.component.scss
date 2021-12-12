@@ -1,3 +1,7 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
 .reports-component {
-  margin: 15px;
+  @extend %columnCentered;
 }
