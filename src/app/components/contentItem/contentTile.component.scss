@@ -85,10 +85,10 @@
 .content-tile-title {
     @extend %rowCentered;
     @extend %marginZero;
-    @extend %paddingStandard;
     @extend %paletteDarkContrast;
     font-size: 0.9rem;
     height: 90px;
+    padding: 15px;
     width: 95%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
