@@ -5,6 +5,8 @@
 .main-content-container {
     @extend %columnSpaceBetween;
     @extend %paletteMedium;
+    padding-top: 95px;
+    position: relative;
 }
 
 .articles-container,
@@ -16,7 +18,7 @@
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
-        width: 100%;
         height: 33%;
+        width: 100%;
     }
 }
