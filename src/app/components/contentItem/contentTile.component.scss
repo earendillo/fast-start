@@ -31,6 +31,10 @@
     height: 150px;
     width: 60%;
 
+    p {
+        cursor: pointer;
+    }
+
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         height: 280px;
         width: 50%;
