@@ -1,5 +1,5 @@
 import { useStoreon } from 'storeon/react';
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import { ContentItem } from '../../modules/content/content.state';
 import {
     ContentTile,
@@ -11,8 +11,7 @@ import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component
 export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');
 
-    useEffect(() => {
-    }, [content.pending]);
+    useEffect(() => {}, [content.pending]);
 
     if (content.pending) {
         return <LoadingIndicator />;
@@ -33,18 +32,6 @@ export function MainContent(): JSX.Element {
                                 ))}
                     </div>
 
-                    <div className="blogs-container">
-                        {content?.blogs?.length >= 3 &&
-                            content.blogs
-                                ?.slice(0, 3)
-                                .map((blog: ContentItem) => (
-                                    <ContentTile
-                                        contentItem={blog}
-                                        contentLabel={ContentLabel.Blog}
-                                    />
-                                ))}
-                    </div>
-
                     <div className="reports-container">
                         {content?.reports?.length >= 3 &&
                             content.reports
@@ -56,9 +43,21 @@ export function MainContent(): JSX.Element {
                                     />
                                 ))}
                     </div>
+
+                    <div className="blogs-container">
+                        {content?.blogs?.length >= 3 &&
+                            content.blogs
+                                ?.slice(0, 3)
+                                .map((blog: ContentItem) => (
+                                    <ContentTile
+                                        contentItem={blog}
+                                        contentLabel={ContentLabel.Blog}
+                                    />
+                                ))}
+                    </div>
                 </div>
             )
         );
     }
-    return (<div>test</div>);
+    return <div>test</div>;
 }
