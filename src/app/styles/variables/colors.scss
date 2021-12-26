@@ -4,15 +4,17 @@ $color_category3: #0CBDC0;
 $color_contrast: #EE9B00;
 $color_dark-contrast: #BB3E03;
 $color_dark: #001219;
-$color_light: #F7F1DE;
+$color_light: #FBF8EF;
 $color_medium-dark: #022e3f;
 $color_medium-light: #E9D8A6;
+$color_white: #FFF;
 
 $color_background-contrast: $color-contrast;
 $color_background-dark: $color_dark;
 $color_background-dark-contrast: $color_dark-contrast;
-$color_background-medium-light: $color_medium-light;
 $color_background-light: $color_light;
+$color_background-medium-light: $color_medium-light;
+$color_background-white: $color_white;
 
 $color_category-article: $color_category1;
 $color_category-blog: $color_category3;

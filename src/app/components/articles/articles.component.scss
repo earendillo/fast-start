@@ -20,12 +20,12 @@
 
 .articles-component {
   @extend %columnLeft;
-  @extend %paletteLight;
+  @extend %paletteWhite;
   padding: 75px 10px 10px 10px;
+
+  h2 {
+    @extend %paddingMedium;
+    border-left: 10px solid $color_category-article;
+  }
 }
 
-h2 {
-  @extend %paddingMedium;
-  border-left: 10px solid $color_category-article;
-
-}
