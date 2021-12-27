@@ -93,7 +93,7 @@
     color: $color_text-dark;
     font-size: 0.9rem;
     height: 100%;
-    padding: 0 0 15px 0;
+    padding-bottom: 15px;
     width: 95%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {

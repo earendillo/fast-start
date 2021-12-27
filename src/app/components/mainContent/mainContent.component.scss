@@ -8,7 +8,7 @@
     padding-top: 95px;
     position: relative;
     @include forLargeScreens($breakpoint-medium) {
-        margin: auto 10vw auto 10vw;
+        margin: auto 10vw;
     }
 }
 
