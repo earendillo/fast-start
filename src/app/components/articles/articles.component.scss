@@ -2,7 +2,30 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.articles-component {
-  @extend %columnCentered;
-  @extend %paletteLight;
+.article {
+  @extend %paddingStandard;
+  border-left: 10px solid $color_category-article;
+  height: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+    margin-top: 0;
+  }
 }
+
+.article-label {
+  background-color: $color_category-article;
+}
+
+.articles-component {
+  @extend %columnLeft;
+  @extend %paletteWhite;
+  padding: 75px 10px 10px 10px;
+
+  h2 {
+    @extend %paddingMedium;
+    border-left: 10px solid $color_category-article;
+  }
+}
+

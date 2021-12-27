@@ -28,8 +28,13 @@
     @extend %paddingZero;
     @extend %paletteLight;
     cursor: pointer;
-    height: 150px;
+    // height: 150px;
+    height: 100%;
     width: 60%;
+    
+    p {
+        cursor: pointer;
+    }
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         height: 280px;
@@ -64,8 +69,8 @@
 .content-tile-label {
     @extend %columnCentered;
     @extend %paddingSmall;
-    @extend %paletteContrast;
     bottom: 8px;
+    color: $color_text-light;
     font-size: 0.7rem;
     font-weight: bold;
     left: 10px;
@@ -83,20 +88,25 @@
 }
 
 .content-tile-title {
-    @extend %rowCentered;
+    @extend %columnLeft;
     @extend %marginZero;
-    @extend %paletteDarkContrast;
+    color: $color_text-dark;
     font-size: 0.9rem;
-    height: 90px;
-    padding: 15px;
+    height: 100%;
+    padding: 0 0 15px 0;
     width: 95%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        height: 90px;
+        height: 50%;
+        padding: 0;
         width: 100%;
     }
+
     @include forLargeScreens($breakpoint-medium) {
-        height: 50px;
+        height: 50%;
+        margin-left: 20px;
+        padding: 0;
+        width: 100%;
     }
 }
 
