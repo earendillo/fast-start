@@ -19,6 +19,7 @@
 .hamburger-icon-container {
     @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
     @extend %paddingMedium;
+    margin-left: 15px;
 
     @include forLargeScreens($breakpoint-medium) {
         display: none;
@@ -102,7 +103,7 @@
     font-size: 1.4rem;
     font-style: italic;
     font-weight: bold;
-    margin-right: 15px;
+    margin-right: 30px;
 
     @include forLargeScreens($breakpoint-medium) {
         margin-left: 10vw;
@@ -124,9 +125,9 @@ button {
 }
 
 li {
-    @extend %paddingStandard;
     border: 1px solid $color_light;
     display: flex;
+    padding: 10px 10px 10px 50px;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
