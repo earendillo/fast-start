@@ -16,7 +16,7 @@ export function MainContent(): JSX.Element {
     if (content.pending) {
         return <LoadingIndicator />;
     }
-    if (content?.articles?.length) {
+    if (content.articles.length) {
         return (
             content && (
                 <div className="main-content-container">
