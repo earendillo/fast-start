@@ -4,7 +4,7 @@ import { ContentItem } from '../../modules/content/content.state';
 import {
     ContentTile,
     ContentLabel,
-} from '../contentItem/contentTile.component';
+} from '../contentTile/contentTile.component';
 import './mainContent.component.scss';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
 

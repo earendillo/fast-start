@@ -5,7 +5,7 @@ import './reports.component.scss';
 import {
     ContentLabel,
     ContentTile,
-} from '../contentItem/contentTile.component';
+} from '../contentTile/contentTile.component';
 
 export function Reports(): JSX.Element {
     const { content } = useStoreon('content');

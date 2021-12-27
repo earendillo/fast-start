@@ -4,7 +4,7 @@ import { Article } from '../../modules/content/content.state';
 import {
     ContentLabel,
     ContentTile,
-} from '../contentItem/contentTile.component';
+} from '../contentTile/contentTile.component';
 import './articles.component.scss';
 
 export function Articles(): JSX.Element {
@@ -27,7 +27,7 @@ export function Articles(): JSX.Element {
     return (
         <div className="articles-component">
             <h2>Articles</h2>
-            {renderArticles()}
+            <div className="articles-content-container">{renderArticles()}</div>
         </div>
     );
 }

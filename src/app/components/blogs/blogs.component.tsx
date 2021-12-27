@@ -5,7 +5,7 @@ import './blogs.component.scss';
 import {
     ContentLabel,
     ContentTile,
-} from '../contentItem/contentTile.component';
+} from '../contentTile/contentTile.component';
 
 export function Blogs() {
     const { content } = useStoreon('content');

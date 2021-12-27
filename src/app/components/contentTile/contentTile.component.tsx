@@ -21,7 +21,9 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
         >
             <div className="for-large-and-small-screens">
                 <div className="content-tile-title">
-                    <h3 className={ContentLabel[contentLabel].toLowerCase()}>{contentItem.title}</h3>
+                    <h3 className={ContentLabel[contentLabel].toLowerCase()}>
+                        {contentItem.title}
+                    </h3>
                 </div>
                 <div className="content-tile-img-and-container">
                     <div className="content-tile-img">
@@ -29,7 +31,11 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
                             alt="content item pic"
                             src={`${contentItem.imageUrl}`}
                         />
-                        <div className={`content-tile-label ${ContentLabel[contentLabel].toLowerCase()}-label`}>
+                        <div
+                            className={`content-tile-label ${ContentLabel[
+                                contentLabel
+                            ].toLowerCase()}-label`}
+                        >
                             {ContentLabel[contentLabel]}
                         </div>
                     </div>
@@ -54,14 +60,24 @@ export function ContentTile({ contentItem, contentLabel }: ContentTileProps) {
                         alt="content item pic"
                         src={`${contentItem.imageUrl}`}
                     />
-                    <div className={`content-tile-label ${ContentLabel[contentLabel].toLowerCase()}-label`}>
+                    <div
+                        className={`content-tile-label ${ContentLabel[
+                            contentLabel
+                        ].toLowerCase()}-label`}
+                    >
                         {ContentLabel[contentLabel]}
                     </div>
                 </div>
                 <div className="content-tile-container">
                     <div className="content-tile-summary">
                         <div className="content-tile-title">
-                            <h3 className={ContentLabel[contentLabel].toLowerCase()}>{contentItem.title}</h3>
+                            <h3
+                                className={ContentLabel[
+                                    contentLabel
+                                ].toLowerCase()}
+                            >
+                                {contentItem.title}
+                            </h3>
                         </div>
                         <p>{`${contentItem.summary.slice(0, 120)}...`}</p>
                     </div>
