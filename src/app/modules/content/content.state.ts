@@ -11,6 +11,12 @@ export interface ContentItem {
     url: string;
 }
 
+export enum ContentLabel {
+    'Article',
+    'Blog',
+    'Report',
+}
+
 export interface ContentState {
     articles?: Array<Article> | null;
     blogs?: Array<Blog> | null;

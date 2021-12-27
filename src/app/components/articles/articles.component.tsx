@@ -1,33 +1,31 @@
 import React from 'react';
 import { useStoreon } from 'storeon/react';
-import { Article } from '../../modules/content/content.state';
-import {
-    ContentLabel,
-    ContentTile,
-} from '../contentTile/contentTile.component';
+import { useEffect } from 'react';
+import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import { ContentLabel } from '../../modules/content/content.state';
+import { CategoryItems } from '../categoryItems.component.tsx/categoryItems.component';
 import './articles.component.scss';
 
 export function Articles(): JSX.Element {
     const { content } = useStoreon('content');
 
-    function renderArticles(): JSX.Element {
-        if (!content || !content.articles.length) {
-            return <div>No data</div>;
-        }
+    useEffect(() => {}, [content.pending]);
 
-        return content.articles.map((article: Article, index: number) => (
-            <ContentTile
-                key={index + article.title}
-                contentItem={article}
-                contentLabel={ContentLabel.Article}
-            />
-        ));
+    if (content.pending) {
+        return <LoadingIndicator />;
     }
-
-    return (
-        <div className="articles-component">
-            <h2>Articles</h2>
-            <div className="articles-content-container">{renderArticles()}</div>
-        </div>
-    );
+    if (content.articles.length) {
+        return (
+            content && (
+                <div className="articles-content">
+                    <h2>Articles</h2>
+                    <CategoryItems
+                        categoryItems={content.articles}
+                        label={ContentLabel.Article}
+                    />
+                </div>
+            )
+        );
+    }
+    return <div></div>;
 }

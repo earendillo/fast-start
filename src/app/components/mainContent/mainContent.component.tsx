@@ -1,12 +1,9 @@
 import { useStoreon } from 'storeon/react';
 import { useEffect } from 'react';
-import { ContentItem } from '../../modules/content/content.state';
-import {
-    ContentTile,
-    ContentLabel,
-} from '../contentTile/contentTile.component';
+import { ContentLabel } from '../../modules/content/content.state';
 import './mainContent.component.scss';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import { CategoryItems } from '../categoryItems.component.tsx/categoryItems.component';
 
 export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');
@@ -20,44 +17,18 @@ export function MainContent(): JSX.Element {
         return (
             content && (
                 <div className="main-content-container">
-                    <div className="articles-container">
-                        {content?.articles.length >= 3 &&
-                            content.articles
-                                ?.slice(0, 3)
-                                .map((article: ContentItem) => (
-                                    <ContentTile
-                                        contentItem={article}
-                                        contentLabel={ContentLabel.Article}
-                                    />
-                                ))}
-                    </div>
-
-                    <div className="reports-container">
-                        {content?.reports?.length >= 3 &&
-                            content.reports
-                                ?.slice(0, 3)
-                                .map((report: ContentItem) => (
-                                    <ContentTile
-                                        contentItem={report}
-                                        contentLabel={ContentLabel.Report}
-                                    />
-                                ))}
-                    </div>
-
-                    <div className="blogs-container">
-                        {content?.blogs?.length >= 3 &&
-                            content.blogs
-                                ?.slice(0, 3)
-                                .map((blog: ContentItem) => (
-                                    <ContentTile
-                                        contentItem={blog}
-                                        contentLabel={ContentLabel.Blog}
-                                    />
-                                ))}
-                    </div>
+                    <CategoryItems
+                        categoryItems={content.articles?.slice(0, 3)}
+                        label={ContentLabel.Article} />
+                    <CategoryItems
+                        categoryItems={content.reports?.slice(0, 3)}
+                        label={ContentLabel.Report} />
+                    <CategoryItems
+                        categoryItems={content.blogs?.slice(0, 3)}
+                        label={ContentLabel.Blog} />
                 </div>
             )
         );
     }
-    return <div>test</div>;
+    return <div></div>;
 }

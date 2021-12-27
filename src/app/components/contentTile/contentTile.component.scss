@@ -2,6 +2,37 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
+.article {
+  border-left: 10px solid $color_category-article;
+  height: 100%;
+  margin-bottom: 0;
+  padding: 10px 10px 0 10px;
+
+  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+    margin-top: 0;
+  }
+}
+
+.article-label {
+    background-color: $color_category-article;
+}
+
+.blog {
+  @extend %paddingStandard;
+  border-left: 10px solid $color_category-blog;
+  height: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+    margin-top: 0;
+  }
+}
+
+.blog-label {
+    background-color: $color_category-blog;
+}
+
 .content-tile {
     @extend %marginStandard;
     @extend %paddingZero;
@@ -30,7 +61,7 @@
     cursor: pointer;
     height: 100%;
     width: 60%;
-    
+
     p {
         cursor: pointer;
         text-align: justify;
@@ -125,6 +156,22 @@
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         display: flex;
     }
+}
+
+.report {
+  @extend %paddingStandard;
+  border-left: 10px solid $color_category-report;
+  height: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+    margin-top: 0;
+  }
+}
+
+.report-label {
+    background-color: $color_category-report;
 }
 
 img {
