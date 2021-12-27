@@ -22,6 +22,8 @@ export function Articles(): JSX.Element {
                     <CategoryItems
                         categoryItems={content.articles}
                         label={ContentLabel.Article}
+                        summaryLength={500}
+                        //zamienić 500 na maksymalną długość summary
                     />
                 </div>
             )

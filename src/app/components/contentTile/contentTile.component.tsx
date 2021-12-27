@@ -5,9 +5,10 @@ import { ContentItem, ContentLabel } from '../../modules/content/content.state';
 export interface ContentTileProps {
     item: ContentItem;
     label: ContentLabel;
+    summaryLength: number;
 }
 
-export function ContentTile({ item, label }: ContentTileProps) {
+export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
     return (
         <section
             className="content-tile"
@@ -32,7 +33,7 @@ export function ContentTile({ item, label }: ContentTileProps) {
                     </div>
                     <div className="content-tile-container">
                         <div className="content-tile-summary">
-                            <p>{`${item.summary.slice(0, 120)}...`}</p>
+                            <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
                         </div>
                         <div className="content-tile-newssite-and-date">
                             <span>{`${item.newsSite}, ${
@@ -63,7 +64,7 @@ export function ContentTile({ item, label }: ContentTileProps) {
                                 {item.title}
                             </h3>
                         </div>
-                        <p>{`${item.summary.slice(0, 120)}...`}</p>
+                        <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
                     </div>
                     <div className="content-tile-newssite-and-date">
                         <span>{`${item.newsSite}, ${

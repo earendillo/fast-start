@@ -19,13 +19,16 @@ export function MainContent(): JSX.Element {
                 <div className="main-content-container">
                     <CategoryItems
                         categoryItems={content.articles?.slice(0, 3)}
-                        label={ContentLabel.Article} />
+                        label={ContentLabel.Article}
+                        summaryLength={120} />
                     <CategoryItems
                         categoryItems={content.reports?.slice(0, 3)}
-                        label={ContentLabel.Report} />
+                        label={ContentLabel.Report}
+                        summaryLength={120} />
                     <CategoryItems
                         categoryItems={content.blogs?.slice(0, 3)}
-                        label={ContentLabel.Blog} />
+                        label={ContentLabel.Blog}
+                        summaryLength={120} />
                 </div>
             )
         );
