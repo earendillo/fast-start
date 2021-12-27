@@ -21,3 +21,8 @@
     margin: auto 10vw auto 10vw;
   }
 }
+
+.category-items {
+  @extend %rowSpaceBetween;
+
+}
