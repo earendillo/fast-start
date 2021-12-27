@@ -25,7 +25,6 @@ export const routes = compose(
             </div>
             <Footer
                 aboutPageInfo={'info about page - change me'}
-                usedAPI={'used API - change me'}
             />
         </div>
     )),
