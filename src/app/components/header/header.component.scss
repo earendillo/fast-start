@@ -57,6 +57,12 @@
     }
 }
 
+.logo {
+    @extend %paddingStandard;
+    @extend %rowCentered;
+    @include setImageDisplay(40px, 40px);
+}
+
 .navigation-container {
     @extend %columnLeft;
     @extend %paletteDark;
@@ -91,7 +97,11 @@
 }
 
 .product-name-container {
-    margin-right: 10px;
+    @extend %rowCentered;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 15px;
 }
 
 .visible {

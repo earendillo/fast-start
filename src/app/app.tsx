@@ -19,7 +19,7 @@ interface AppProps {
 export const routes = compose(
     withView((request) => (
         <div>
-            <MainHeader appName={'Product name - change me'} />
+            <MainHeader appName={`Fast Start`} />
             <div className="main-container">
                 <View />
             </div>

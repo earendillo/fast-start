@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-navi';
+import rocket from '../../images/rocket.svg';
 import './header.component.scss';
 
 interface MainHeaderProps {
     appName: string;
 }
 
-export function MainHeader({appName}: MainHeaderProps) {
+export function MainHeader({ appName }: MainHeaderProps) {
     const [isMenuVisible, setMenuVisible] = useState(false);
     const onClickHandler = () => setMenuVisible(!isMenuVisible);
     const iconVisibilityClass = isMenuVisible ? 'animate' : '';
@@ -24,6 +25,7 @@ export function MainHeader({appName}: MainHeaderProps) {
                     ></div>
                 </div>
                 <div className="product-name-container">
+                    <img className="logo" src={rocket} alt="rocket logo" />
                     <p>{appName}</p>
                 </div>
             </div>
