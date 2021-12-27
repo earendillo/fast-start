@@ -28,12 +28,12 @@
     @extend %paddingZero;
     @extend %paletteLight;
     cursor: pointer;
-    // height: 150px;
     height: 100%;
     width: 60%;
     
     p {
         cursor: pointer;
+        text-align: justify;
     }
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
@@ -93,7 +93,7 @@
     color: $color_text-dark;
     font-size: 0.9rem;
     height: 100%;
-    padding: 0 0 15px 0;
+    padding-bottom: 15px;
     width: 95%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
@@ -104,6 +104,7 @@
 
     @include forLargeScreens($breakpoint-medium) {
         height: 50%;
+        height: 90px;
         margin-left: 20px;
         padding: 0;
         width: 100%;

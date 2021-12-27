@@ -19,6 +19,7 @@
 .hamburger-icon-container {
     @include setHamburgerContainerDisplay($hamburgerBarWidth, $hamburgerBarHeight, $hamburgerBarSpacing);
     @extend %paddingMedium;
+    margin-left: 15px;
 
     @include forLargeScreens($breakpoint-medium) {
         display: none;
@@ -57,6 +58,12 @@
     }
 }
 
+.logo {
+    @extend %paddingStandard;
+    @extend %rowCentered;
+    @include setImageDisplay(40px, 40px);
+}
+
 .navigation-container {
     @extend %columnLeft;
     @extend %paletteDark;
@@ -65,9 +72,9 @@
     z-index: 10;
 
     @include forLargeScreens($breakpoint-medium) {
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
     }
 }
 
@@ -76,6 +83,7 @@
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
+        margin-right: 10vw;
         width: auto;
     }
 }
@@ -91,7 +99,15 @@
 }
 
 .product-name-container {
-    margin-right: 10px;
+    @extend %rowCentered;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 30px;
+
+    @include forLargeScreens($breakpoint-medium) {
+        margin-left: 10vw;
+    }
 }
 
 .visible {
@@ -109,9 +125,9 @@ button {
 }
 
 li {
-    @extend %paddingStandard;
     border: 1px solid $color_light;
     display: flex;
+    padding: 10px 10px 10px 50px;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
