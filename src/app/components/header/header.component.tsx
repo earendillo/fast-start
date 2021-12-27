@@ -54,11 +54,6 @@ export function MainHeader({ appName }: MainHeaderProps) {
                             Blogs
                         </Link>
                     </li>
-                    <li className="navigation-list-item">
-                        <Link onClick={onClickHandler} href={'/about-page'}>
-                            About page
-                        </Link>
-                    </li>
                 </ul>
             </div>
         </nav>

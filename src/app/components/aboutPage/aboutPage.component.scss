@@ -2,7 +2,47 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.about-page-component {
-  @extend %columnCentered;
+.about-page-container {
+  @extend %columnLeft;
+  @extend %paletteWhite;
+  padding: 75px 10px 10px 10px;
+
+  @include forLargeScreens($breakpoint-medium) {
+    margin: auto 10vw;
+  }
+
+  h2 {
+    @extend %paddingMedium;
+    border-left: 10px solid $color_text-dark;
+  }
+}
+
+.about-page-section {
+  @extend %marginStandard;
+  @extend %paddingStandard;
   @extend %paletteLight;
+  height: 100%;
+  margin-bottom: 0;
+
+  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+    margin-top: 0;
+  }
+
+  a {
+    @include setLinkLight;
+  }
+
+  h3 {
+    @extend %paddingMedium;
+    border-left: 10px solid $color_section1;
+  }
+
+  img {
+    @include setImageDisplay(50px, 50px);
+  }
+
+  p {
+    @extend %paddingLargeLeft;
+    font-size: 0.7rem;
+  }
 }

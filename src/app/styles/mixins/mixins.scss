@@ -103,3 +103,18 @@
     cursor: pointer;
   }
 }
+
+@mixin setLinkLight() {
+  @extend %paletteLight;
+  border: none;
+  text-decoration: none;
+  transition: color 0.5s;
+
+  &:active {
+    color: $color_text-active;
+  }
+  &:hover {
+    color: $color_text-contrast;
+    cursor: pointer;
+  }
+}
