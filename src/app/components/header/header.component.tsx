@@ -24,6 +24,9 @@ export function MainHeader({ appName }: MainHeaderProps) {
                         className={`hamburger-icon ${iconVisibilityClass}`}
                     ></div>
                 </div>
+
+                {/* source of free rocket svg: https://pixabay.com/pl/vectors/okr%c4%99t-rakietowy-statek-kosmiczny-303591/ */}
+
                 <div className="product-name-container">
                     <img className="logo" src={rocket} alt="rocket logo" />
                     <p>{appName}</p>
