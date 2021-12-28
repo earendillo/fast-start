@@ -22,7 +22,7 @@ export function Blogs() {
                     <CategoryItems
                         categoryItems={content.blogs}
                         label={ContentLabel.Blog}
-                        summaryLength={0}
+                        specifiedLength={500}
                     />
                 </div>
             )

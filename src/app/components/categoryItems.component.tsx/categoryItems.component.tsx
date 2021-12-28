@@ -6,13 +6,13 @@ import './categoryItems.component.scss';
 interface CategoryItemsProps {
     categoryItems: Array<ContentItem>;
     label: ContentLabel;
-    summaryLength: number;
+    specifiedLength: number;
 }
 
 export function CategoryItems({
     categoryItems,
     label,
-    summaryLength,
+    specifiedLength,
 }: CategoryItemsProps): JSX.Element {
     return (
         <Fragment>
@@ -20,7 +20,7 @@ export function CategoryItems({
                 <ContentTile
                     item={categoryItem}
                     label={label}
-                    summaryLength={summaryLength}
+                    specifiedLength={specifiedLength}
                 />
             ))}
         </Fragment>

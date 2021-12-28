@@ -1,6 +1,6 @@
-$color_category1: #005F73;
-$color_category2: #0A9396;
-$color_category3: #0CBDC0;
+$color_category1: #BB3E03;
+$color_category2: #CA6702;
+$color_category3: #EE9B00;
 $color_contrast: #EE9B00;
 $color_dark-contrast: #BB3E03;
 $color_dark: #001219;
@@ -12,6 +12,7 @@ $color_white: #FFF;
 $color_background-contrast: $color-contrast;
 $color_background-dark: $color_dark;
 $color_background-dark-contrast: $color_dark-contrast;
+$color_background-hover: $color_medium-light;
 $color_background-light: $color_light;
 $color_background-medium-light: $color_medium-light;
 $color_background-white: $color_white;
@@ -22,7 +23,7 @@ $color_category-report: $color_category2;
 
 $color_shadow: $color_medium-dark;
 
-$color_text-active: $color_medium-light;
+$color_text-active: $color_contrast;
 $color_text-contrast: $color_contrast;
 $color_text-dark: $color_dark;
 $color_text-light: $color_light;

@@ -11,4 +11,8 @@
     @extend %paddingMedium;
     border-left: 10px solid $color_category-report;
   }
+
+  .content-tile {
+    height: auto;
+  }
 }

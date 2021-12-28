@@ -23,7 +23,7 @@ export function Articles(): JSX.Element {
                         <CategoryItems
                             categoryItems={content.articles}
                             label={ContentLabel.Article}
-                            summaryLength={120}
+                            specifiedLength={500}
                         />
                     </div>
                 </div>

@@ -19,23 +19,23 @@ export function MainContent(): JSX.Element {
                 <div className="main-content-container">
                     <div className="category-items">
                         <CategoryItems
-                            categoryItems={content.articles?.slice(0, 3)}
+                            categoryItems={content.articles?.slice(0, 2)}
                             label={ContentLabel.Article}
-                            summaryLength={120}
+                            specifiedLength={120}
                         />
                     </div>
                     <div className="category-items">
                         <CategoryItems
-                            categoryItems={content.reports?.slice(0, 3)}
+                            categoryItems={content.reports?.slice(0, 2)}
                             label={ContentLabel.Report}
-                            summaryLength={120}
+                            specifiedLength={120}
                         />
                     </div>
                     <div className="category-items">
                         <CategoryItems
-                            categoryItems={content.blogs?.slice(0, 3)}
+                            categoryItems={content.blogs?.slice(0, 2)}
                             label={ContentLabel.Blog}
-                            summaryLength={120}
+                            specifiedLength={120}
                         />
                     </div>
                 </div>

@@ -4,13 +4,23 @@
 
 .category-items {
     @extend %columnCentered;
-    height: 300%;
+    height: 200%;
     width: 100%;
+
+    .content-tile-newssite-and-date {
+        display: none;
+    }
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
-        height: 33%;
+        height: 50%;
         width: 100%;
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
     }
 }
 

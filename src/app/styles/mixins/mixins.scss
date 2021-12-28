@@ -28,11 +28,11 @@
 }
 
 @mixin setHamburgerIconAnimate($barSpacing) {
-  background: $color_background-light;
+  background: $color_background-contrast;
   transform: translateY($barSpacing);
   transition: all 0ms 300ms;
   &:after {
-    background: rgba(255, 255, 255, 1);
+    background: $color_background-contrast;
     content: "";
     left: 0;
     position: absolute;
@@ -53,7 +53,7 @@
     }
   }
   &:before {
-    background: rgba(255, 255, 255, 1);
+    background: $color_background-contrast;
     bottom: $barSpacing;
     content: "";
     left: 0;
@@ -98,7 +98,24 @@
   &:active {
     color: $color_text-active;
   }
-  &:hover {
+  &:hover,
+  &:focus {
+    color: $color_text-contrast;
+    cursor: pointer;
+  }
+}
+
+@mixin setMenuLink() {
+  // @extend %paletteDark;
+  color: $color_text-light;
+  border: none;
+  text-decoration: none;
+
+  &:active {
+    color: $color_text-active;
+  }
+  &:hover,
+  &:focus {
     color: $color_text-contrast;
     cursor: pointer;
   }

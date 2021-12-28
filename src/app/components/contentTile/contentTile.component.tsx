@@ -5,16 +5,19 @@ import { ContentItem, ContentLabel } from '../../modules/content/content.state';
 export interface ContentTileProps {
     item: ContentItem;
     label: ContentLabel;
-    summaryLength: number;
+    specifiedLength: number;
 }
 
-export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
+export function ContentTile({ item, label, specifiedLength }: ContentTileProps) {
+    const summaryLength = item.summary.length;
+    const usedLength = specifiedLength > summaryLength ? summaryLength : specifiedLength;
+
     return (
         <section
             className="content-tile"
             onClick={() => window.open(item.url, '_blank')}
         >
-            <div className="for-large-and-small-screens">
+            <div className="for-small-screens">
                 <div className="content-tile-title">
                     <h3 className={ContentLabel[label].toLowerCase()}>
                         {item.title}
@@ -33,9 +36,7 @@ export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
                     </div>
                     <div className="content-tile-container">
                         <div className="content-tile-summary">
-                            <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
-                                                    {/* to change - summaryLength / summaryLength=item.summary.length-1??*/}
-
+                            <p>{`${item.summary.slice(0, usedLength)}...`}</p>
                         </div>
                         <div className="content-tile-newssite-and-date">
                             <span>{`${item.newsSite}, ${
@@ -48,7 +49,7 @@ export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
                 </div>
             </div>
 
-            <div className="for-medium-screens">
+            <div className="for-medium-and-large-screens">
                 <div className="content-tile-img">
                     <img alt="content item pic" src={`${item.imageUrl}`} />
                     <div
@@ -66,8 +67,7 @@ export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
                                 {item.title}
                             </h3>
                         </div>
-                        <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
-                        {/* to change - summaryLength */}
+                        <p>{`${item.summary.slice(0, usedLength)}...`}</p>
                     </div>
                     <div className="content-tile-newssite-and-date">
                         <span>{`${item.newsSite}, ${

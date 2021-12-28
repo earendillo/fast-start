@@ -22,7 +22,7 @@ export function Reports(): JSX.Element {
                     <CategoryItems
                         categoryItems={content.reports}
                         label={ContentLabel.Report}
-                        summaryLength={120}
+                        specifiedLength={500}
                     />
                 </div>
             )
