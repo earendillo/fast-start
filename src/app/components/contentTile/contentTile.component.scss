@@ -1,0 +1,245 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
+.article {
+    border-left: 10px solid $color_category-article;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 10px 10px 0 10px;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        margin-top: 0;
+    }
+}
+
+.article-label {
+    background-color: $color_category-article;
+}
+
+.blog {
+    @extend %paddingStandard;
+    border-left: 10px solid $color_category-blog;
+    height: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        margin-top: 0;
+    }
+}
+
+.blog-label {
+    background-color: $color_category-blog;
+}
+
+.content-tile {
+    @extend %marginStandard;
+    @extend %paddingZero;
+    @extend %paletteLight;
+    @extend %columnSpaceBetween;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    transition: width 0.3s, height 0.3s;
+    width: 90%;
+
+    &:hover {
+        background-color: $color_background-hover;
+        width: 91%;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+
+        @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+            font-size: 1.2rem;
+        }
+
+        @include forLargeScreens($breakpoint-medium) {
+            font-size: 1.4rem;
+        }
+    }
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        flex-direction: row;
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+    }
+}
+
+.content-tile-container {
+    @extend %columnSpaceBetween;
+    @extend %marginStandard;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 10px 0 0;
+    width: 60%;
+
+    p {
+        cursor: pointer;
+        padding: 30px 10px 0 5px;
+        text-align: justify;
+    }
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        width: 50%;
+    }
+}
+
+.content-tile-img {
+    border-bottom: 3px solid $color-contrast;
+    border-right: 3px solid $color-contrast;
+    height: 220px;
+    margin: 10px 0 10px 10px;
+    position: relative;
+    transition: width 0.3s, height 0.3s;
+    width: 40%;
+
+    &:hover {
+        height: 221px;
+        width: 41%;
+    }
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: 280px;
+        width: 50%;
+
+        &:hover {
+            height: 281px;
+            width: 51%;
+        }
+    }
+    @include forLargeScreens($breakpoint-medium) {
+        height: 280px;
+        width: 50%;
+
+        &:hover {
+            height: 281px;
+            width: 51%;
+        }
+    }
+}
+
+.content-tile-img-and-container {
+    @extend %rowCentered;
+    width: 100%;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        flex-direction: column;
+    }
+}
+
+.content-tile-label {
+    @extend %columnCentered;
+    bottom: 8px;
+    color: $color_text-light;
+    font-size: 0.7rem;
+    font-weight: bold;
+    left: 10px;
+    padding: 5px 10px;
+    position: absolute;
+    width: 25%;
+}
+
+.content-tile-newssite-and-date {
+    @extend %paddingStandard;
+    font-size: 0.7rem;
+    margin: 0 10px 20px 10px;
+}
+
+.content-tile-summary {
+    font-size: 0.8rem;
+}
+
+.content-tile-title {
+    @extend %columnLeft;
+    @extend %marginZero;
+    @extend %paddingZero;
+    color: $color_text-dark;
+    font-size: 0.9rem;
+    height: 100%;
+    width: 95%;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: 40%;
+        margin: 10px;
+        width: 100%;
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+        height: 40%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+.for-small-screens {
+    @extend %columnCentered;
+
+    h3 {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        display: none;
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: none;
+    }
+
+    p {
+        padding: 10px;
+    }
+}
+
+.for-medium-and-large-screens {
+    display: none;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        display: flex;
+
+        h3 {
+            font-size: 1rem;
+            margin: 0;
+            padding-bottom: 0;
+            height: 100px;
+        }
+
+        p {
+            padding: 0 10px;
+            margin: 0;
+        }
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+        display: flex;
+    }
+}
+
+.report {
+    @extend %paddingStandard;
+    border-left: 10px solid $color_category-report;
+    height: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        margin-top: 0;
+    }
+}
+
+.report-label {
+    background-color: $color_category-report;
+}
+
+img {
+    height: 280px;
+    max-height: 100%;
+    object-fit: cover;
+    width: 100%;
+}

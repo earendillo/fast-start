@@ -1,33 +1,32 @@
 import React from 'react';
 import { useStoreon } from 'storeon/react';
-import { Report } from '../../modules/content/content.state';
+import { useEffect } from 'react';
+import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import { ContentLabel } from '../../modules/content/content.state';
+import { CategoryItems } from '../categoryItems.component.tsx/categoryItems.component';
 import './reports.component.scss';
-import {
-    ContentLabel,
-    ContentTile,
-} from '../contentItem/contentTile.component';
 
 export function Reports(): JSX.Element {
     const { content } = useStoreon('content');
 
-    function renderReports(): JSX.Element {
-        if (!content || !content.reports.length) {
-            return <div>No data</div>;
-        }
+    useEffect(() => {}, [content.pending]);
 
-        return content.reports.map((report: Report, index: number) => (
-            <ContentTile
-                key={index + report.title}
-                contentItem={report}
-                contentLabel={ContentLabel.Report}
-            />
-        ));
+    if (content.pending) {
+        return <LoadingIndicator />;
     }
-
-    return (
-        <div className="reports-component">
-            <h2>Reports</h2>
-            {renderReports()}
-        </div>
-    );
+    if (content.reports.length) {
+        return (
+            content && (
+                <div className="reports-content">
+                    <h2>Reports</h2>
+                    <CategoryItems
+                        categoryItems={content.reports}
+                        label={ContentLabel.Report}
+                        specifiedLength={500}
+                    />
+                </div>
+            )
+        );
+    }
+    return <div></div>;
 }

@@ -5,6 +5,7 @@
 .footer-container {
     @extend %columnCentered;
     @extend %paletteDark;
+    border-top: 3px solid $color-contrast;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;

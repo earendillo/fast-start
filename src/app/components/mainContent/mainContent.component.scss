@@ -2,6 +2,28 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
+.category-items {
+    @extend %columnCentered;
+    height: 200%;
+    width: 100%;
+
+    .content-tile-newssite-and-date {
+        display: none;
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+        flex-direction: row;
+        height: 50%;
+        width: 100%;
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
 .main-content-container {
     @extend %columnSpaceBetween;
     @extend %paletteWhite;
@@ -10,19 +32,5 @@
     
     @include forLargeScreens($breakpoint-medium) {
         margin: auto 10vw;
-    }
-}
-
-.articles-container,
-.blogs-container, 
-.reports-container {
-    @extend %columnCentered;
-    height: 300%;
-    width: 100%;
-
-    @include forLargeScreens($breakpoint-medium) {
-        flex-direction: row;
-        height: 33%;
-        width: 100%;
     }
 }
