@@ -17,18 +17,27 @@ export function MainContent(): JSX.Element {
         return (
             content && (
                 <div className="main-content-container">
-                    <CategoryItems
-                        categoryItems={content.articles?.slice(0, 3)}
-                        label={ContentLabel.Article}
-                        summaryLength={120} />
-                    <CategoryItems
-                        categoryItems={content.reports?.slice(0, 3)}
-                        label={ContentLabel.Report}
-                        summaryLength={120} />
-                    <CategoryItems
-                        categoryItems={content.blogs?.slice(0, 3)}
-                        label={ContentLabel.Blog}
-                        summaryLength={120} />
+                    <div className="category-items">
+                        <CategoryItems
+                            categoryItems={content.articles?.slice(0, 3)}
+                            label={ContentLabel.Article}
+                            summaryLength={120}
+                        />
+                    </div>
+                    <div className="category-items">
+                        <CategoryItems
+                            categoryItems={content.reports?.slice(0, 3)}
+                            label={ContentLabel.Report}
+                            summaryLength={120}
+                        />
+                    </div>
+                    <div className="category-items">
+                        <CategoryItems
+                            categoryItems={content.blogs?.slice(0, 3)}
+                            label={ContentLabel.Blog}
+                            summaryLength={120}
+                        />
+                    </div>
                 </div>
             )
         );

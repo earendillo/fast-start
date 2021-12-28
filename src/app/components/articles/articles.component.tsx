@@ -19,11 +19,13 @@ export function Articles(): JSX.Element {
             content && (
                 <div className="articles-content">
                     <h2>Articles</h2>
-                    <CategoryItems
-                        categoryItems={content.articles}
-                        label={ContentLabel.Article}
-                        summaryLength={0}
-                    />
+                    <div className="articles-items">
+                        <CategoryItems
+                            categoryItems={content.articles}
+                            label={ContentLabel.Article}
+                            summaryLength={120}
+                        />
+                    </div>
                 </div>
             )
         );

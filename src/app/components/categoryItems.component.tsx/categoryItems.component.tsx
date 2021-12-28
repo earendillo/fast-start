@@ -1,5 +1,7 @@
 import { ContentItem, ContentLabel } from '../../modules/content/content.state';
 import { ContentTile } from '../contentTile/contentTile.component';
+import { Fragment } from 'react';
+import './categoryItems.component.scss';
 
 interface CategoryItemsProps {
     categoryItems: Array<ContentItem>;
@@ -10,13 +12,17 @@ interface CategoryItemsProps {
 export function CategoryItems({
     categoryItems,
     label,
-    summaryLength
+    summaryLength,
 }: CategoryItemsProps): JSX.Element {
     return (
-        <div className="category-items">
+        <Fragment>
             {categoryItems.map((categoryItem: ContentItem) => (
-                <ContentTile item={categoryItem} label={label} summaryLength={summaryLength}/>
+                <ContentTile
+                    item={categoryItem}
+                    label={label}
+                    summaryLength={summaryLength}
+                />
             ))}
-        </div>
+        </Fragment>
     );
 }

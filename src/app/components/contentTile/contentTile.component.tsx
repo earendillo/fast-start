@@ -33,7 +33,7 @@ export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
                     </div>
                     <div className="content-tile-container">
                         <div className="content-tile-summary">
-                            <p>{`${item.summary.slice(0, summaryLength=item.summary.length-1)}...`}</p>
+                            <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
                                                     {/* to change - summaryLength / summaryLength=item.summary.length-1??*/}
 
                         </div>
@@ -66,7 +66,7 @@ export function ContentTile({ item, label, summaryLength }: ContentTileProps) {
                                 {item.title}
                             </h3>
                         </div>
-                        <p>{`${item.summary.slice(0, summaryLength=item.summary.length-1)}...`}</p>
+                        <p>{`${item.summary.slice(0, summaryLength)}...`}</p>
                         {/* to change - summaryLength */}
                     </div>
                     <div className="content-tile-newssite-and-date">

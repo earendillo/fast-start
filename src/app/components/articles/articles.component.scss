@@ -22,7 +22,6 @@
   }
 }
 
-.category-items {
-  @extend %rowSpaceBetween;
-
+.articles-items {
+  @extend %columnCentered;
 }
