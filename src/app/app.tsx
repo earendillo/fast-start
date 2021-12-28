@@ -23,9 +23,7 @@ export const routes = compose(
             <div className="main-container">
                 <View />
             </div>
-            <Footer
-                aboutPageInfo={'info about page - change me'}
-            />
+            <Footer />
         </div>
     )),
     mount({

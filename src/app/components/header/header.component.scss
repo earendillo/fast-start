@@ -92,6 +92,40 @@
         margin-right: 10vw;
         width: auto;
     }
+
+    a, button {
+        @extend %paddingStandard;
+    }
+    
+    a,
+    button
+    .navigation-list-item {
+        @include setMenuLink;
+        color: $color_text-contrast;
+        width: 100%;
+    
+        @include forLargeScreens($breakpoint-medium) {
+            color: $color_text-light;
+            font-weight: bold;
+            transition: color 0.5s;
+        }
+    }
+    
+    a:focus,
+    a:hover,
+    button:focus,
+    button:hover,
+    .navigation-list-item:focus,
+    .navigation-list-item:hover {
+        background-color: $color_background-contrast;
+        color: $color_text-dark;
+        font-weight: bold;
+    
+        @include forLargeScreens($breakpoint-medium) {
+            background-color: $color_background-dark;
+            color: $color_text-contrast;
+        }
+    }
 }
 
 .navigation-list {
@@ -123,40 +157,6 @@
 
 .visible {
     display: flex;
-}
-
-a, button {
-    @extend %paddingStandard;
-}
-
-a,
-button
-.navigation-list-item {
-    @include setMenuLink;
-    color: $color_text-contrast;
-    width: 100%;
-
-    @include forLargeScreens($breakpoint-medium) {
-        color: $color_text-light;
-        font-weight: bold;
-        transition: color 0.5s;
-    }
-}
-
-a:focus,
-a:hover,
-button:focus,
-button:hover,
-.navigation-list-item:focus,
-.navigation-list-item:hover {
-    background-color: $color_background-contrast;
-    color: $color_text-dark;
-    font-weight: bold;
-
-    @include forLargeScreens($breakpoint-medium) {
-        background-color: $color_background-dark;
-        color: $color_text-contrast;
-    }
 }
 
 li {

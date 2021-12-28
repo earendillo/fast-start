@@ -14,5 +14,6 @@
   h2 {
     @extend %paddingMedium;
     border-left: 10px solid $color_category-blog;
+    cursor: default;
   }
 }

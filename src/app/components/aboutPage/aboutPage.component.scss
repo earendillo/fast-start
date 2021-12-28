@@ -2,10 +2,24 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.about-page-container {
-  @extend %columnLeft;
+.about-page-items {
+  @extend %columnSpaceBetween;
+  @extend %marginZero;
   @extend %paletteWhite;
+  height: 100%;
   padding: 75px 10px 10px 10px;
+  width: 90%;
+
+  a {
+    @include setLinkLight;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  p {
+    padding: 30px 10px 0 5px;
+    text-align: justify;
+  }
 
   @include forLargeScreens($breakpoint-medium) {
     margin: auto 10vw;
@@ -13,36 +27,75 @@
 
   h2 {
     @extend %paddingMedium;
-    border-left: 10px solid $color_text-dark;
+    border-left: 10px solid $color_about-page;
+    cursor: default;
   }
 }
 
-.about-page-section {
+.about-page-container {
+  margin: 0 40px 0 40px;
+  padding: 10px 20px 10px 20px;
+
+  p em {
+    font-size: 0.7rem;
+    margin-left: 10px;
+
+    a {
+      @include setLinkLight;
+      margin-left: 10px;
+    }
+  }
+
+  ul li {
+    @extend %columnLeft;
+    border: none;
+    cursor: default;
+    display: list-item;
+    list-style: circle;
+    margin: 10px 10px 10px 30px;
+    padding: 0 10px 0 20px;
+
+    a {
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.about-page-content {
   @extend %marginStandard;
   @extend %paddingStandard;
   @extend %paletteLight;
-  height: 100%;
-  margin-bottom: 0;
+  @extend %columnSpaceBetween;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  transition: width 0.3s, height 0.3s;
+  width: 90%;
 
-  @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-    margin-top: 0;
+  &:hover {
+    background-color: $color_background-hover;
+    width: 91%;
   }
+}
 
-  a {
-    @include setLinkLight;
-  }
+.about-page-header {
+  @extend %rowLeft;
+  align-items: center;
+  border-left: 10px solid $color_about-page;
 
   h3 {
     @extend %paddingMedium;
-    border-left: 10px solid $color_section1;
+    cursor: default;
   }
 
   img {
-    @include setImageDisplay(50px, 50px);
-  }
+    @include setImageDisplay(30px, 30px);
+    padding-left: 20px;
+    transition: transform 1s;
 
-  p {
-    @extend %paddingLargeLeft;
-    font-size: 0.7rem;
+    &:hover {
+      transform: rotate(-90deg);
+    }
   }
 }

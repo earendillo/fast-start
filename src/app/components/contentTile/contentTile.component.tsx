@@ -10,7 +10,7 @@ export interface ContentTileProps {
 
 export function ContentTile({ item, label, specifiedLength }: ContentTileProps) {
     const summaryLength = item.summary.length;
-    const usedLength = specifiedLength > summaryLength ? summaryLength : specifiedLength;
+    const usedLength = specifiedLength > summaryLength ? summaryLength-3 : specifiedLength;
 
     return (
         <section
@@ -36,7 +36,7 @@ export function ContentTile({ item, label, specifiedLength }: ContentTileProps) 
                     </div>
                     <div className="content-tile-container">
                         <div className="content-tile-summary">
-                            <p>{`${item.summary.slice(0, usedLength)}...`}</p>
+                            <p>{`${item.summary.slice(0, usedLength)}`}</p>
                         </div>
                         <div className="content-tile-newssite-and-date">
                             <span>{`${item.newsSite}, ${
