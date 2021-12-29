@@ -14,19 +14,19 @@ export function Blogs() {
     if (content.pending) {
         return <LoadingIndicator />;
     }
-    if (content.blogs.length) {
-        return (
-            content && (
-                <div className="blogs-content">
-                    <h2>Blogs</h2>
-                    <CategoryItems
-                        categoryItems={content.blogs}
-                        label={ContentLabel.Blog}
-                        specifiedLength={500}
-                    />
-                </div>
-            )
-        );
+
+    if (content.error) {
+        return <div>Content error occured.</div>;
     }
-    return <div></div>;
+
+    return (
+        <div className="blogs-content">
+            <h2>Blogs</h2>
+            <CategoryItems
+                categoryItems={content.blogs}
+                label={ContentLabel.Blog}
+                length={500}
+            />
+        </div>
+    );
 }

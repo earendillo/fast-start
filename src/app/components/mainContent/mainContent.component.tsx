@@ -13,35 +13,34 @@ export function MainContent(): JSX.Element {
     if (content.pending) {
         return <LoadingIndicator />;
     }
-    if (content.articles.length) {
-        //articles in content.articles.length - to change -> content.length?
-        return (
-            content && (
-                <div className="main-content-container" id="main-content">
-                    <div className="category-items">
-                        <CategoryItems
-                            categoryItems={content.articles?.slice(0, 2)}
-                            label={ContentLabel.Article}
-                            specifiedLength={120}
-                        />
-                    </div>
-                    <div className="category-items">
-                        <CategoryItems
-                            categoryItems={content.reports?.slice(0, 2)}
-                            label={ContentLabel.Report}
-                            specifiedLength={120}
-                        />
-                    </div>
-                    <div className="category-items">
-                        <CategoryItems
-                            categoryItems={content.blogs?.slice(0, 2)}
-                            label={ContentLabel.Blog}
-                            specifiedLength={120}
-                        />
-                    </div>
-                </div>
-            )
-        );
+
+    if (content.error) {
+        return <div>Content error occured.</div>;
     }
-    return <div></div>;
+
+    return (
+        <div className="main-content-container">
+            <div className="category-items">
+                <CategoryItems
+                    categoryItems={content.articles?.slice(0, 2)}
+                    label={ContentLabel.Article}
+                    length={120}
+                />
+            </div>
+            <div className="category-items">
+                <CategoryItems
+                    categoryItems={content.reports?.slice(0, 2)}
+                    label={ContentLabel.Report}
+                    length={120}
+                />
+            </div>
+            <div className="category-items">
+                <CategoryItems
+                    categoryItems={content.blogs?.slice(0, 2)}
+                    label={ContentLabel.Blog}
+                    length={120}
+                />
+            </div>
+        </div>
+    );
 }

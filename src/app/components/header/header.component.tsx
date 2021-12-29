@@ -9,7 +9,7 @@ interface MainHeaderProps {
 
 export function MainHeader({ appName }: MainHeaderProps) {
     const [isMenuVisible, setMenuVisible] = useState(false);
-    const onClickHandler = () => setMenuVisible(!isMenuVisible);
+    const handleClick = () => setMenuVisible(!isMenuVisible);
     const iconVisibilityClass = isMenuVisible ? 'animate' : '';
     const menuVisibilityClass = isMenuVisible ? 'visible' : 'hiddenIfMobile';
 
@@ -18,7 +18,7 @@ export function MainHeader({ appName }: MainHeaderProps) {
             <div className="header-logo-and-icon-container">
                 <div
                     className="hamburger-icon-container"
-                    onClick={onClickHandler}
+                    onClick={handleClick}
                 >
                     <div
                         className={`hamburger-icon ${iconVisibilityClass}`}
@@ -28,29 +28,29 @@ export function MainHeader({ appName }: MainHeaderProps) {
                 {/* source of free rocket svg: https://pixabay.com/pl/vectors/okr%c4%99t-rakietowy-statek-kosmiczny-303591/ */}
 
                 <div className="product-name-container">
-                    <img className="logo" src={rocket} alt="rocket logo" />
+                    <img className="logo" src={rocket} alt="White rocket that rotates on hover" />
                     <p>{appName}</p>
                 </div>
             </div>
             <div className={`navbar-container ${menuVisibilityClass}`}>
                 <ul className="navigation-list">
                     <li className="navigation-list-item">
-                        <Link onClick={onClickHandler} href={'/'}>
+                        <Link onClick={handleClick} href={'/'}>
                             Home
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={onClickHandler} href={'/articles'}>
+                        <Link onClick={handleClick} href={'/articles'}>
                             Articles
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={onClickHandler} href={'/reports'}>
+                        <Link onClick={handleClick} href={'/reports'}>
                             Reports
                         </Link>
                     </li>
                     <li className="navigation-list-item">
-                        <Link onClick={onClickHandler} href={'/blogs'}>
+                        <Link onClick={handleClick} href={'/blogs'}>
                             Blogs
                         </Link>
                     </li>

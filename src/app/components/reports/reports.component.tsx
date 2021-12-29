@@ -14,19 +14,19 @@ export function Reports(): JSX.Element {
     if (content.pending) {
         return <LoadingIndicator />;
     }
-    if (content.reports.length) {
-        return (
-            content && (
-                <div className="reports-content">
-                    <h2>Reports</h2>
-                    <CategoryItems
-                        categoryItems={content.reports}
-                        label={ContentLabel.Report}
-                        specifiedLength={500}
-                    />
-                </div>
-            )
-        );
+
+    if (content.error) {
+        return <div>Content error occured.</div>;
     }
-    return <div></div>;
+
+    return (
+        <div className="reports-content">
+            <h2>Reports</h2>
+            <CategoryItems
+                categoryItems={content.reports}
+                label={ContentLabel.Report}
+                length={500}
+            />
+        </div>
+    );
 }

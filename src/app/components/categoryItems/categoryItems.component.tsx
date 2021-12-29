@@ -6,13 +6,13 @@ import { Fragment } from 'react';
 interface CategoryItemsProps {
     categoryItems: Array<ContentItem>;
     label: ContentLabel;
-    specifiedLength: number;
+    length: number;
 }
 
 export function CategoryItems({
     categoryItems,
     label,
-    specifiedLength,
+    length,
 }: CategoryItemsProps): JSX.Element {
     return (
         <Fragment>
@@ -20,7 +20,7 @@ export function CategoryItems({
                 <ContentTile
                     item={categoryItem}
                     label={label}
-                    specifiedLength={specifiedLength}
+                    length={length}
                 />
             ))}
         </Fragment>
