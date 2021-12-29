@@ -40,8 +40,7 @@
     @extend %columnSpaceBetween;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background-color 0.3s;
-    transition: width 0.3s, height 0.3s;
+    transition: background-color 0.3s, width 0.3s;
     width: 90%;
 
     &:hover {
@@ -63,9 +62,6 @@
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         flex-direction: row;
-    }
-
-    @include forLargeScreens($breakpoint-medium) {
     }
 }
 

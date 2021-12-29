@@ -1,10 +1,10 @@
-import React from 'react';
-import { useStoreon } from 'storeon/react';
-import { useEffect } from 'react';
-import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
-import { ContentLabel } from '../../modules/content/content.state';
-import { CategoryItems } from '../categoryItems.component.tsx/categoryItems.component';
 import './blogs.component.scss';
+import { CategoryItems } from '../categoryItems/categoryItems.component';
+import { ContentLabel } from '../../modules/content/content.state';
+import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import { useEffect } from 'react';
+import { useStoreon } from 'storeon/react';
+import React from 'react';
 
 export function Blogs() {
     const { content } = useStoreon('content');

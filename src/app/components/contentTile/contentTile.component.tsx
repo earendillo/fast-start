@@ -1,6 +1,6 @@
-import React from 'react';
 import './contentTile.component.scss';
 import { ContentItem, ContentLabel } from '../../modules/content/content.state';
+import React from 'react';
 
 export interface ContentTileProps {
     item: ContentItem;

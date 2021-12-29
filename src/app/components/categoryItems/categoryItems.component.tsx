@@ -1,7 +1,7 @@
+import './categoryItems.component.scss';
 import { ContentItem, ContentLabel } from '../../modules/content/content.state';
 import { ContentTile } from '../contentTile/contentTile.component';
 import { Fragment } from 'react';
-import './categoryItems.component.scss';
 
 interface CategoryItemsProps {
     categoryItems: Array<ContentItem>;

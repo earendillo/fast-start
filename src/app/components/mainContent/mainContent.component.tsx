@@ -1,9 +1,9 @@
-import { useStoreon } from 'storeon/react';
-import { useEffect } from 'react';
-import { ContentLabel } from '../../modules/content/content.state';
 import './mainContent.component.scss';
+import { CategoryItems } from '../categoryItems/categoryItems.component';
+import { ContentLabel } from '../../modules/content/content.state';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
-import { CategoryItems } from '../categoryItems.component.tsx/categoryItems.component';
+import { useEffect } from 'react';
+import { useStoreon } from 'storeon/react';
 
 export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');
@@ -14,9 +14,10 @@ export function MainContent(): JSX.Element {
         return <LoadingIndicator />;
     }
     if (content.articles.length) {
+        //articles in content.articles.length - to change -> content.length?
         return (
             content && (
-                <div className="main-content-container">
+                <div className="main-content-container" id="main-content">
                     <div className="category-items">
                         <CategoryItems
                             categoryItems={content.articles?.slice(0, 2)}
