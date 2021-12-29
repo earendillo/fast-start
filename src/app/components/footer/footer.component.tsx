@@ -1,9 +1,5 @@
 import './footer.component.scss';
 
-// interface FooterProps {
-//     aboutPageInfo: string;
-// }
-
 export function Footer(): JSX.Element {
     function renderAboutPage(): JSX.Element {
         return (

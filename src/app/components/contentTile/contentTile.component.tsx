@@ -1,21 +1,21 @@
-import React from 'react';
 import './contentTile.component.scss';
 import { ContentItem, ContentLabel } from '../../modules/content/content.state';
+import { trimDate, trimSummary } from '../../utils/utils';
+import React from 'react';
 
 export interface ContentTileProps {
     item: ContentItem;
     label: ContentLabel;
-    specifiedLength: number;
+    length: number;
 }
 
-export function ContentTile({ item, label, specifiedLength }: ContentTileProps) {
-    const summaryLength = item.summary.length;
-    const usedLength = specifiedLength > summaryLength ? summaryLength-3 : specifiedLength;
+export function ContentTile({ item, label, length }: ContentTileProps) {
+    const handleClick = () => window.open(item.url, '_blank');
 
     return (
         <section
             className="content-tile"
-            onClick={() => window.open(item.url, '_blank')}
+            onClick={handleClick}
         >
             <div className="for-small-screens">
                 <div className="content-tile-title">
@@ -25,7 +25,7 @@ export function ContentTile({ item, label, specifiedLength }: ContentTileProps) 
                 </div>
                 <div className="content-tile-img-and-container">
                     <div className="content-tile-img">
-                        <img alt="content item pic" src={`${item.imageUrl}`} />
+                        <img alt="Image illustrating current content" src={`${item.imageUrl}`} />
                         <div
                             className={`content-tile-label ${ContentLabel[
                                 label
@@ -36,13 +36,13 @@ export function ContentTile({ item, label, specifiedLength }: ContentTileProps) 
                     </div>
                     <div className="content-tile-container">
                         <div className="content-tile-summary">
-                            <p>{`${item.summary.slice(0, usedLength)}`}</p>
+                            <p>{trimSummary(item.summary, length)}</p>
                         </div>
                         <div className="content-tile-newssite-and-date">
                             <span>{`${item.newsSite}, ${
                                 item.updatedAt
-                                    ? item.updatedAt.slice(0, 10)
-                                    : item.publishedAt.slice(0, 10)
+                                    ? trimDate(item.updatedAt)
+                                    : trimDate(item.publishedAt)
                             }`}</span>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export function ContentTile({ item, label, specifiedLength }: ContentTileProps) 
 
             <div className="for-medium-and-large-screens">
                 <div className="content-tile-img">
-                    <img alt="content item pic" src={`${item.imageUrl}`} />
+                    <img alt="Image illustrating current content" src={`${item.imageUrl}`} />
                     <div
                         className={`content-tile-label ${ContentLabel[
                             label
@@ -67,13 +67,13 @@ export function ContentTile({ item, label, specifiedLength }: ContentTileProps) 
                                 {item.title}
                             </h3>
                         </div>
-                        <p>{`${item.summary.slice(0, usedLength)}...`}</p>
+                        <p>{trimSummary(item.summary, length)}</p>
                     </div>
                     <div className="content-tile-newssite-and-date">
                         <span>{`${item.newsSite}, ${
                             item.updatedAt
-                                ? item.updatedAt.slice(0, 10)
-                                : item.publishedAt.slice(0, 10)
+                                ? trimDate(item.updatedAt)
+                                : trimDate(item.publishedAt)
                         }`}</span>
                     </div>
                 </div>

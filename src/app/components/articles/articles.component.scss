@@ -17,7 +17,7 @@
     cursor: default;
   }
 }
-///////////////////
+
 .articles-content-container {
   @extend %columnSpaceBetween;
   @extend %paletteWhite;
@@ -26,7 +26,7 @@
     margin: auto 10vw auto 10vw;
   }
 }
-/////////////////////////
+
 .articles-items {
   @extend %columnCentered;
 }
