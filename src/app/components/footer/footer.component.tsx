@@ -1,10 +1,14 @@
 import './footer.component.scss';
 
-interface FooterProps {
-    aboutPageInfo: string;
-}
+export function Footer(): JSX.Element {
+    function renderAboutPage(): JSX.Element {
+        return (
+            <div>
+                <a href={'/about-page'}>About page</a>
+            </div>
+        );
+    }
 
-export function Footer({ aboutPageInfo }: FooterProps): JSX.Element {
     function renderAPIInfo(): JSX.Element {
         return (
             <p>
@@ -13,7 +17,7 @@ export function Footer({ aboutPageInfo }: FooterProps): JSX.Element {
                     href="https://api.spaceflightnewsapi.net/v3/documentation"
                     target="_blank"
                 >
-                     Spaceflight News API
+                    Spaceflight News API
                 </a>
             </p>
         );
@@ -21,7 +25,7 @@ export function Footer({ aboutPageInfo }: FooterProps): JSX.Element {
 
     return (
         <div className="footer-container">
-            <div className="info-container">{aboutPageInfo}</div>
+            <div className="info-container">{renderAboutPage()}</div>
             <div className="used-api-container">{renderAPIInfo()}</div>
         </div>
     );

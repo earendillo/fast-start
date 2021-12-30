@@ -103,20 +103,20 @@
     }
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        height: 280px;
+        height: 95%;
         width: 50%;
 
         &:hover {
-            height: 281px;
+            height: 96%;
             width: 51%;
         }
     }
     @include forLargeScreens($breakpoint-medium) {
-        height: 280px;
+        height: 95%;
         width: 50%;
 
         &:hover {
-            height: 281px;
+            height: 96%;
             width: 51%;
         }
     }
@@ -180,8 +180,8 @@
     @extend %columnCentered;
 
     h3 {
+        @extend %paddingStandard;
         margin-bottom: 10px;
-        padding: 10px;
     }
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
@@ -193,7 +193,7 @@
     }
 
     p {
-        padding: 10px;
+        @extend %paddingStandard;
     }
 }
 
@@ -204,15 +204,15 @@
         display: flex;
 
         h3 {
+            @extend %marginZero;
             font-size: 1rem;
-            margin: 0;
-            padding-bottom: 0;
             height: 100px;
+            padding-bottom: 0;
         }
 
         p {
-            padding: 0 10px;
             margin: 0;
+            padding: 0 10px;
         }
     }
 
@@ -238,7 +238,7 @@
 }
 
 img {
-    height: 280px;
+    height: 100%;
     max-height: 100%;
     object-fit: cover;
     width: 100%;

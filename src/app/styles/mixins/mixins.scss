@@ -73,10 +73,8 @@
   max-width: $maxWidth;
 }
 
-
 @mixin setLinkDarkContrast() {
   @extend %paletteDarkContrast;
-  border: none;
   text-decoration: none;
   transition: color 0.5s;
 
@@ -85,13 +83,11 @@
   }
   &:hover {
     color: $color_text-contrast;
-    cursor: pointer;
   }
 }
 
 @mixin setLinkDark() {
   @extend %paletteDark;
-  border: none;
   text-decoration: none;
   transition: color 0.5s;
 
@@ -101,22 +97,38 @@
   &:hover,
   &:focus {
     color: $color_text-contrast;
-    cursor: pointer;
+  }
+}
+
+@mixin setLinkLight() {
+  color: $color_text-dark;
+  text-decoration: none;
+  transition: color 0.5s;
+
+  &:active {
+    color: $color_text-contrast;
+    background-color: none;
+
+  }
+
+  &:hover,
+  &:focus {
+    color: $color_text-contrast;
+    background-color: none;
+
   }
 }
 
 @mixin setMenuLink() {
-  // @extend %paletteDark;
   color: $color_text-light;
-  border: none;
   text-decoration: none;
 
   &:active {
     color: $color_text-active;
   }
+
   &:hover,
   &:focus {
     color: $color_text-contrast;
-    cursor: pointer;
   }
 }

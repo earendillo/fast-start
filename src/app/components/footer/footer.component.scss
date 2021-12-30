@@ -7,6 +7,11 @@
     @extend %paletteDark;
     border-top: 3px solid $color-contrast;
 
+    a {
+        @extend %paddingSmall;
+        @include setLinkDark;
+    }
+
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         justify-content: space-around;
@@ -23,6 +28,4 @@
     @extend %rowRight;
 }
 
-a {
-    @extend %paddingSmall;
-}
+

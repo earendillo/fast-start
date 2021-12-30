@@ -2,7 +2,100 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.about-page-component {
-  @extend %columnCentered;
+.about-page-items {
+  @extend %columnSpaceBetween;
+  @extend %marginZero;
+  @extend %paletteWhite;
+  height: 100%;
+  padding: 75px 10px 10px 10px;
+  width: 90%;
+
+  a {
+    @include setLinkLight;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  p {
+    padding: 30px 10px 0 5px;
+    text-align: justify;
+  }
+
+  @include forLargeScreens($breakpoint-medium) {
+    margin: auto 10vw;
+  }
+
+  h2 {
+    @extend %paddingMedium;
+    border-left: 10px solid $color_about-page;
+    cursor: default;
+  }
+}
+
+.about-page-container {
+  margin: 0 40px;
+  padding: 10px 20px;
+
+  p em {
+    font-size: 0.7rem;
+    margin-left: 10px;
+
+    a {
+      @include setLinkLight;
+      margin-left: 10px;
+    }
+  }
+
+  ul li {
+    @extend %columnLeft;
+    border: none;
+    cursor: default;
+    display: list-item;
+    list-style: circle;
+    margin: 10px 10px 10px 30px;
+    padding: 0 10px 0 20px;
+
+    a {
+      @extend %marginZero;
+      @extend %paddingZero;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.about-page-content {
+  @extend %marginStandard;
+  @extend %paddingStandard;
   @extend %paletteLight;
+  @extend %columnSpaceBetween;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  transition: width 0.3s, height 0.3s;
+  width: 90%;
+
+  &:hover {
+    background-color: $color_background-hover;
+    width: 91%;
+  }
+}
+
+.about-page-header {
+  @extend %rowLeft;
+  align-items: center;
+  border-left: 10px solid $color_about-page;
+
+  h3 {
+    @extend %paddingMedium;
+    cursor: default;
+  }
+
+  img {
+    @include setImageDisplay(30px, 30px);
+    padding-left: 20px;
+    transition: transform 1s;
+
+    &:hover {
+      transform: rotate(-90deg);
+    }
+  }
 }
