@@ -24,6 +24,7 @@ export function MainContent(): JSX.Element {
         <Fragment>
             <LandingPage />
             <div className="main-content-container">
+                <h2>Latest news</h2>
                 <div className="category-items">
                     <CategoryItems
                         categoryItems={content.articles?.slice(0, 2)}

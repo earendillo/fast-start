@@ -6,12 +6,12 @@ export function AboutPage() {
         <div className="about-page-items">
             <h2>About page</h2>
 
-            <div className="about-page-content">
-                <div className="about-page-header">
+            <div className="about-page-item">
+                <div className="about-page-item-title">
                     <img alt="White rocket that moves on hover" src={rocket} />
                     <h3>Some facts</h3>
                 </div>
-                <div className="about-page-container">
+                <div className="about-page-list">
                     <ul>
                         <li>There are over 140 spaceflight launches in 2021</li>
                         <li>
@@ -42,12 +42,12 @@ export function AboutPage() {
                 </div>
             </div>
 
-            <div className="about-page-content">
-                <div className="about-page-header">
+            <div className="item-container">
+                <div className="about-page-item-title">
                     <img alt="White rocket that moves on hover" src={rocket} />
                     <h3>We provide fresh content</h3>
                 </div>
-                <div className="about-page-container">
+                <div className="about-page-list">
                     <ul>
                         <li>Latest spaceflight news</li>
                         <li>Detailed blogs about missions and launches</li>
@@ -56,12 +56,12 @@ export function AboutPage() {
                 </div>
             </div>
 
-            <div className="about-page-content">
-                <div className="about-page-header">
+            <div className="item-container">
+                <div className="about-page-item-title">
                     <img alt="White rocket that moves on hover" src={rocket} />
                     <h3>Our mission and core values</h3>
                 </div>
-                <div className="about-page-container">
+                <div className="about-page-list">
                     <ul>
                         <li>To deliver high quality product</li>
                         <li>To deliver interesting content</li>
@@ -72,12 +72,12 @@ export function AboutPage() {
                 </div>
             </div>
 
-            <div className="about-page-content">
-                <div className="about-page-header">
+            <div className="item-container">
+                <div className="about-page-item-title">
                     <img alt="White rocket that moves on hover" src={rocket} />
                     <h3>Our team</h3>
                 </div>
-                <div className="about-page-container">
+                <div className="about-page-list">
                     <ul>
                         <li>
                             <a

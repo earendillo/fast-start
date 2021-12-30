@@ -17,6 +17,7 @@
         width: 100%;
 
         h3 {
+            // @extend %fontMedium;
             font-size: 1.1rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -27,9 +28,9 @@
 .main-content-container {
     @extend %columnSpaceBetween;
     @extend %paletteWhite;
-    padding-top: 95px;
+    padding: 25px 10px;
     position: relative;
-    
+
     @include forLargeScreens($breakpoint-medium) {
         margin: auto 10vw;
     }
@@ -40,5 +41,9 @@
 
     .content-tile-img {
         height: 280px;
+    }
+
+    h2 {
+        @include setCategoryHeader($color_contrast);
     }
 }

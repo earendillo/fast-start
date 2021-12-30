@@ -20,7 +20,7 @@ export function Blogs() {
     }
 
     return (
-        <div className="blogs-content">
+        <div className="blogs-items">
             <h2>Blogs</h2>
             <CategoryItems
                 categoryItems={content.blogs}

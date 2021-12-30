@@ -20,7 +20,7 @@ export function Reports(): JSX.Element {
     }
 
     return (
-        <div className="reports-content">
+        <div className="reports-items">
             <h2>Reports</h2>
             <CategoryItems
                 categoryItems={content.reports}

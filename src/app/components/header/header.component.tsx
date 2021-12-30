@@ -11,11 +11,11 @@ export function MainHeader({ appName }: MainHeaderProps) {
     const [isMenuVisible, setMenuVisible] = useState(false);
     const handleClick = () => setMenuVisible(!isMenuVisible);
     const iconVisibilityClass = isMenuVisible ? 'animate' : '';
-    const menuVisibilityClass = isMenuVisible ? 'visible' : 'hiddenIfMobile';
+    const menuVisibilityClass = isMenuVisible ? '' : 'hiddenIfMobile';
 
     return (
-        <nav className="navigation-container">
-            <div className="header-logo-and-icon-container">
+        <nav className="menu-items">
+            <div className="header">
                 <div
                     className="hamburger-icon-container"
                     onClick={handleClick}
@@ -32,30 +32,28 @@ export function MainHeader({ appName }: MainHeaderProps) {
                     <p>{appName}</p>
                 </div>
             </div>
-            <div className={`navbar-container ${menuVisibilityClass}`}>
-                <ul className="navigation-list">
-                    <li className="navigation-list-item">
+            <ul className={`nav ${menuVisibilityClass}`}>
+                    <li className="nav-item">
                         <Link onClick={handleClick} href={'/'}>
                             Home
                         </Link>
                     </li>
-                    <li className="navigation-list-item">
+                    <li className="nav-item">
                         <Link onClick={handleClick} href={'/articles'}>
                             Articles
                         </Link>
                     </li>
-                    <li className="navigation-list-item">
+                    <li className="nav-item">
                         <Link onClick={handleClick} href={'/reports'}>
                             Reports
                         </Link>
                     </li>
-                    <li className="navigation-list-item">
+                    <li className="nav-item">
                         <Link onClick={handleClick} href={'/blogs'}>
                             Blogs
                         </Link>
                     </li>
                 </ul>
-            </div>
         </nav>
     );
 }

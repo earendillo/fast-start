@@ -4,11 +4,12 @@
 
 .landing-btn {
     @extend %paddingStandard;
+    @extend %transitionFast;
     @include setLinkDark;
+    //add placeholder to button style
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, height 0.3s, width 0.3s;
 
     &:hover {
         background-color: $color_background-contrast;

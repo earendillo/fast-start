@@ -1,46 +1,67 @@
-@import '../../styles/mixins/mixins.scss';
-@import '../../styles/variables/variables.scss';
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/variables/variables.scss";
 
 %columnCentered {
     @include setFlexDisplay(column, center, center);
-};
+}
 %columnLeft {
     @include setFlexDisplay(column, flex-start, flex-start);
-};
+}
 %columnSpaceBetween {
     @include setFlexDisplay(column, space-between, space-between);
-};
+}
+%fontVerySmall {
+    font-size: 0.7rem;
+}
+%fontSmall {
+    font-size: 0.8rem;
+}
+%fontMedium {
+    font-size: 1.1rem;
+}
+%fontLarge {
+    font-size: 1.4rem;
+}
+////////////////////////////////////////////////////////////////
+//to adjust - tile header
+%headerTile {
+    @extend %fontSmall;
+    @extend %marginZero;
+    padding-left: 10px;
+    text-align: left;
 
-%rowCentered {
-    @include setFlexDisplay(row, center, center);
-};
-%rowLeft {
-    @include setFlexDisplay(row, flex-start, flex-start);
-};
-%rowRight {
-    @include setFlexDisplay(row, flex-end, flex-end);
-};
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        font-size: 1.1rem;
+    }
 
+    @include forLargeScreens($breakpoint-medium) {
+        font-size: 1.4rem;
+    }
+}
+////////////////////////////////////////////////////////////////
+
+%imageBorder {
+    border-bottom: 3px solid $color-contrast;
+    border-right: 3px solid $color-contrast;
+}
 %marginZero {
     margin: 0px;
-};
+}
 %marginStandard {
     margin: 10px;
-};
-
+}
 %paddingZero {
     padding: 0px;
-};
+}
 %paddingSmall {
     padding: 5px;
-};
+}
 %paddingStandard {
     padding: 10px;
-};
+}
 %paddingMedium {
     padding: 20px;
 }
-
 %paletteDark {
     background-color: $color_background-dark;
     color: $color_text-light;
@@ -52,8 +73,27 @@
 %paletteLight {
     background-color: $color_background-light;
     color: $color_text-dark;
+
+    &:hover {
+        background-color: $color_background-hover;
+    }
 }
 %paletteWhite {
     background-color: $color_background-white;
     color: $color_text-dark;
+}
+%rowCentered {
+    @include setFlexDisplay(row, center, center);
+}
+%rowLeft {
+    @include setFlexDisplay(row, flex-start, flex-start);
+}
+%rowRight {
+    @include setFlexDisplay(row, flex-end, flex-end);
+}
+%rowSpaceBetween {
+    @include setFlexDisplay(row, center, space-between);
+}
+%transitionFast {
+    transition: background-color 0.3s, color 0.5s, height 0.3s, width 0.3s;
 }

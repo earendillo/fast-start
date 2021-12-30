@@ -1,3 +1,22 @@
+@mixin setCategoryHeader($categoryColor) {
+  border-left: 10px solid $categoryColor;
+  cursor: default;
+  padding: 10px 0 10px 20px;
+}
+
+@mixin setCategoryLabelOnImg($colorCategory) {
+  @extend %columnCentered;
+  @extend %fontVerySmall;
+  background-color: $colorCategory;
+  bottom: 8px;
+  color: $color_text-light;
+  font-weight: bold;
+  left: 10px;
+  padding: 5px 10px;
+  position: absolute;
+  width: 25%;
+}
+
 @mixin forLargeScreens($breakpointMedium) {
   @media only screen and (min-width: $breakpointMedium) {
     @content;
@@ -68,11 +87,29 @@
   width: $barWidth;
 }
 
-@mixin setImageDisplay($maxWidth, $maxHeight) {
-  max-height: $maxHeight;
-  max-width: $maxWidth;
+@mixin setImageContainerDisplay($height, $width) {
+  @extend %marginStandard;
+  height: $height;
+  width: $width;
 }
 
+@mixin setImageDisplay($maxHeight, $maxWidth) {
+  height: 100%;
+  max-height: $maxHeight;
+  object-fit: cover;
+  width: $maxWidth;
+  width: 100%;
+}
+
+@mixin setLogoDisplay($height, $width, $degree, $time) {
+  height: $height;
+  transition: transform $time;
+  width: $width;
+
+    &:hover {
+        transform: rotate($degree);
+    }
+  }
 @mixin setLinkDark() {
   @extend %paletteDark;
   text-decoration: none;
@@ -96,27 +133,39 @@
   &:active {
     color: $color_text-contrast;
     background-color: none;
-
   }
 
   &:hover,
   &:focus {
     color: $color_text-contrast;
     background-color: none;
-
   }
 }
 
 @mixin setMenuLink() {
-  color: $color_text-light;
   text-decoration: none;
+  color: $color_text-contrast;
+  width: 100%;
+
+  @include forLargeScreens($breakpoint-medium) {
+    color: $color_text-light;
+    font-weight: bold;
+    transition: color 0.5s;
+  }
 
   &:active {
     color: $color_text-active;
   }
 
-  &:hover,
-  &:focus {
-    color: $color_text-contrast;
+  &:focus,
+  &:hover {
+    background-color: $color_background-contrast;
+    color: $color_text-dark;
+    font-weight: bold;
+
+    @include forLargeScreens($breakpoint-medium) {
+      background-color: $color_background-dark;
+      color: $color_text-contrast;
+    }
   }
 }

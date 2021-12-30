@@ -13,72 +13,34 @@ export function ContentTile({ item, label, length }: ContentTileProps) {
     const handleClick = () => window.open(item.url, '_blank');
 
     return (
-        <section className="content-tile" onClick={handleClick}>
-            <div className="for-small-screens">
-                <div className="content-tile-title">
-                    <h3 className={ContentLabel[label].toLowerCase()}>
-                        {item.title}
-                    </h3>
-                </div>
-                <div className="content-tile-img-and-container">
-                    <div className="content-tile-img">
-                        <img
-                            alt="Image illustrating current content"
-                            src={`${item.imageUrl}`}
-                        />
-                        <div
-                            className={`content-tile-label ${ContentLabel[
-                                label
-                            ].toLowerCase()}-label`}
-                        >
-                            {ContentLabel[label]}
-                        </div>
-                    </div>
-                    <div className="content-tile-container">
-                        <div className="content-tile-summary">
-                            <p>{trimSummary(item.summary, length)}</p>
-                        </div>
-                        <div className="content-tile-newssite-and-date">
-                            <span>{`${item.newsSite}, ${
-                                item.updatedAt
-                                    ? trimDate(item.updatedAt)
-                                    : trimDate(item.publishedAt)
-                            }`}</span>
-                        </div>
-                    </div>
+        <section className="tile" onClick={handleClick}>
+            <div className="tile-img-container">
+                <img
+                    className="tile-img"
+                    alt="Illustration of current content"
+                    src={`${item.imageUrl}`}
+                />
+                <div
+                    className={`label-${ContentLabel[
+                        label
+                    ].toLowerCase()}`}
+                >
+                    {ContentLabel[label]}
                 </div>
             </div>
-
-            <div className="for-medium-and-large-screens">
-                <div className="content-tile-img">
-                    <img
-                        alt="Image illustrating current content"
-                        src={`${item.imageUrl}`}
-                    />
-                    <div
-                        className={`content-tile-label ${ContentLabel[
-                            label
-                        ].toLowerCase()}-label`}
-                    >
-                        {ContentLabel[label]}
-                    </div>
+            <div className="tile-text-container">
+                <div className="summary">
+                        <h3 className={`tile-title-${ContentLabel[label].toLowerCase()}`}>
+                            {item.title}
+                        </h3>
+                    <p>{trimSummary(item.summary, length)}</p>
                 </div>
-                <div className="content-tile-container">
-                    <div className="content-tile-summary">
-                        <div className="content-tile-title">
-                            <h3 className={ContentLabel[label].toLowerCase()}>
-                                {item.title}
-                            </h3>
-                        </div>
-                        <p>{trimSummary(item.summary, length)}</p>
-                    </div>
-                    <div className="content-tile-newssite-and-date">
-                        <span>{`${item.newsSite}, ${
-                            item.updatedAt
-                                ? trimDate(item.updatedAt)
-                                : trimDate(item.publishedAt)
-                        }`}</span>
-                    </div>
+                <div className="newssite-and-date">
+                    <span>{`${item.newsSite}, ${
+                        item.updatedAt
+                            ? trimDate(item.updatedAt)
+                            : trimDate(item.publishedAt)
+                    }`}</span>
                 </div>
             </div>
         </section>

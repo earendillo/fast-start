@@ -20,15 +20,13 @@ export function Articles(): JSX.Element {
     }
 
     return (
-        <div className="articles-content">
+        <div className="articles-items">
             <h2>Articles</h2>
-            <div className="articles-items">
                 <CategoryItems
                     categoryItems={content.articles}
                     label={ContentLabel.Article}
                     length={500}
                 />
-            </div>
         </div>
     );
 }
