@@ -20,22 +20,13 @@
 %rowRight {
     @include setFlexDisplay(row, flex-end, flex-end);
 };
-%rowSpaceBetween {
-    @include setFlexDisplay(row, space-between, space-between);
-};
 
 %marginZero {
     margin: 0px;
 };
-%marginSmall {
-    margin: 5px;
-};
 %marginStandard {
     margin: 10px;
 };
-%marginMedium {
-    margin: 20px;
-}
 
 %paddingZero {
     padding: 0px;
@@ -49,14 +40,7 @@
 %paddingMedium {
     padding: 20px;
 }
-%paddingLargeLeft {
-    padding-left: 50px;
-}
 
-%paletteContrast {
-    background-color: $color_background-contrast;
-    color: $color_text-dark;
-}
 %paletteDark {
     background-color: $color_background-dark;
     color: $color_text-light;
@@ -67,10 +51,6 @@
 }
 %paletteLight {
     background-color: $color_background-light;
-    color: $color_text-dark;
-}
-%paletteMedium {
-    background-color: $color_background-medium-light;
     color: $color_text-dark;
 }
 %paletteWhite {

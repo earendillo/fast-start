@@ -5,7 +5,6 @@ import { Articles } from './components/articles/articles.component';
 import { Blogs } from './components/blogs/blogs.component';
 import { compose, mount, route, withView } from 'navi';
 import { Footer } from './components/footer/footer.component';
-import { LandingPage } from './components/landingPage/landingPage.component';
 import { MainContent } from './components/mainContent/mainContent.component';
 import { MainHeader } from './components/header/header.component';
 import { Reports } from './components/reports/reports.component';
@@ -21,7 +20,6 @@ export const routes = compose(
     withView((request) => (
         <div>
             <MainHeader appName={`Fast Start`} />
-            <LandingPage />
             <div className="main-container">
                 <View />
             </div>

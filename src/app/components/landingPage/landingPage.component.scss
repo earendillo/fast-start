@@ -16,7 +16,7 @@
         height: 40px;
         width: 90px;
     }
-    
+
     a {
         text-decoration: none;
     }
@@ -27,23 +27,33 @@
 .landing-page-container {
     @extend %columnCentered;
     @extend %paletteWhite;
-    background-image: url('../../images/landingImageSmall.jpg');
+    background-image: url("../../images/landingImageSmall.jpg");
     background-size: cover;
     border-bottom: 3px solid $color_contrast;
     max-width: 100%;
-    height: 650px;
+    height: 675px;
     padding-top: 95px;
     position: relative;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        background-image: url('../../images/landingImageMedium.jpg');
+        background-image: url("../../images/landingImageMedium.jpg");
     }
-    
+
     @include forLargeScreens($breakpoint-medium) {
-        background-image: url('../../images/landingImageLarge.jpg');
+        background-image: url("../../images/landingImageLarge.jpg");
+    }
+}
+
+.landing-page-content {
+    @extend %columnCentered;
+    @extend %paletteDark;
+    opacity: 50%;
+
+    .landing-btn {
+        @include setLinkDark;
     }
 
     h1 {
-        color: $color_text-landing-header;
+        color: $color_text-medium;
     }
 }

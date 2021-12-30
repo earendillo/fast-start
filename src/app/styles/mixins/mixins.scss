@@ -73,19 +73,6 @@
   max-width: $maxWidth;
 }
 
-@mixin setLinkDarkContrast() {
-  @extend %paletteDarkContrast;
-  text-decoration: none;
-  transition: color 0.5s;
-
-  &:active {
-    color: $color_text-active;
-  }
-  &:hover {
-    color: $color_text-contrast;
-  }
-}
-
 @mixin setLinkDark() {
   @extend %paletteDark;
   text-decoration: none;
@@ -94,6 +81,7 @@
   &:active {
     color: $color_text-active;
   }
+
   &:hover,
   &:focus {
     color: $color_text-contrast;
