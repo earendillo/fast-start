@@ -33,8 +33,8 @@
 }
 
 .about-page-container {
-  margin: 0 40px 0 40px;
-  padding: 10px 20px 10px 20px;
+  margin: 0 40px;
+  padding: 10px 20px;
 
   p em {
     font-size: 0.7rem;
@@ -56,9 +56,9 @@
     padding: 0 10px 0 20px;
 
     a {
+      @extend %marginZero;
+      @extend %paddingZero;
       font-size: 0.9rem;
-      margin: 0;
-      padding: 0;
     }
   }
 }

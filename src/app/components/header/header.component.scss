@@ -166,8 +166,8 @@ li {
     height: 50px;
 
     @include forLargeScreens($breakpoint-medium) {
+        @extend %paddingZero;
         border: none;
-        padding: 0;
         width: auto;
     }
 }
