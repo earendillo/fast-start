@@ -19,6 +19,7 @@
         height: 52px;
         width: 202px;
     }
+    
     a {
         @extend %fontStandard;
         color: $color_text-dark;
@@ -50,8 +51,9 @@
 }
 
 .landing-page-content {
-    color: $color_text-dark;
     @extend %fontLarge;
+    color: $color_text-dark;
+    cursor: default;
 
     h1 {
         @extend %fontExtraLarge;
