@@ -23,7 +23,7 @@ export function MainContent(): JSX.Element {
     return (
         <Fragment>
             <LandingPage />
-            <div className="main-content-container">
+            <div id="main-content" className="main-content-container">
                 <h2>Latest news</h2>
                 <div className="category-items">
                     <CategoryItems

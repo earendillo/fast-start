@@ -7,28 +7,31 @@
     height: 200%;
     width: 100%;
 
-    .content-tile-newssite-and-date {
-        display: none;
-    }
-
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         height: 50%;
         width: 100%;
 
         h3 {
-            // @extend %fontMedium;
             font-size: 1.1rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
         }
+    }
+
+    .content-tile-newssite-and-date {
+        display: none;
+    }
+
+    .tile {
+        height: 400px;
     }
 }
 
 .main-content-container {
     @extend %columnSpaceBetween;
     @extend %paletteWhite;
-    padding: 25px 10px;
+    padding: 75px 10px 25px 10px;
     position: relative;
 
     @include forLargeScreens($breakpoint-medium) {

@@ -21,7 +21,6 @@
 
 .summary {
     @extend %fontSmall;
-    // @extend %paddingZero;
 
     p {
         @extend %paddingZero;
@@ -37,25 +36,32 @@
     @extend %paletteLight;
     @extend %transitionFast;
     cursor: pointer;
-    width: 90%;
     height: 525px;
-    border: 1px solid blue;
+    width: 90%;
 
     &:hover {
         width: 91%;
     }
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        flex-direction: row;
         height: 300px;
+        justify-content: space-around;
     }
 
     @include forLargeScreens($breakpoint-medium) {
-        flex-direction: row;
+        height: 400px;
     }
 }
 
 .tile-img {
     @include setImageDisplay(220px, 220px);
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+    }
 }
 
 .tile-img-container {
@@ -64,31 +70,27 @@
     position: relative;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        max-height: 350px;
-    }
-
-    @include forLargeScreens($breakpoint-medium) {
-        height: 95%;
-        width: 50%;
+        height: 94%;
+        width: 47.5%;
     }
 }
 
 .tile-text-container {
-    @extend %columnSpaceBetween;
+    @extend %columnSpaceAround;
     @extend %marginZero;
     @extend %paddingZero;
-    border: 1px solid red;
     height: 100%;
     width: 90%;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
-        width: 50%;
+        height: 94%;
+        width: 47.5%;
     }
 
     h3 {
         cursor: pointer;
     }
-    
+
     p {
         cursor: pointer;
         padding: 30px 10px 0 5px;
@@ -96,9 +98,6 @@
     }
 }
 
-
-/////////////////////////////////////////////////////////////////////////
-//adjust header tile
 .tile-title-article {
     @extend %headerTile;
     @include setCategoryHeader($color_category-article);
@@ -113,4 +112,3 @@
     @extend %headerTile;
     @include setCategoryHeader($color_category-report);
 }
-////////////////////////////////////////////////////////////////////////////

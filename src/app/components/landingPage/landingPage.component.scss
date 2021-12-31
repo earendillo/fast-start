@@ -2,39 +2,43 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.landing-btn {
+.landing-page-btn {
     @extend %paddingStandard;
     @extend %transitionFast;
-    @include setLinkDark;
-    //add placeholder to button style
-    border-radius: 5px;
-    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid $color_dark;
     cursor: pointer;
+    height: 50px;
+    margin: 10px;
+    padding: 10px 20px;
+    width: 200px;
 
     &:hover {
         background-color: $color_background-contrast;
-        color: $color_dark;
-        height: 40px;
-        width: 90px;
+        height: 52px;
+        width: 202px;
     }
-
     a {
+        @extend %fontStandard;
+        color: $color_text-dark;
         text-decoration: none;
     }
 }
 
-//source of landing image: https://unsplash.com/photos/yZygONrUBe8
+//source of landing image: https://unsplash.com/photos/-p-KCm6xB9I
 
-.landing-page-container {
+.landing-page-background {
     @extend %columnCentered;
-    @extend %paletteWhite;
     background-image: url("../../images/landingImageSmall.jpg");
+    background-position: center;
     background-size: cover;
     border-bottom: 3px solid $color_contrast;
+    height: 100vh;
     max-width: 100%;
-    height: 675px;
-    padding-top: 95px;
+    padding: 0 20px;
     position: relative;
+    text-align: center;
 
     @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
         background-image: url("../../images/landingImageMedium.jpg");
@@ -46,15 +50,15 @@
 }
 
 .landing-page-content {
-    @extend %columnCentered;
-    @extend %paletteDark;
-    opacity: 50%;
-
-    .landing-btn {
-        @include setLinkDark;
-    }
+    color: $color_text-dark;
+    @extend %fontLarge;
 
     h1 {
-        color: $color_text-medium;
+        @extend %fontExtraLarge;
+        line-height: 1.2;
+    }
+
+    h3 {
+        @extend %fontMedium;
     }
 }

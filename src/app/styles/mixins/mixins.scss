@@ -8,13 +8,14 @@
   @extend %columnCentered;
   @extend %fontVerySmall;
   background-color: $colorCategory;
+  border-radius: 5px;
   bottom: 8px;
   color: $color_text-light;
   font-weight: bold;
   left: 10px;
   padding: 5px 10px;
   position: absolute;
-  width: 25%;
+  width: 100px;
 }
 
 @mixin forLargeScreens($breakpointMedium) {
