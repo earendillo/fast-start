@@ -83,6 +83,20 @@
     &:hover {
         background-color: $color_background-hover;
     }
+    li {background-color: $color_background-medium-light;
+    color: $color_text-dark;
+
+    &:hover {
+        background-color: $color_background-light;
+    }}
+}
+%paletteMediumLight {
+    background-color: $color_background-medium-light;
+    color: $color_text-dark;
+
+    &:hover {
+        background-color: $color_background-light;
+    }
 }
 %paletteWhite {
     background-color: $color_background-white;
