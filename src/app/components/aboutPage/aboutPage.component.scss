@@ -2,58 +2,39 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.about-page-item {
-  @extend %columnSpaceBetween;
-  @extend %fontSmall;
-  @extend %marginStandard;
-  @extend %paddingStandard;
-  @extend %paletteLight;
-  @extend %transitionFast;
-  width: 90%;
-
-  &:hover {
-    background-color: $color_background-hover;
-    width: 91%;
-  }
-}
-
 .about-page-item-title {
   @extend %rowLeft;
-  align-items: center;
   @include setCategoryHeader($color_about-page);
+  align-items: center;
+  padding: 0 10px 0 20px;
 
   h3 {
-    @extend %paddingMedium;
     cursor: default;
+    padding-left: 20px;
   }
 
   img {
     @include setLogoDisplay(30px, 30px, -90deg, 1s);
-    padding-left: 20px;
   }
 }
 
 .about-page-items {
   @extend %columnSpaceBetween;
-  @extend %marginZero;
   @extend %paletteWhite;
   height: 100%;
   padding: 75px 10px 10px 10px;
   width: 90%;
+  margin: 0 20px;
+  justify-content: center;
+
+  @include forLargeScreens($breakpoint-medium) {
+    margin: 0 10vw;
+  }
 
   a {
     @include setLinkLight;
     @extend %fontSmall;
     font-weight: 400;
-  }
-
-  p {
-    padding: 30px 10px 0 5px;
-    text-align: justify;
-  }
-
-  @include forLargeScreens($breakpoint-medium) {
-    margin: auto 10vw;
   }
 
   h2 {
@@ -64,32 +45,31 @@
 }
 
 .about-page-list {
+  @extend %rowCentered;
+  flex-wrap: wrap;
   margin: 0 40px;
-  padding: 10px 20px;
+  padding: 10px 0;
 
-  p em {
-    @extend %fontVerySmall;
-    margin-left: 10px;
-
-    a {
-      @include setLinkLight;
-      margin-left: 10px;
-    }
-  }
-
-  ul li {
-    @extend %columnLeft;
-    border: none;
+  li {
+    @extend %fontSmall;
+    @extend %marginStandard;
+    @extend %paddingStandard;
+    @extend %paletteMediumLight;
+    @extend %transitionFast;
     cursor: default;
-    display: list-item;
-    list-style: circle;
-    margin: 10px 10px 10px 30px;
-    padding: 0 10px 0 20px;
+    height: 150px;
+    list-style: none;
+    text-align: center;
+    width: 150px;
 
     a {
+      @extend %columnCentered;
       @extend %fontSmall;
       @extend %marginZero;
-      @extend %paddingZero;
+      @extend %paddingMedium;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
     }
   }
 }
