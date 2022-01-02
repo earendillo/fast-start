@@ -56,6 +56,7 @@
     @extend %paddingStandard;
     @extend %paletteMediumLight;
     @extend %transitionFast;
+    @extend %columnCentered;
     cursor: default;
     height: 150px;
     list-style: none;
@@ -63,13 +64,36 @@
     width: 150px;
 
     a {
-      @extend %columnCentered;
+      @extend %columnTopCentered;
       @extend %fontSmall;
       @extend %marginZero;
-      @extend %paddingMedium;
+      // @extend %paddingMedium;
       cursor: pointer;
       height: 100%;
       width: 100%;
+      border: 1px solid red;
+      padding: 0;
     }
   }
+}
+
+.icon-large {
+  height: 80px;
+  width: 80px;
+}
+
+.icon-medium-large {
+  height: 50px;
+  width: 50px;
+}
+
+.icon-medium {
+  height: 45px;
+  width: 45px;
+}
+
+.icon-small {
+  height: 30px;
+  width: 30px;
+  margin-bottom: 10px;
 }
