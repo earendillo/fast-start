@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './landingPage.component.scss';
 
 export function LandingPage() {

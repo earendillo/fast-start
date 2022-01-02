@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './aboutPage.component.scss';
 import rocket from '../../images/rocket.svg';
 

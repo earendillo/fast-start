@@ -1,11 +1,12 @@
+import React, { Fragment, useEffect } from 'react';
+
+import { useStoreon } from 'storeon/react';
+
 import './mainContent.component.scss';
 import { CategoryItems } from '../categoryItems/categoryItems.component';
 import { ContentLabel } from '../../modules/content/content.state';
-import { Fragment } from 'react';
 import { LandingPage } from '../landingPage/landingPage.component';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
-import { useEffect } from 'react';
-import { useStoreon } from 'storeon/react';
 
 export function MainContent(): JSX.Element {
     const { content } = useStoreon('content');

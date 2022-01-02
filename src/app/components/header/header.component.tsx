@@ -1,6 +1,8 @@
-import './header.component.scss';
-import { Link } from 'react-navi';
 import React, { useState } from 'react';
+
+import { Link } from 'react-navi';
+
+import './header.component.scss';
 import rocket from '../../images/rocket.svg';
 
 interface MainHeaderProps {

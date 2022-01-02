@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './footer.component.scss';
 
 export function Footer(): JSX.Element {
