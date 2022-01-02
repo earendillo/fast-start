@@ -5,12 +5,6 @@
 .footer-container {
     @extend %columnCentered;
     @extend %paletteDark;
-    border-top: 3px solid $color-contrast;
-
-    a {
-        @extend %paddingSmall;
-        @include setLinkDark;
-    }
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
@@ -26,10 +20,8 @@
 .used-api-container {
     @extend %paddingStandard;
     @extend %rowRight;
+}
 
-    p {
-        @extend %rowCentered;
-        flex-wrap: wrap;
-        text-align: center;
-    }
+a {
+    @extend %paddingSmall;
 }

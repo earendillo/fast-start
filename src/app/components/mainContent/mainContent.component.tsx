@@ -5,6 +5,7 @@ import { useStoreon } from 'storeon/react';
 import './mainContent.component.scss';
 import { CategoryItems } from '../categoryItems/categoryItems.component';
 import { ContentLabel } from '../../modules/content/content.state';
+import { ErrorInfo } from '../errorInfo/errorInfo.component';
 import { LandingPage } from '../landingPage/landingPage.component';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
 
@@ -18,7 +19,7 @@ export function MainContent(): JSX.Element {
     }
 
     if (content.error) {
-        return <div>Content error occured.</div>;
+        return <ErrorInfo />;
     }
 
     return (
