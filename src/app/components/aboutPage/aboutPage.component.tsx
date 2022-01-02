@@ -19,7 +19,7 @@ export function AboutPage() {
                         href="https://www.nasa.gov/feature/facts-and-figures"
                         target="_blank"
                     >
-                        There are over 140 spaceflight launches in 2021
+                        There were over 140 spaceflight launches last year
                     </a>
                 </li>
                 <li>
@@ -79,6 +79,7 @@ export function AboutPage() {
             <ul className="about-page-list">
                 <li>
                     <a href="https://github.com/magmat88" target="_blank">
+                        {/* source of team member icon: https://pixabay.com/pl/vectors/u%c5%bcytkownik-osoba-ludzie-profil-1633249/ */}
                         <img alt="Team member icon" src={teamMember} />
                         Magda
                     </a>
