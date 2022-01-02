@@ -1,0 +1,66 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
+.landing-page-btn {
+    @extend %paddingStandard;
+    @extend %transitionFast;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid $color_dark;
+    cursor: pointer;
+    height: 50px;
+    margin: 10px;
+    padding: 10px 20px;
+    width: 200px;
+
+    &:hover {
+        background-color: $color_background-contrast;
+        height: 52px;
+        width: 202px;
+    }
+    
+    a {
+        @extend %fontStandard;
+        color: $color_text-dark;
+        text-decoration: none;
+    }
+}
+
+//source of landing image: https://unsplash.com/photos/-p-KCm6xB9I
+
+.landing-page-background {
+    @extend %columnCentered;
+    background-image: url("../../images/landingImageSmall.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 3px solid $color_contrast;
+    height: 100vh;
+    max-width: 100%;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+
+    @include forMediumScreens($breakpoint-small, $breakpoint-medium) {
+        background-image: url("../../images/landingImageMedium.jpg");
+    }
+
+    @include forLargeScreens($breakpoint-medium) {
+        background-image: url("../../images/landingImageLarge.jpg");
+    }
+}
+
+.landing-page-content {
+    @extend %fontLarge;
+    color: $color_text-dark;
+    cursor: default;
+
+    h1 {
+        @extend %fontExtraLarge;
+        line-height: 1.2;
+    }
+
+    h3 {
+        @extend %fontMedium;
+    }
+}

@@ -2,8 +2,9 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.loading-indicator-component {
+.loading-indicator-container {
     @extend %rowCentered;
+    height: 65vw;
 }
 
 // https://icons8.com/cssload/en/spinners

@@ -2,10 +2,6 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.for-medium-screens {
-    padding-right: 10px;
-}
-
 .hamburger-icon {
     @include setHamburgerIconAnimate($hamburgerBarSpacing);
 }
@@ -26,27 +22,14 @@
     }
 }
 
-.header-container {
-    @extend %columnLeft;
+.header {
     @extend %paletteDark;
-    align-items: center;
+    @extend %rowSpaceBetween;
     flex-direction: row-reverse;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-.header-logo-and-icon-container {
-    @extend %rowCentered;
-    justify-content: space-between;
-    width: 100%;
-
-    @include forLargeScreens($breakpoint-medium) {
         width: auto;
-        flex-direction: column;
-        align-items: flex-start;
     }
 }
 
@@ -61,15 +44,10 @@
 .logo {
     @extend %paddingStandard;
     @extend %rowCentered;
-    @include setImageDisplay(40px, 40px);
-    transition: transform 2s;    
-
-    &:hover {
-        transform: rotate(360deg);
-    }
+    @include setLogoDisplay(40px, 40px, 360deg, 2s);
 }
 
-.navigation-container {
+.menu-items {
     @extend %columnLeft;
     @extend %paletteDark;
     border-bottom: 3px solid $color-contrast;
@@ -84,68 +62,31 @@
     }
 }
 
-.navbar-container {
+.nav {
     @extend %columnLeft;
-    width: 100%;
-
-    @include forLargeScreens($breakpoint-medium) {
-        margin-right: 10vw;
-        width: auto;
-    }
-
-    a, button {
-        @extend %paddingStandard;
-    }
-    
-    a,
-    button
-    .navigation-list-item {
-        @include setMenuLink;
-        color: $color_text-contrast;
-        width: 100%;
-    
-        @include forLargeScreens($breakpoint-medium) {
-            color: $color_text-light;
-            font-weight: bold;
-            transition: color 0.5s;
-        }
-    }
-    
-    a:focus,
-    a:hover,
-    button:focus,
-    button:hover,
-    .navigation-list-item:focus,
-    .navigation-list-item:hover {
-        background-color: $color_background-contrast;
-        color: $color_text-dark;
-        font-weight: bold;
-    
-        @include forLargeScreens($breakpoint-medium) {
-            background-color: $color_background-dark;
-            color: $color_text-contrast;
-        }
-    }
-}
-
-.navigation-list {
-    @extend %columnCentered;
+    @extend %paddingZero;
+    list-style-type: none;
     width: 100%;
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         justify-content: flex-end;
+        margin-right: 10vw;
+        width: auto;
+    }
+
+    a {
+        @extend %columnCentered;
+        @include setMenuLink;
+        padding: 15px;
     }
 }
 
-.navigation-list-item {
-    @extend %paddingZero;
-}
-
 .product-name-container {
+    @extend %fontLarge;
     @extend %rowCentered;
     color: $color_text-contrast;
-    font-size: 1.4rem;
+    cursor: default;
     font-style: italic;
     font-weight: bold;
     margin-right: 30px;
@@ -155,36 +96,23 @@
     }
 }
 
-.visible {
-    display: flex;
-}
-
 li {
     @extend %rowCentered;
-    border: 1px solid $color_light;
+    border-bottom: 1px solid $color_light;
     width: 100%;
     height: 50px;
 
     @include forLargeScreens($breakpoint-medium) {
-        @extend %paddingZero;
         border: none;
+        padding: 0;
         width: auto;
     }
 }
 
-li a {
-    padding-left: 40px;
+li:first-of-type a {
+    border-top: 1px solid $color_light;
 
     @include forLargeScreens($breakpoint-medium) {
-        padding-left: 10px;
+        border-top: none;
     }
-}
-
-p {
-    cursor: default;
-}
-
-ul {
-    @extend %paddingZero;
-    list-style-type: none;
 }

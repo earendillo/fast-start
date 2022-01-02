@@ -2,7 +2,7 @@
 @import "../../styles/placeholders/placeholders.scss";
 @import "../../styles/variables/variables.scss";
 
-.articles-content {
+.articles-items {
   @extend %columnLeft;
   @extend %paletteWhite;
   padding: 75px 10px 10px 10px;
@@ -12,21 +12,7 @@
   }
 
   h2 {
-    @extend %paddingMedium;
-    border-left: 10px solid $color_category-article;
-    cursor: default;
+    @include setCategoryHeader($color_category-article);
   }
 }
 
-.articles-content-container {
-  @extend %columnSpaceBetween;
-  @extend %paletteWhite;
-
-  @include forLargeScreens($breakpoint-medium) {
-    margin: auto 10vw auto 10vw;
-  }
-}
-
-.articles-items {
-  @extend %columnCentered;
-}

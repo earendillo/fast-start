@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import { useStoreon } from 'storeon/react';
-import { useEffect } from 'react';
-import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
-import { ContentLabel } from '../../modules/content/content.state';
-import { CategoryItems } from '../categoryItems/categoryItems.component';
+
 import './blogs.component.scss';
+import { CategoryItems } from '../categoryItems/categoryItems.component';
+import { ContentLabel } from '../../modules/content/content.state';
+import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
 
 export function Blogs() {
     const { content } = useStoreon('content');
@@ -20,7 +21,7 @@ export function Blogs() {
     }
 
     return (
-        <div className="blogs-content">
+        <div className="blogs-items">
             <h2>Blogs</h2>
             <CategoryItems
                 categoryItems={content.blogs}

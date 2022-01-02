@@ -26,6 +26,10 @@
 .used-api-container {
     @extend %paddingStandard;
     @extend %rowRight;
+
+    p {
+        @extend %rowCentered;
+        flex-wrap: wrap;
+        text-align: center;
+    }
 }
-
-

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './loadingIndicator.component.scss';
 
 export function LoadingIndicator(): JSX.Element {

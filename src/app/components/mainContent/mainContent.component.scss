@@ -7,10 +7,6 @@
     height: 200%;
     width: 100%;
 
-    .content-tile-newssite-and-date {
-        display: none;
-    }
-
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
         height: 50%;
@@ -22,15 +18,35 @@
             padding-bottom: 10px;
         }
     }
+
+    .content-tile-newssite-and-date {
+        display: none;
+    }
+
+    .tile {
+        height: 400px;
+    }
 }
 
 .main-content-container {
     @extend %columnSpaceBetween;
     @extend %paletteWhite;
-    padding-top: 95px;
+    padding: 75px 10px 25px 10px;
     position: relative;
-    
+
     @include forLargeScreens($breakpoint-medium) {
         margin: auto 10vw;
+    }
+
+    .content-tile {
+        height: 300px;
+    }
+
+    .content-tile-img {
+        height: 280px;
+    }
+
+    h2 {
+        @include setCategoryHeader($color_contrast);
     }
 }
