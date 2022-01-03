@@ -51,12 +51,12 @@
   padding: 10px 0;
 
   li {
+    @extend %columnCentered;
     @extend %fontSmall;
     @extend %marginStandard;
     @extend %paddingStandard;
     @extend %paletteMediumLight;
     @extend %transitionFast;
-    @extend %columnCentered;
     cursor: default;
     height: 150px;
     list-style: none;
@@ -64,36 +64,52 @@
     width: 150px;
 
     a {
-      @extend %columnTopCentered;
+      @extend %columnCentered;
       @extend %fontSmall;
       @extend %marginZero;
-      // @extend %paddingMedium;
+      @extend %paddingZero;
       cursor: pointer;
       height: 100%;
       width: 100%;
-      border: 1px solid red;
-      padding: 0;
     }
   }
 }
 
+.icon-container {
+  @extend %columnFlexEnd;
+  @extend %marginZero;
+  height: 40%;
+}
+
 .icon-large {
+  @extend %marginZero;
+  @extend %paddingZero;
   height: 80px;
   width: 80px;
 }
 
 .icon-medium-large {
+  @extend %marginZero;
   height: 50px;
+  padding: 60px 0 0 0;
   width: 50px;
 }
 
 .icon-medium {
+  @extend %marginZero;
+  @extend %paddingZero;
   height: 45px;
   width: 45px;
 }
 
 .icon-small {
+  @extend %marginZero;
+  @extend %paddingZero;
   height: 30px;
   width: 30px;
-  margin-bottom: 10px;
+}
+
+.text-container {
+  @extend %columnCentered;
+  height: 60%;
 }

@@ -35,7 +35,9 @@ export function AboutPage() {
                                 src={fact}
                             />
                         </div>
-                        There were over 140 spaceflight launches last year
+                        <div className="text-container">
+                            There were over 140 spaceflight launches last year
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -50,7 +52,10 @@ export function AboutPage() {
                                 src={fact}
                             />
                         </div>
-                        There are at least 7 people on space station right now
+                        <div className="text-container">
+                            There are at least 7 people on space station right
+                            now
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -65,8 +70,10 @@ export function AboutPage() {
                                 src={fact}
                             />
                         </div>
-                        In 24 hours, the space station is travelling through 16
-                        sunrises and sunsets
+                        <div className="text-container">
+                            In 24 hours, the space station is travelling through
+                            16 sunrises and sunsets
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -81,8 +88,10 @@ export function AboutPage() {
                                 src={fact}
                             />
                         </div>
-                        The space for living and working on space station is
-                        larger than a six-bedroom house
+                        <div className="text-container">
+                            The space for living and working on space station is
+                            larger than a six-bedroom house
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -100,7 +109,9 @@ export function AboutPage() {
                             src={news}
                         />
                     </div>
-                    Latest spaceflight news
+                    <div className="text-container">
+                        Latest spaceflight news
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -110,7 +121,9 @@ export function AboutPage() {
                             src={blog}
                         />
                     </div>
-                    Detailed blogs about missions and launches
+                    <div className="text-container">
+                        Detailed blogs about missions and launches
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -120,7 +133,9 @@ export function AboutPage() {
                             src={reports}
                         />
                     </div>
-                    Latest data from space stations and missions
+                    <div className="text-container">
+                        Latest data from space stations and missions
+                    </div>
                 </li>
             </ul>
 
@@ -137,7 +152,9 @@ export function AboutPage() {
                             src={quality}
                         />
                     </div>
-                    To deliver high quality product
+                    <div className="text-container">
+                        To deliver high quality product
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -147,7 +164,9 @@ export function AboutPage() {
                             src={interesting}
                         />
                     </div>
-                    To deliver interesting content
+                    <div className="text-container">
+                        To deliver interesting content
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -157,7 +176,9 @@ export function AboutPage() {
                             src={tracking}
                         />
                     </div>
-                    To make tracking spaceflight information easier
+                    <div className="text-container">
+                        To make tracking spaceflight information easier
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -167,7 +188,9 @@ export function AboutPage() {
                             src={programmer}
                         />
                     </div>
-                    To develop our programming skills
+                    <div className="text-container">
+                        To develop our programming skills
+                    </div>
                 </li>
                 <li>
                     <div className="icon-container">
@@ -177,7 +200,9 @@ export function AboutPage() {
                             src={heart}
                         />
                     </div>
-                    To do what we love, to love what we do
+                    <div className="text-container">
+                        To do what we love, to love what we do
+                    </div>
                 </li>
             </ul>
 
