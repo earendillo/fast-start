@@ -4,12 +4,12 @@
 
 .footer-container {
     @extend %columnCentered;
+    @extend %marginZero;
+    @extend %paddingZero;
     @extend %paletteDark;
     align-items: center;
     border-top: 3px solid $color-contrast;
     height: 75px;
-    margin: 0;
-    padding: 0;
 
     a {
         @extend %paddingSmall;
@@ -36,10 +36,8 @@
     @extend %fontVerySmall;
     @extend %paddingZero;
     @extend %rowRight;
+}
 
-    p {
-        @extend %rowCentered;
-        flex-wrap: wrap;
-        text-align: center;
-    }
+a {
+    @extend %paddingSmall;
 }

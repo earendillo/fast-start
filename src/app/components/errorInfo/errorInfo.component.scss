@@ -1,0 +1,24 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
+.error-icon {
+  height: 50px;
+}
+
+.error-item {
+    @extend %columnSpaceBetween;
+    @extend %paletteWhite;
+    box-sizing: border-box;
+    height: 90vh;
+    margin: 0 20px;
+    justify-content: center;
+  
+    @include forLargeScreens($breakpoint-medium) {
+      margin: 0 10vw;
+    }
+}
+
+.error-text {
+    @extend %rowCentered;
+}
