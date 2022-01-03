@@ -1,7 +1,14 @@
 import { CONFIG_STORE_KEY } from './config.module';
-
+//!!!
 export type ConfigItem = ConfigSection;
 
+export enum ConfigLabel {
+    'Facts',
+    'ContentTypes',
+    'MissionAndValues',
+    'Team'
+}
+//!!!
 export interface ConfigSection {
     headerContent: string;
     data: Array<ConfigSectionData>;
