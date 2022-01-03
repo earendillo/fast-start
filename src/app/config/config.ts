@@ -17,6 +17,36 @@ export const config = {
                         'The space for living and working on space station is larger than a six-bedroom house',
                     ],
                 },
+                {
+                    iconName: 'fact',
+                    iconClassName: 'icon-small',
+                    alt: 'Light bulb icon',
+                    iconSource:
+                        'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
+                    href: 'https://www.nasa.gov/feature/facts-and-figures',
+                    content:
+                        'There are at least 7 people on space station right now',
+                },
+                {
+                    iconName: 'fact',
+                    iconClassName: 'icon-small',
+                    alt: 'Light bulb icon',
+                    iconSource:
+                        'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
+                    href: 'https://www.nasa.gov/feature/facts-and-figures',
+                    content:
+                        'In 24 hours, the space station is travelling through 16 sunrises and sunsets',
+                },
+                {
+                    iconName: 'fact',
+                    iconClassName: 'icon-small',
+                    alt: 'Light bulb icon',
+                    iconSource:
+                        'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
+                    href: 'https://www.nasa.gov/feature/facts-and-figures',
+                    content:
+                        'The space for living and working on space station is larger than a six-bedroom house',
+                },
             ],
         },
         contentTypes: {
