@@ -4,6 +4,9 @@
 %columnCentered {
     @include setFlexDisplay(column, center, center);
 }
+%columnFlexEnd {
+    @include setFlexDisplay(column, center, flex-end);
+}
 %columnLeft {
     @include setFlexDisplay(column, flex-start, flex-start);
 }

@@ -4,7 +4,17 @@
 
 .footer-container {
     @extend %columnCentered;
+    @extend %marginZero;
+    @extend %paddingZero;
     @extend %paletteDark;
+    align-items: center;
+    border-top: 3px solid $color-contrast;
+    height: 75px;
+
+    a {
+        @extend %paddingSmall;
+        @include setLinkDark;
+    }
 
     @include forLargeScreens($breakpoint-medium) {
         flex-direction: row;
@@ -13,12 +23,18 @@
 }
 
 .info-container {
-    @extend %paddingStandard;
+    @extend %fontSmall;
+    @extend %paddingZero;
     @extend %rowLeft;
+
+    a {
+        @include setLinkContrast;
+    }
 }
 
 .used-api-container {
-    @extend %paddingStandard;
+    @extend %fontVerySmall;
+    @extend %paddingZero;
     @extend %rowRight;
 }
 
