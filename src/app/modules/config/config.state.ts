@@ -19,7 +19,8 @@ export interface ConfigSectionData {
     iconClassName: string;
     alt: string;
     iconSource: string;
-    href: string;
+    //any do zmiany
+    href: any;
     content: string;
 }
 

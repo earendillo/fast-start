@@ -20,7 +20,6 @@ export interface ConfigTileProps {
 }
 
 export function ConfigTile({ item, label }: ConfigTileProps) {
-    // const handleClick = () => window.open(item.url, '_blank');
 
     return (
         <section className="about-page-item-title">
