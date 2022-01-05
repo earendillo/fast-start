@@ -3,53 +3,36 @@ import React, { useEffect } from 'react';
 import { useStoreon } from 'storeon/react';
 
 import './aboutPage.component.scss';
-import { AboutPageItems } from '../aboutPageItems/aboutPageItems.component';
-import { ConfigLabel } from '../../modules/config/config.state';
-import { ErrorInfo } from '../errorInfo/errorInfo.component';
-import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
-
-import blog from '../../images/blog.svg';
-import fact from '../../images/fact.svg';
-import heart from '../../images/heart.svg';
-import interesting from '../../images/interesting.svg';
-import news from '../../images/news.svg';
-import programmer from '../../images/programmer.svg';
-import quality from '../../images/quality.svg';
-import reports from '../../images/reports.svg';
+import { List } from '../list/list.component';
 import rocket from '../../images/rocket.svg';
-import teamMember from '../../images/teamMember.svg';
-import tracking from '../../images/tracking.svg';
 
 export function AboutPage(): JSX.Element {
     const { config } = useStoreon('config');
-
-    useEffect(() => {}, [config.pending]);
-
-    if (config.pending) {
-        return <LoadingIndicator />;
-    }
-
-    if (config.error) {
-        return <ErrorInfo />;
-    }
+    useEffect(() => {}, [config]);
 
     return (
         <div className="about-page-items">
             <h2>About page</h2>
-            {/* map */}
-            <AboutPageItems
-                items={config.aboutPage}
-                label={ConfigLabel.Facts}
-            />
-            <AboutPageItems
-                items={config.aboutPage}
-                label={ConfigLabel.ContentTypes}
-            />
-            <AboutPageItems
-                items={config.aboutPage}
-                label={ConfigLabel.MissionAndValues}
-            />
-            <AboutPageItems items={config.aboutPage} label={ConfigLabel.Team} />
+            <section className="about-page-item-title">
+                <img alt="White rocket that moves on hover" src={rocket} />
+                <h3>Some reasons to keep on track with spaceflights</h3>
+            </section>
+            <List listItems={config.staticContent.aboutPage.facts} />
+            <section className="about-page-item-title">
+                <img alt="White rocket that moves on hover" src={rocket} />
+                <h3>We provide fresh content</h3>
+            </section>
+            <List listItems={config.staticContent.aboutPage.contentTypes} />
+            <section className="about-page-item-title">
+                <img alt="White rocket that moves on hover" src={rocket} />
+                <h3>Our mission and core values</h3>
+            </section>
+            <List listItems={config.staticContent.aboutPage.missionAndValues} />
+            <section className="about-page-item-title">
+                <img alt="White rocket that moves on hover" src={rocket} />
+                <h3>Our team</h3>
+            </section>
+            <List listItems={config.staticContent.aboutPage.team} />
         </div>
     );
 }

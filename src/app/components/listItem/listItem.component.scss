@@ -1,0 +1,76 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/placeholders/placeholders.scss";
+@import "../../styles/variables/variables.scss";
+
+.icon-container {
+    @extend %columnFlexEnd;
+    @extend %marginZero;
+    height: 40%;
+}
+
+.icon-large {
+    @extend %marginZero;
+    @extend %paddingZero;
+    height: 80px;
+    width: 80px;
+}
+
+.icon-medium-large {
+    @extend %marginZero;
+    height: 50px;
+    padding: 60px 0 0 0;
+    width: 50px;
+}
+
+.icon-medium {
+    @extend %marginZero;
+    @extend %paddingZero;
+    height: 45px;
+    width: 45px;
+}
+
+.icon-small {
+    @extend %marginZero;
+    @extend %paddingZero;
+    height: 30px;
+    width: 30px;
+}
+
+.text-container {
+    @extend %columnCentered;
+    height: 60%;
+}
+
+.about-page-list {
+    @extend %rowCentered;
+    flex-wrap: wrap;
+    margin: 0 40px;
+    padding: 10px 0;
+
+    li {
+        @extend %columnCentered;
+        @extend %fontSmall;
+        @extend %marginStandard;
+        @extend %paddingStandard;
+        @extend %paletteMediumLight;
+        @extend %transitionFast;
+        cursor: default;
+        height: 150px;
+        list-style: none;
+        text-align: center;
+        width: 150px;
+
+        a {
+            @extend %columnCentered;
+            @extend %fontSmall;
+            @extend %marginZero;
+            @extend %paddingZero;
+            height: 100%;
+            width: 100%;
+        }
+
+        .withLink {
+            cursor: pointer;
+        }
+    }
+}
