@@ -19,7 +19,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
                 href: 'https://www.nasa.gov/feature/facts-and-figures',
-                content: 'There were over 140 spaceflight launches last year',
+                content: 'There were over 140 spaceflight launches last year'
             },
             {
                 icon: fact,
@@ -29,7 +29,7 @@ export const staticContent = {
                     'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
                 href: 'https://www.nasa.gov/feature/facts-and-figures',
                 content:
-                    'There are at least 7 people on space station right now',
+                    'There are at least 7 people on space station right now'
             },
             {
                 icon: fact,
@@ -39,7 +39,7 @@ export const staticContent = {
                     'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
                 href: 'https://www.nasa.gov/feature/facts-and-figures',
                 content:
-                    'In 24 hours, the space station is travelling through 16 sunrises and sunsets',
+                    'In 24 hours, the space station is travelling through 16 sunrises and sunsets'
             },
             {
                 icon: fact,
@@ -49,8 +49,8 @@ export const staticContent = {
                     'https://pixabay.com/pl/vectors/%c5%bcar%c3%b3wka-pomys%c5%82-roz%c5%bcarzony-lampa-1294335/',
                 href: 'https://www.nasa.gov/feature/facts-and-figures',
                 content:
-                    'The space for living and working on space station is larger than a six-bedroom house',
-            },
+                    'The space for living and working on space station is larger than a six-bedroom house'
+            }
         ],
         contentTypes: [
             {
@@ -60,7 +60,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/gazeta-czyta%c4%87-aktualno%c5%9bci-biznes-311272/',
                 href: null,
-                content: 'Latest spaceflight news',
+                content: 'Latest spaceflight news'
             },
             {
                 icon: blog,
@@ -69,7 +69,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/pisa%c4%87-list-poczta-d%c5%82ugopis-tekst-1292838/',
                 href: null,
-                content: 'Detailed blogs about missions and launches',
+                content: 'Detailed blogs about missions and launches'
             },
             {
                 icon: reports,
@@ -78,8 +78,8 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/p%c5%82aski-projekt-symbol-ikona-www-2126876/',
                 href: null,
-                content: 'Latest data from space stations and missions',
-            },
+                content: 'Latest data from space stations and missions'
+            }
         ],
         missionAndValues: [
             {
@@ -89,7 +89,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/nagroda-medal-gwiazda-jako%c5%9b%c4%87-5572089/',
                 href: null,
-                content: 'To deliver high quality product',
+                content: 'To deliver high quality product'
             },
             {
                 icon: interesting,
@@ -98,7 +98,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/r%c4%99ka-palec-kciuk-kciuk-w-g%c3%b3r%c4%99-159474/',
                 href: null,
-                content: 'To deliver interesting content',
+                content: 'To deliver interesting content'
             },
             {
                 icon: tracking,
@@ -107,7 +107,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/szukaj-znajdowa%c4%87-lupa-powi%c4%99kszenie-6699087/',
                 href: null,
-                content: 'To make tracking spaceflight information easier',
+                content: 'To make tracking spaceflight information easier'
             },
             {
                 icon: programmer,
@@ -116,7 +116,7 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/facet-programista-komputer-post%c4%99p-6070329/',
                 href: null,
-                content: 'To develop our programming skills',
+                content: 'To develop our programming skills'
             },
             {
                 icon: heart,
@@ -125,28 +125,28 @@ export const staticContent = {
                 iconSource:
                     'https://pixabay.com/pl/vectors/czarny-serce-mi%c5%82o%c5%9b%c4%87-czarna-mi%c5%82o%c5%9b%c4%87-152877/',
                 href: null,
-                content: 'To do what we love, to love what we do',
-            },
+                content: 'To do what we love, to love what we do'
+            }
         ],
         team: [
             {
                 icon: teamMember,
-                iconClassName: 'icon-medium-large',
+                iconClassName: 'icon-medium',
                 alt: 'Team member icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/u%c5%bcytkownik-osoba-ludzie-profil-1633249/',
                 href: 'https://github.com/magmat88',
-                content: 'Magda',
+                content: 'Magda'
             },
             {
                 icon: teamMember,
-                iconClassName: 'icon-medium-large',
+                iconClassName: 'icon-medium',
                 alt: 'Team member icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/u%c5%bcytkownik-osoba-ludzie-profil-1633249/',
                 href: 'https://github.com/earendillo',
-                content: 'Mateusz',
-            },
-        ],
-    },
+                content: 'Mateusz'
+            }
+        ]
+    }
 };

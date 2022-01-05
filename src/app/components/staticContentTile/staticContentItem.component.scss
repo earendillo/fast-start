@@ -36,12 +36,7 @@
     width: 30px;
 }
 
-.text-container {
-    @extend %columnCentered;
-    height: 60%;
-}
-
-.about-page-list {
+.static-content-list {
     @extend %rowCentered;
     flex-wrap: wrap;
     margin: 0 40px;
@@ -73,4 +68,9 @@
             cursor: pointer;
         }
     }
+}
+
+.text-container {
+    @extend %columnCentered;
+    height: 60%;
 }
