@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-
 import { useStoreon } from 'storeon/react';
-
-import './aboutPage.component.scss';
 import { StaticContentList } from '../staticContentList/staticContentList.component';
+import { StaticContentListWithAnchor } from '../staticContentListWithAnchor/staticContentListWithAnchor.component';
 import rocket from '../../images/rocket.svg';
+import './aboutPage.component.scss';
 
 export function AboutPage(): JSX.Element {
     const { config } = useStoreon('config');
@@ -17,7 +16,7 @@ export function AboutPage(): JSX.Element {
                 <img alt="White rocket that moves on hover" src={rocket} />
                 <h3>Some reasons to keep on track with spaceflights</h3>
             </section>
-            <StaticContentList staticContentListItems={config.staticContent.aboutPage.facts} />
+            <StaticContentListWithAnchor staticContentListWithAnchorItems={config.staticContent.aboutPage.facts} />
 
             <section className="about-page-item-title">
                 <img alt="White rocket that moves on hover" src={rocket} />
@@ -35,7 +34,7 @@ export function AboutPage(): JSX.Element {
                 <img alt="White rocket that moves on hover" src={rocket} />
                 <h3>Our team</h3>
             </section>
-            <StaticContentList staticContentListItems={config.staticContent.aboutPage.team} />
+            <StaticContentListWithAnchor staticContentListWithAnchorItems={config.staticContent.aboutPage.team} />
         </div>
     );
 }

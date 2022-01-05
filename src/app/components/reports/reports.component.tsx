@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-
 import { useStoreon } from 'storeon/react';
-
-import './reports.component.scss';
 import { CategoryItems } from '../categoryItems/categoryItems.component';
 import { ContentLabel } from '../../modules/content/content.state';
 import { ErrorInfo } from '../errorInfo/errorInfo.component';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import './reports.component.scss';
 
 export function Reports(): JSX.Element {
     const { content } = useStoreon('content');

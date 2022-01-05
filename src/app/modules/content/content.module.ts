@@ -1,24 +1,24 @@
 import { StoreonModule, StoreonStore } from 'storeon';
 import { createSubstore } from 'storeon-substore';
 import {
+    ContentEvents,
     ContentInitEvent,
-    FetchArticlesEvent,
     FetchArticlesEndedEvent,
-    FetchBlogsEvent,
+    FetchArticlesEvent,
     FetchBlogsEndedEvent,
+    FetchBlogsEvent,
+    FetchDashboardDataEndedEvent,
+    FetchDashboardDataEvent,
     FetchReportsEndedEvent,
     FetchReportsEvent,
-    FetchDashboardDataEvent,
-    FetchDashboardDataEndedEvent,
-    ContentEvents,
     SetPendingEvent,
 } from './content.events';
 import {
-    WithContentState,
-    ContentState,
     Article,
     Blog,
+    ContentState,
     Report,
+    WithContentState,
 } from './content.state';
 import {
     ARTICLES_ROUTE,

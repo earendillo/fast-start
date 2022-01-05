@@ -59,7 +59,7 @@ export const staticContent = {
                 alt: 'Newspaper icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/gazeta-czyta%c4%87-aktualno%c5%9bci-biznes-311272/',
-                href: null,
+                href: '',
                 content: 'Latest spaceflight news'
             },
             {
@@ -68,7 +68,7 @@ export const staticContent = {
                 alt: 'Sheet of paper with fountain pen icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/pisa%c4%87-list-poczta-d%c5%82ugopis-tekst-1292838/',
-                href: null,
+                href: '',
                 content: 'Detailed blogs about missions and launches'
             },
             {
@@ -77,7 +77,7 @@ export const staticContent = {
                 alt: 'Graph on monitor icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/p%c5%82aski-projekt-symbol-ikona-www-2126876/',
-                href: null,
+                href: '',
                 content: 'Latest data from space stations and missions'
             }
         ],
@@ -88,7 +88,7 @@ export const staticContent = {
                 alt: 'Order of quality icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/nagroda-medal-gwiazda-jako%c5%9b%c4%87-5572089/',
-                href: null,
+                href: '',
                 content: 'To deliver high quality product'
             },
             {
@@ -97,7 +97,7 @@ export const staticContent = {
                 alt: 'Hand with thumb up icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/r%c4%99ka-palec-kciuk-kciuk-w-g%c3%b3r%c4%99-159474/',
-                href: null,
+                href: '',
                 content: 'To deliver interesting content'
             },
             {
@@ -106,7 +106,7 @@ export const staticContent = {
                 alt: 'Magnifier glass icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/szukaj-znajdowa%c4%87-lupa-powi%c4%99kszenie-6699087/',
-                href: null,
+                href: '',
                 content: 'To make tracking spaceflight information easier'
             },
             {
@@ -115,7 +115,7 @@ export const staticContent = {
                 alt: 'Programmer working at the computer icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/facet-programista-komputer-post%c4%99p-6070329/',
-                href: null,
+                href: '',
                 content: 'To develop our programming skills'
             },
             {
@@ -124,7 +124,7 @@ export const staticContent = {
                 alt: 'Heart icon',
                 iconSource:
                     'https://pixabay.com/pl/vectors/czarny-serce-mi%c5%82o%c5%9b%c4%87-czarna-mi%c5%82o%c5%9b%c4%87-152877/',
-                href: null,
+                href: '',
                 content: 'To do what we love, to love what we do'
             }
         ],

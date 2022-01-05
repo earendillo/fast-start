@@ -1,7 +1,6 @@
 import React from 'react';
-
-import './errorInfo.component.scss';
 import errorIcon from '../../images/errorIcon.svg';
+import './errorInfo.component.scss';
 
 export function ErrorInfo() {
     return (

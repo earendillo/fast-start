@@ -1,8 +1,6 @@
 import { StoreonModule, StoreonStore } from 'storeon';
 import { createSubstore } from 'storeon-substore';
-
 import { AppGlobalEvents, AppInitEvent } from './app.events';
-
 import { APP_STORE_KEY, AppGlobalState, WithAppGlobalState } from './app.state';
 import { AppStore } from './app.store';
 

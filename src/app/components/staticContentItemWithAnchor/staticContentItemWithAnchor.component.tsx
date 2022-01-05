@@ -1,17 +1,16 @@
 import React from 'react';
-
-import './staticContentItem.component.scss';
 import { StaticContentItem } from '../../modules/config/config.state';
+import './staticContentItemWithAnchor.component.scss';
 
-export interface StaticContentItemProps {
+export interface StaticContentItemWithAnchorProps {
     staticContentItem: StaticContentItem;
 }
 
-export function StaticContentItemTile({ staticContentItem }: StaticContentItemProps) {
+export function StaticContentItemWithAnchor({ staticContentItem }: StaticContentItemWithAnchorProps) {
+
     return (
         <li>
             <a
-                className={staticContentItem.href && 'withLink'}
                 href={staticContentItem.href}
                 target="_blank"
             >

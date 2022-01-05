@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { compose, mount, route, withView } from 'navi';
 import { Router, View } from 'react-navi';
 import { StoreContext } from 'storeon/react';
-
-import './app.scss';
 import { AboutPage } from './components/aboutPage/aboutPage.component';
 import { AppStore } from './app.store';
 import { Articles } from './components/articles/articles.component';
@@ -13,7 +10,7 @@ import { Footer } from './components/footer/footer.component';
 import { MainContent } from './components/mainContent/mainContent.component';
 import { MainHeader } from './components/header/header.component';
 import { Reports } from './components/reports/reports.component';
-
+import './app.scss';
 
 interface AppProps {
     store: AppStore;

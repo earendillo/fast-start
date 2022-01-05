@@ -8,7 +8,7 @@ export interface StaticContentItem {
     icon: string;
     iconClassName: string;
     alt: string;
-    href: string | null;
+    href: string;
     iconSource: string;
     content: string;
 };

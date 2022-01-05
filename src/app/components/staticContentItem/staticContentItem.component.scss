@@ -54,19 +54,6 @@
         list-style: none;
         text-align: center;
         width: 150px;
-
-        a {
-            @extend %columnCentered;
-            @extend %fontSmall;
-            @extend %marginZero;
-            @extend %paddingZero;
-            height: 100%;
-            width: 100%;
-        }
-
-        .withLink {
-            cursor: pointer;
-        }
     }
 }
 

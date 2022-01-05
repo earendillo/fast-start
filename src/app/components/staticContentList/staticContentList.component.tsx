@@ -1,7 +1,6 @@
 import React from 'react';
-
 import { StaticContentItem } from '../../modules/config/config.state';
-import { StaticContentItemTile } from '../staticContentTile/staticContentItem.component';
+import { StaticContentItemTile } from '../staticContentItem/staticContentItem.component';
 
 interface StaticContentListProps {
     staticContentListItems: Array<StaticContentItem>;
