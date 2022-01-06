@@ -1,40 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useStoreon } from 'storeon/react';
 import { StaticContentList } from '../staticContentList/staticContentList.component';
-import { StaticContentListWithAnchor } from '../staticContentListWithAnchor/staticContentListWithAnchor.component';
 import rocket from '../../images/rocket.svg';
 import './aboutPage.component.scss';
+import { StaticContentItem } from '../../modules/config/config.state';
 
 export function AboutPage(): JSX.Element {
     const { config } = useStoreon('config');
     useEffect(() => {}, [config]);
 
+    function renderStaticContent(
+        title: string,
+        staticContentListToRender: Array<StaticContentItem>
+    ): JSX.Element {
+        return (
+            <Fragment>
+                <section className="about-page-item-title">
+                    <img alt="White rocket that moves on hover" src={rocket} />
+                    <h3>{title}</h3>
+                </section>
+
+                <StaticContentList
+                    staticContentListItems={staticContentListToRender}
+                />
+            </Fragment>
+        );
+    }
+
     return (
         <div className="about-page-items">
             <h2>About page</h2>
-            <section className="about-page-item-title">
-                <img alt="White rocket that moves on hover" src={rocket} />
-                <h3>Some reasons to keep on track with spaceflights</h3>
-            </section>
-            <StaticContentListWithAnchor staticContentListWithAnchorItems={config.staticContent.aboutPage.facts} />
 
-            <section className="about-page-item-title">
-                <img alt="White rocket that moves on hover" src={rocket} />
-                <h3>We provide fresh content</h3>
-            </section>
-            <StaticContentList staticContentListItems={config.staticContent.aboutPage.contentTypes} />
+            {renderStaticContent(
+                'Some reasons to keep on track with spaceflights',
+                config.staticContent.aboutPage.facts
+            )}
 
-            <section className="about-page-item-title">
-                <img alt="White rocket that moves on hover" src={rocket} />
-                <h3>Our mission and core values</h3>
-            </section>
-            <StaticContentList staticContentListItems={config.staticContent.aboutPage.missionAndValues} />
+            {renderStaticContent(
+                'We provide fresh content',
+                config.staticContent.aboutPage.contentTypes
+            )}
 
-            <section className="about-page-item-title">
-                <img alt="White rocket that moves on hover" src={rocket} />
-                <h3>Our team</h3>
-            </section>
-            <StaticContentListWithAnchor staticContentListWithAnchorItems={config.staticContent.aboutPage.team} />
+            {renderStaticContent(
+                'Our mission and core values',
+                config.staticContent.aboutPage.missionAndValues
+            )}
+
+            {renderStaticContent(
+                'Our team',
+                config.staticContent.aboutPage.team
+            )}
         </div>
     );
 }
