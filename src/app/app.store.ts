@@ -1,5 +1,4 @@
 import { createStoreon, StoreonStore } from 'storeon';
-
 import { AppState } from './app.state';
 import { AppEvents } from './app.events';
 import { getAppModule } from './app.module';

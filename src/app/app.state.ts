@@ -1,5 +1,6 @@
 import { WithContentState } from './modules/content/content.state';
 import { WithConfigState } from './modules/config/config.state';
+
 export const APP_STORE_KEY = 'app' as const;
 
 export interface AppState
