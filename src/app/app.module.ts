@@ -1,10 +1,9 @@
 import { StoreonModule, StoreonStore } from 'storeon';
 import { createSubstore } from 'storeon-substore';
-
-import { AppGlobalEvents, AppInitEvent } from './app.events';
-
-import { APP_STORE_KEY, AppGlobalState, WithAppGlobalState } from './app.state';
 import { AppStore } from './app.store';
+import { AppGlobalEvents, AppInitEvent } from './app.events';
+import { APP_STORE_KEY, AppGlobalState, WithAppGlobalState } from './app.state';
+
 
 export type AppGlobalStore = StoreonStore<AppGlobalState, AppGlobalEvents>;
 export type AppGlobalModule = StoreonModule<

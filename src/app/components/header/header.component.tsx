@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
 import { Link } from 'react-navi';
-
-import './header.component.scss';
 import rocket from '../../images/rocket.svg';
+import './header.component.scss';
 
 interface MainHeaderProps {
     appName: string;

@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-
 import { useStoreon } from 'storeon/react';
-
-import './blogs.component.scss';
 import { CategoryItems } from '../categoryItems/categoryItems.component';
 import { ContentLabel } from '../../modules/content/content.state';
 import { ErrorInfo } from '../errorInfo/errorInfo.component';
 import { LoadingIndicator } from '../loadingIndicator/loadingIndicator.component';
+import './blogs.component.scss';
 
 export function Blogs() {
     const { content } = useStoreon('content');
