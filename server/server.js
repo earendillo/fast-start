@@ -74,7 +74,7 @@ fastify.get(DASHBOARD_ROUTE, async (req, reply) => {
     }
 })
 
-fastify.listen(process.env.PORT || 5000, function (err, port) {
+fastify.listen(process.env.PORT || 5000, '0.0.0.0', function (err, port) {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
