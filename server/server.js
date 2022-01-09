@@ -4,7 +4,6 @@ const fastify = require('fastify')({
 const path = require('path');
 const axios = require('axios').default;
 
-const PORT = process.env.PORT || 5000;
 const BASE_API_URL = 'https://api.spaceflightnewsapi.net/v3';
 const ARTICLES_ROUTE = '/articles';
 const REPORTS_ROUTE = '/reports';
@@ -75,7 +74,7 @@ fastify.get(DASHBOARD_ROUTE, async (req, reply) => {
     }
 })
 
-fastify.listen(PORT, function (err, port) {
+fastify.listen(process.env.PORT || 5000, function (err, port) {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
