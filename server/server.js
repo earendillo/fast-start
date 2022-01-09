@@ -1,6 +1,7 @@
 const fastify = require('fastify')({
     logger: true,
 });
+const path = require('path');
 const axios = require('axios').default;
 
 const PORT = process.env.PORT || 5000;
@@ -8,39 +9,50 @@ const BASE_API_URL = 'https://api.spaceflightnewsapi.net/v3';
 const ARTICLES_ROUTE = '/articles';
 const REPORTS_ROUTE = '/reports';
 const BLOGS_ROUTE = '/blogs';
-const DASHBOARD_ROUTE = '/dashboard'
+const DASHBOARD_ROUTE = '/dashboard';
 
-fastify.get(ARTICLES_ROUTE, (req, res) => {
+fastify.register(require('fastify-static'), {
+    root: path.join(__dirname, '..', './build')
+});
+
+fastify.get('/', async (request, reply) => {
+    try {
+        reply.sendFile('index.html');
+    }
+    catch (e) { console.log(e) }
+});
+
+fastify.get(ARTICLES_ROUTE, (req, reply) => {
     try {
         axios.get(`${BASE_API_URL}${ARTICLES_ROUTE}`).then(async (response) => {
-            res.send(response.data);
+            reply.send(response.data);
         });
     } catch (error) {
         console.error(error);
     }
 });
 
-fastify.get(REPORTS_ROUTE, (req, res) => {
+fastify.get(REPORTS_ROUTE, (req, reply) => {
     try {
         axios.get(`${BASE_API_URL}${REPORTS_ROUTE}`).then(async (response) => {
-            res.send(response.data);
+            reply.send(response.data);
         });
     } catch (error) {
         console.error(error);
     }
 });
 
-fastify.get(BLOGS_ROUTE, (req, res) => {
+fastify.get(BLOGS_ROUTE, (req, reply) => {
     try {
         axios.get(`${BASE_API_URL}${BLOGS_ROUTE}`).then(async (response) => {
-            res.send(response.data);
+            reply.send(response.data);
         });
     } catch (error) {
         console.error(error);
     }
 });
 
-fastify.get(DASHBOARD_ROUTE, async (req, res) => {
+fastify.get(DASHBOARD_ROUTE, async (req, reply) => {
     try {
         const articlesPromise = axios.get(`${BASE_API_URL}${ARTICLES_ROUTE}`);
         const blogsPromise = axios.get(`${BASE_API_URL}${BLOGS_ROUTE}`);
@@ -57,7 +69,7 @@ fastify.get(DASHBOARD_ROUTE, async (req, res) => {
             blogs: blogs.data,
             reports: reports.data,
         };
-        res.send(response);
+        reply.send(response);
     } catch (error) {
         console.error(error);
     }
