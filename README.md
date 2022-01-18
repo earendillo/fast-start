@@ -1,3 +1,9 @@
+# Heroku:
+* See app on Heroku: https://fast-start.herokuapp.com/
+
+# Node version:
+* Use node v10.16.3
+
 # Sandbox/Funbox utilizing:
 * React w/ TypeScript based on CRA
 * Storeon as store provider
