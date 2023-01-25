@@ -1,6 +1,3 @@
-# Heroku:
-* See app on Heroku: https://fast-start.herokuapp.com/
-
 # Node version:
 * Use node v10.16.3
 
